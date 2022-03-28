@@ -61,10 +61,6 @@ comprados juntos com itens que já estão no carrinho, para ser ofertado no fech
 
  > **Requisitos Não Funcionais**
 
- - [x]  Linguagem Java;
- - [x]  Banco de Dados Relacional;
- - [x]  Documentações.<br><br>
-
 <br>
 
 ## :bulb: Metodologia Utilizada
