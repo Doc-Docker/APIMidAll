@@ -47,7 +47,7 @@ Na compra de 3 produtos, ganhe 50% de desconto no item de menor valor.
 
 <br>
 
-## **Escopo do Projeto:**
+## :dart:	Escopo do Projeto
 
  > **Requisitos Funcionais**
 
@@ -67,6 +67,11 @@ comprados juntos com itens que já estão no carrinho, para ser ofertado no fech
 
 <br>
 
+**:link: Clique no link abaixo para visualizar o *Wireframe no Figma*:** 
+> [Figma Atualizado](https://www.figma.com/file/9x87JgSK0HbLfNtucaYlDW/API-MidAll)
+
+<br>
+
 ## :bulb: Metodologia Utilizada
 
 * **Metodologia Ágil:** Framework [Scrum](https://www.desenvolvimentoagil.com.br/scrum/)
@@ -83,7 +88,7 @@ Este projeto está sob a licença MIT - veja o arquivo [LICENSE.md](https://gith
 
 - [x] [Kickoff]() - 14/03/2022 a 18/03/2022
 
-- [x] [SPRINT 1]() - 25/03/2021 a 14/04/2022
+- [x] [SPRINT 1](https://github.com/Doc-Docker/APIMidAll/tree/SPRINT-1) - 25/03/2021 a 14/04/2022
 
 - [ ] [SPRINT 2]() - 25/04/2021 a 15/05/2022
 
@@ -95,7 +100,7 @@ Este projeto está sob a licença MIT - veja o arquivo [LICENSE.md](https://gith
 
 ## :date: As Sprints
 
-🔖 SPRINT 1 ([Link da Pasta]()):  Em Andamento 🚧
+🔖 SPRINT 1 ([Link da Pasta](https://github.com/Doc-Docker/APIMidAll/tree/SPRINT-1)):  Em Andamento 🚧
 
 🔖 SPRINT 2 ([Link da Pasta]()):  Carregando 🔋
 
