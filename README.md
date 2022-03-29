@@ -90,9 +90,9 @@ Este projeto está sob a licença MIT - veja o arquivo [LICENSE.md](https://gith
 
 - [x] [SPRINT 1](https://github.com/Doc-Docker/APIMidAll/tree/SPRINT-1) - 25/03/2022 a 14/04/2022
 
-- [ ] [SPRINT 2]() - 25/04/2022 a 15/05/2022
+- [ ] SPRINT 2 - 25/04/2022 a 15/05/2022
 
-- [ ] [SPRINT 3]() - 16/05/2022 a 05/06/2022
+- [ ] SPRINT 3 - 16/05/2022 a 05/06/2022
 
 - [ ] Feira de Soluções - 15/06/2022 às 19h
 
@@ -102,9 +102,9 @@ Este projeto está sob a licença MIT - veja o arquivo [LICENSE.md](https://gith
 
 🔖 SPRINT 1 ([Link da Pasta](https://github.com/Doc-Docker/APIMidAll/tree/SPRINT-1)):  Em Andamento 🚧
 
-🔖 SPRINT 2 ([Link da Pasta]()):  Carregando 🔋
+🔖 SPRINT 2 :  Carregando 🔋
 
-🔖 SPRINT 3 ([Link da Pasta]()):  Carregando 🔋
+🔖 SPRINT 3 :  Carregando 🔋
 
 <br>
 
