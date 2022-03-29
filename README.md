@@ -88,9 +88,9 @@ Este projeto está sob a licença MIT - veja o arquivo [LICENSE.md](https://gith
 
 - [x] [Kickoff]() - 14/03/2022 a 18/03/2022
 
-- [x] [SPRINT 1](https://github.com/Doc-Docker/APIMidAll/tree/SPRINT-1) - 25/03/2021 a 14/04/2022
+- [x] [SPRINT 1](https://github.com/Doc-Docker/APIMidAll/tree/SPRINT-1) - 25/03/2022 a 14/04/2022
 
-- [ ] [SPRINT 2]() - 25/04/2021 a 15/05/2022
+- [ ] [SPRINT 2]() - 25/04/2022 a 15/05/2022
 
 - [ ] [SPRINT 3]() - 16/05/2022 a 05/06/2022
 
