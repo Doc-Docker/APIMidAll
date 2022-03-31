@@ -1,31 +1,55 @@
 package com.backend.backend.service;
 
 import com.backend.backend.domain.Category;
+import com.backend.backend.domain.Product;
 import com.backend.backend.domain.categoryPromotion;
+import com.backend.backend.dto.ProductDTO;
 import com.backend.backend.dto.categoryPromotionDTO;
+import com.backend.backend.exceptions.BadRequestException;
+import com.backend.backend.repository.CategoryRepository;
 import com.backend.backend.repository.categoryPromotionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class categoryPromotionService {
 
     @Autowired
-    categoryPromotionRepository rep;
+    categoryPromotionRepository catPromoRep;
+
+    @Autowired
+    CategoryService categoryService;
+
+    @Autowired
+    CategoryRepository categoryRepository;
 
     public categoryPromotion insert(categoryPromotionDTO objDto){
+        this.validateDTOCategories(objDto);
         objDto.setId(null);
 
-        Optional<categoryPromotion> catQueryReturn = rep.findById(objDto.getCategory_id());
+        return catPromoRep.save(this.fromDTO(objDto));
+    }
 
-        if(catQueryReturn.isEmpty()){
-            throw new RuntimeException("Category does not exist");
-        }
-        categoryPromotion obj = new categoryPromotion(objDto.getId(), objDto.getDiscount(), objDto.getCategory_id());
+    private void validateDTOCategories(categoryPromotionDTO categoryPromotionDTO) {
+        categoryPromotionDTO.getCategoriesPromotions().forEach(givenCategory -> {
+            Category category = categoryService.find(givenCategory.getId());
+            if(givenCategory.getName() != null && !Objects.equals(givenCategory.getName(), category.getName()))
+                throw new BadRequestException("Category name doesn't match with the given id");
+        });
+    }
 
-        return rep.save(obj);
+    private categoryPromotion fromDTO(categoryPromotionDTO categoryPromotionDTO) {
+        categoryPromotion catpromo = new categoryPromotion(categoryPromotionDTO.getId(),categoryPromotionDTO.getDiscount());
+
+        catpromo.getCategoriesPromotions().addAll(categoryPromotionDTO.getCategoriesPromotions().stream().map(
+                categoryDTO -> new Category(categoryDTO.getId(), categoryDTO.getName())
+        ).collect(Collectors.toList()));
+
+        return catpromo;
     }
 
 }

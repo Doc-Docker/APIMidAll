@@ -24,9 +24,11 @@ public class Category implements Serializable {
 
     private String name;
 
-    @JsonManagedReference
     @ManyToMany(mappedBy = "categories")
     private List<Product> products = new ArrayList<>();
+
+    @ManyToMany(mappedBy = "categoriesPromotions")
+    private List<categoryPromotion> catPromotions = new ArrayList<>();
 
     public Category(Integer id, String name) {
         this.id = id;

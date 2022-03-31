@@ -1,6 +1,7 @@
 package com.backend.backend.resource;
 
 import com.backend.backend.domain.Category;
+import com.backend.backend.domain.categoryPromotion;
 import com.backend.backend.dto.categoryPromotionDTO;
 import com.backend.backend.service.categoryPromotionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,11 +21,9 @@ public class categoryPromotionResource {
     @Autowired
     categoryPromotionService catPromoService;
 
-
-
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<?> insert(@RequestBody categoryPromotionDTO obj){
-        obj = catPromoService.insert(obj);
+        categoryPromotion insertedPromotion = catPromoService.insert(obj);
         URI uri = ServletUriComponentsBuilder
                 .fromCurrentRequest()
                 .path("/{id}").buildAndExpand(obj.getId())
