@@ -21,14 +21,6 @@ public class CategoryResource {
     @Autowired
     private CategoryService categoryService;
 
-    /**
-     @PostMapping
-     public ResponseEntity<CategoryDTO> create(@RequestBody CategoryDTO categoryDTO){
-     CategoryDTO cat = CategoryDTO.builder().id(categoryDTO.getId()).name(categoryDTO.getName()).build();
-     categoryService.send(cat);
-     return ResponseEntity.status(HttpStatus.CREATED).body(cat);
-     }*/
-
     @RequestMapping(value="/{id}", method = RequestMethod.GET)
     public ResponseEntity<?> find(@PathVariable Integer id){
         Category cat = categoryService.find(id);
