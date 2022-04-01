@@ -31,7 +31,15 @@ public class categoryPromotionService {
         this.validateDTOCategories(objDto);
         objDto.setId(null);
 
+
+
         return catPromoRep.save(this.fromDTO(objDto));
+        //return catPromoRep.saveAndFlush(this.fromDTO(objDto));
+    }
+
+    public categoryPromotion find(Integer id){
+        Optional<categoryPromotion> cat = catPromoRep.findById(id);
+        return cat.orElseThrow();
     }
 
     private void validateDTOCategories(categoryPromotionDTO categoryPromotionDTO) {

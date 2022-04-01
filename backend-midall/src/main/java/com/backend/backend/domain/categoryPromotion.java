@@ -28,8 +28,8 @@ public class categoryPromotion implements Serializable {
     @ManyToMany
     @JoinTable(
             name = "PROMOTION_CATEGORY",
-            joinColumns = @JoinColumn(name = "promotion_id"),
-            inverseJoinColumns = @JoinColumn(name = "category_id")
+            joinColumns = @JoinColumn(name = "categoryPromotion_id"),
+            inverseJoinColumns = @JoinColumn(name = "Category_id")
     )
     private List<Category> categoriesPromotions = new ArrayList<>();
 
