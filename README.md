@@ -52,19 +52,19 @@ Após a conclusão do projeto os seguintes “deliverables” deverão ser produ
 
 (imagem)
 
-#### 🔗 [Visualizar *burndown* da primeira sprint]()
-
 <br>
 
 ## :newspaper: Backlog do Produto
 
-(imagem)
+#### 🔗 [Visualizar o *Product Backlog* da primeira sprint](https://github.com/Doc-Docker/APIMidAll/blob/main/Images/product_backlog1.png)
 
 <br>
 
 ## :sparkles: Wireframe Figma
 
 <h3 align="center">Layout Inicial</h3>
+
+(imagem)
 
 **:link: Clique no link abaixo para visualizar o *Wireframe no Figma*:** 
 > [Figma](https://www.figma.com/file/9x87JgSK0HbLfNtucaYlDW/API-MidAll)
@@ -75,12 +75,12 @@ Após a conclusão do projeto os seguintes “deliverables” deverão ser produ
 
 ## :clubs: Modelo Conceitual
 
-(imagem)
+<img src = "https://github.com/Doc-Docker/APIMidAll/blob/main/Images/Modelo_Conceitual.png" width="900" height="600"/></h1>
 
 <br>
 
 ## :spades: Modelo Lógico Relacional
 
-(imagem)
+<img src = "https://github.com/Doc-Docker/APIMidAll/blob/main/Images/Modelo_Logico.png" width="900" height="600"/></h1>
 
 <br>
