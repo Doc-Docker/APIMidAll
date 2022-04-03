@@ -5,7 +5,7 @@
 <p align="center">
       <h3 align="center"> API PromoAll </h3>
 <p align="center">
-<img src ="https://github.com/Doc-Docker/APIMidAll/blob/main/Images/logo_promoall.png" width="200" height="200"/>
+<img src ="https://github.com/Doc-Docker/APIMidAll/blob/main/Images/imgapi.PNG" width="200" height="200"/>
 <hr>
 
 <p align="center">
@@ -72,18 +72,6 @@ comprados juntos com itens que já estão no carrinho, para ser ofertado no fech
 
 <br>
 
-## :bulb: Metodologia Utilizada
-
-* **Metodologia Ágil:** Framework [Scrum](https://www.desenvolvimentoagil.com.br/scrum/)
-
-<br>
-
-## :page_facing_up: Licença MIT
-
-Este projeto está sob a licença MIT - veja o arquivo [LICENSE.md](https://github.com/Doc-Docker/APIMidAll/blob/main/LICENSE) para mais detalhes.
-
-<br>
-
 ## :hourglass_flowing_sand: Planejamento de Entregas
 
 - [x] [Kickoff]() - 14/03/2022 a 18/03/2022
@@ -114,6 +102,24 @@ Este projeto está sob a licença MIT - veja o arquivo [LICENSE.md](https://gith
 * **Back-end:** Java e Spring Boot
 * **Front-end:** Angular, CSS, Bootstrap
 * **Ferramentas:** IntelliJ IDEA, Visual Studio Code, GitHub e Figma
+
+<br>
+
+## :bulb: Metodologia Utilizada
+
+* **Metodologia Ágil:** Framework [Scrum](https://www.desenvolvimentoagil.com.br/scrum/)
+
+<br>
+
+## :page_facing_up: Licença MIT
+
+Este projeto está sob a licença MIT - veja o arquivo [LICENSE.md](https://github.com/Doc-Docker/APIMidAll/blob/main/LICENSE) para mais detalhes.
+
+<br>
+
+## :dart: Backlog das Sprints
+
+<h1 align="center"> <img src = "https://github.com/Doc-Docker/APIMidAll/blob/main/Images/sprint_backlog.png" /></h1>
 
 <br>
 
