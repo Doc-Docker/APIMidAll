@@ -66,8 +66,7 @@ Após a conclusão do projeto os seguintes “deliverables” deverão ser produ
 
 (imagem)
 
-**:link: Clique no link abaixo para visualizar o *Wireframe no Figma*:** 
-> [Figma](https://www.figma.com/file/9x87JgSK0HbLfNtucaYlDW/API-MidAll)
+#### 🔗 [Clique aqui para visualizar o Wireframe do Projeto no Figma](https://www.figma.com/file/9x87JgSK0HbLfNtucaYlDW/API-MidAll)
 
  _Nota: Nessa sprint, não focamos em criar um wireframe com estética e visual aprimorados. Este detalhe será adicionado nas próximas entregas, pois não é de valor para o cliente inicialmente._
 
