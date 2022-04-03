@@ -74,7 +74,7 @@ comprados juntos com itens que já estão no carrinho, para ser ofertado no fech
 
 ## :hourglass_flowing_sand: Planejamento de Entregas
 
-- [x] [Kickoff]() - 14/03/2022 a 18/03/2022
+- [x] [Kickoff](https://github.com/Doc-Docker/APIMidAll/tree/main/docs) - 14/03/2022 a 18/03/2022
 
 - [x] [SPRINT 1](https://github.com/Doc-Docker/APIMidAll/tree/SPRINT-1) - 25/03/2022 a 14/04/2022
 
