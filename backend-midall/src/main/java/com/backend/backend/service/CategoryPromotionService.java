@@ -1,13 +1,11 @@
 package com.backend.backend.service;
 
 import com.backend.backend.domain.Category;
-import com.backend.backend.domain.Product;
-import com.backend.backend.domain.categoryPromotion;
-import com.backend.backend.dto.ProductDTO;
-import com.backend.backend.dto.categoryPromotionDTO;
+import com.backend.backend.domain.CategoryPromotion;
+import com.backend.backend.dto.CategoryPromotionDTO;
 import com.backend.backend.exceptions.BadRequestException;
 import com.backend.backend.repository.CategoryRepository;
-import com.backend.backend.repository.categoryPromotionRepository;
+import com.backend.backend.repository.CategoryPromotionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,10 +14,10 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public class categoryPromotionService {
+public class CategoryPromotionService {
 
     @Autowired
-    categoryPromotionRepository catPromoRep;
+    CategoryPromotionRepository catPromoRep;
 
     @Autowired
     CategoryService categoryService;
@@ -27,7 +25,7 @@ public class categoryPromotionService {
     @Autowired
     CategoryRepository categoryRepository;
 
-    public categoryPromotion insert(categoryPromotionDTO objDto){
+    public CategoryPromotion insert(CategoryPromotionDTO objDto){
         this.validateDTOCategories(objDto);
         objDto.setId(null);
 
@@ -35,12 +33,12 @@ public class categoryPromotionService {
         //return catPromoRep.saveAndFlush(this.fromDTO(objDto));
     }
 
-    public categoryPromotion find(Integer id){
-        Optional<categoryPromotion> cat = catPromoRep.findById(id);
+    public CategoryPromotion find(Integer id){
+        Optional<CategoryPromotion> cat = catPromoRep.findById(id);
         return cat.orElseThrow();
     }
 
-    private void validateDTOCategories(categoryPromotionDTO categoryPromotionDTO) {
+    private void validateDTOCategories(CategoryPromotionDTO categoryPromotionDTO) {
         categoryPromotionDTO.getCategories().forEach(givenCategory -> {
             Category category = categoryService.find(givenCategory.getId());
             if(givenCategory.getName() != null && !Objects.equals(givenCategory.getName(), category.getName()))
@@ -48,8 +46,8 @@ public class categoryPromotionService {
         });
     }
 
-    private categoryPromotion fromDTO(categoryPromotionDTO categoryPromotionDTO) {
-        categoryPromotion catpromo = new categoryPromotion(categoryPromotionDTO.getId(),categoryPromotionDTO.getDiscount());
+    private CategoryPromotion fromDTO(CategoryPromotionDTO categoryPromotionDTO) {
+        CategoryPromotion catpromo = new CategoryPromotion(categoryPromotionDTO.getId(),categoryPromotionDTO.getDiscount());
 
         catpromo.getCategories().addAll(categoryPromotionDTO.getCategories().stream().map(
                 categoryDTO -> new Category(categoryDTO.getId(), categoryDTO.getName())

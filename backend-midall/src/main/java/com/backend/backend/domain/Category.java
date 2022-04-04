@@ -1,6 +1,5 @@
 package com.backend.backend.domain;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -28,7 +27,7 @@ public class Category implements Serializable {
     private List<Product> products = new ArrayList<>();
 
     @ManyToMany(mappedBy = "categories")
-    private List<categoryPromotion> catPromotions = new ArrayList<>();
+    private List<CategoryPromotion> catPromotions = new ArrayList<>();
 
     public Category(Integer id, String name) {
         this.id = id;

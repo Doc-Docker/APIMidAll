@@ -1,6 +1,6 @@
 package com.backend.backend.dto;
 
-import com.backend.backend.domain.productPromotion;
+import com.backend.backend.domain.ProductPromotion;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,7 +12,7 @@ import java.io.Serializable;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class productPromotionDTO implements Serializable {
+public class ProductPromotionDTO implements Serializable {
 
     private static final long serialVerionUID = 1L;
 
@@ -22,7 +22,7 @@ public class productPromotionDTO implements Serializable {
 
     private Integer product_id;
 
-    public productPromotionDTO(productPromotion obj){
+    public ProductPromotionDTO(ProductPromotion obj){
         id = obj.getId();
         discount = obj.getDiscount();
         product_id = obj.getProduct_id();

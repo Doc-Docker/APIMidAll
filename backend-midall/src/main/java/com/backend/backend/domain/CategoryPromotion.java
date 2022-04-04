@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @EqualsAndHashCode(of={"id"})
-public class categoryPromotion implements Serializable {
+public class CategoryPromotion implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -33,7 +33,7 @@ public class categoryPromotion implements Serializable {
     )
     private List<Category> categories = new ArrayList<>();
 
-    public categoryPromotion(Integer id, Double discount) {
+    public CategoryPromotion(Integer id, Double discount) {
         this.id = id;
         this.discount = discount;
     }

@@ -14,7 +14,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Entity
 @EqualsAndHashCode(of={"id"})
-public class productPromotion implements Serializable {
+public class ProductPromotion implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

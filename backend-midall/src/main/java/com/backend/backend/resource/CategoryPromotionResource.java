@@ -1,9 +1,8 @@
 package com.backend.backend.resource;
 
-import com.backend.backend.domain.Category;
-import com.backend.backend.domain.categoryPromotion;
-import com.backend.backend.dto.categoryPromotionDTO;
-import com.backend.backend.service.categoryPromotionService;
+import com.backend.backend.domain.CategoryPromotion;
+import com.backend.backend.dto.CategoryPromotionDTO;
+import com.backend.backend.service.CategoryPromotionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,14 +12,14 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("/category-promotions")
-public class categoryPromotionResource {
+public class CategoryPromotionResource {
 
     @Autowired
-    categoryPromotionService catPromoService;
+    CategoryPromotionService catPromoService;
 
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<?> insert(@RequestBody categoryPromotionDTO obj){
-        categoryPromotion insertedPromotion = catPromoService.insert(obj);
+    public ResponseEntity<?> insert(@RequestBody CategoryPromotionDTO obj){
+        CategoryPromotion insertedPromotion = catPromoService.insert(obj);
         URI uri = ServletUriComponentsBuilder
                 .fromCurrentRequest()
                 .path("/{id}").buildAndExpand(obj.getId())
@@ -30,7 +29,7 @@ public class categoryPromotionResource {
 
     @RequestMapping(value="/{id}", method = RequestMethod.GET)
     public ResponseEntity<?> find(@PathVariable Integer id){
-        categoryPromotion cat = catPromoService.find(id);
+        CategoryPromotion cat = catPromoService.find(id);
         return ResponseEntity.ok().body(cat);
     }
 }
