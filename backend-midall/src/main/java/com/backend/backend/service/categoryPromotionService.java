@@ -31,8 +31,6 @@ public class categoryPromotionService {
         this.validateDTOCategories(objDto);
         objDto.setId(null);
 
-
-
         return catPromoRep.save(this.fromDTO(objDto));
         //return catPromoRep.saveAndFlush(this.fromDTO(objDto));
     }
@@ -43,7 +41,7 @@ public class categoryPromotionService {
     }
 
     private void validateDTOCategories(categoryPromotionDTO categoryPromotionDTO) {
-        categoryPromotionDTO.getCategoriesPromotions().forEach(givenCategory -> {
+        categoryPromotionDTO.getCategories().forEach(givenCategory -> {
             Category category = categoryService.find(givenCategory.getId());
             if(givenCategory.getName() != null && !Objects.equals(givenCategory.getName(), category.getName()))
                 throw new BadRequestException("Category name doesn't match with the given id");
@@ -53,7 +51,7 @@ public class categoryPromotionService {
     private categoryPromotion fromDTO(categoryPromotionDTO categoryPromotionDTO) {
         categoryPromotion catpromo = new categoryPromotion(categoryPromotionDTO.getId(),categoryPromotionDTO.getDiscount());
 
-        catpromo.getCategoriesPromotions().addAll(categoryPromotionDTO.getCategoriesPromotions().stream().map(
+        catpromo.getCategories().addAll(categoryPromotionDTO.getCategories().stream().map(
                 categoryDTO -> new Category(categoryDTO.getId(), categoryDTO.getName())
         ).collect(Collectors.toList()));
 

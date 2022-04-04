@@ -31,7 +31,7 @@ public class categoryPromotion implements Serializable {
             joinColumns = @JoinColumn(name = "categoryPromotion_id"),
             inverseJoinColumns = @JoinColumn(name = "Category_id")
     )
-    private List<Category> categoriesPromotions = new ArrayList<>();
+    private List<Category> categories = new ArrayList<>();
 
     public categoryPromotion(Integer id, Double discount) {
         this.id = id;

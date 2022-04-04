@@ -18,7 +18,7 @@ public class categoryPromotionDTO implements Serializable {
 
     private Double discount;
 
-    private List<CategoryDTO> categoriesPromotions = new ArrayList<>();
+    private List<CategoryDTO> categories = new ArrayList<>();
 
     public categoryPromotionDTO(categoryPromotion obj){
         id = obj.getId();
