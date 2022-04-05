@@ -25,6 +25,8 @@ public class ProductDTO implements Serializable {
     @PositiveOrZero(message = "Price must be a value higher or equal to 0")
     private Double price;
 
+    private String description;
+
     private List<CategoryDTO> categories = new ArrayList<>();
 
     private List<ProductPromotionDTO> productPromotions = new ArrayList<>();
@@ -33,6 +35,7 @@ public class ProductDTO implements Serializable {
         this.id = product.getId();
         this.name = product.getName();
         this.price = product.getPrice();
+        this.description = product.getDescription();
     }
 
 }

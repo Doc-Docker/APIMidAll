@@ -57,7 +57,7 @@ public class ProductPromotionService {
         ProductPromotion productPromotion = new ProductPromotion(productPromotionDTO.getId(),productPromotionDTO.getDiscount());
 
         productPromotion.getProducts().addAll(productPromotionDTO.getProducts().stream().map(
-                productDTO -> new Product(productDTO.getId(), productDTO.getName(), productDTO.getPrice())
+                productDTO -> new Product(productDTO.getId(), productDTO.getName(), productDTO.getPrice(), productDTO.getDescription())
         ).collect(Collectors.toList()));
 
         return productPromotion;

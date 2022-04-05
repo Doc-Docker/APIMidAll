@@ -25,6 +25,8 @@ public class Product implements Serializable {
 
     private Double price;
 
+    private String description;
+
     @JsonIgnore
     @ManyToMany
     @JoinTable(
@@ -37,10 +39,11 @@ public class Product implements Serializable {
     @ManyToMany(mappedBy = "products")
     private List<ProductPromotion> productPromotions = new ArrayList<>();
 
-    public Product(Integer id, String name, Double price) {
+    public Product(Integer id, String name, Double price, String description) {
         this.id = id;
         this.name = name;
         this.price = price;
+        this.description = description;
     }
 
 

@@ -75,7 +75,8 @@ public class ProductService {
         Product finalProduct = new Product(
                 id,
                 productReceived.getName() != null ? productReceived.getName() : product.getName(),
-                productReceived.getPrice() != null ? productReceived.getPrice() : product.getPrice()
+                productReceived.getPrice() != null ? productReceived.getPrice() : product.getPrice(),
+                productReceived.getDescription() != null? productReceived.getDescription() : product.getDescription()
         );
         finalProduct.setCategories(
                 productReceived.getCategories() != null ? productReceived.getCategories() : product.getCategories()
@@ -99,7 +100,7 @@ public class ProductService {
     }
 
     private Product fromDTO(ProductDTO productDTO) {
-        Product product = new Product(productDTO.getId() , productDTO.getName(), productDTO.getPrice());
+        Product product = new Product(productDTO.getId() , productDTO.getName(), productDTO.getPrice(), productDTO.getDescription());
         product.getCategories().addAll(productDTO.getCategories().stream().map(
                 categoryDTO -> new Category(categoryDTO.getId(), categoryDTO.getName())
         ).collect(Collectors.toList()));
