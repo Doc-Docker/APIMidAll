@@ -1,14 +1,14 @@
 package com.backend.backend.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -24,6 +24,19 @@ public class ProductPromotion implements Serializable {
 
     private Double discount;
 
-    private Integer product_id;
+    @JsonIgnore
+    @ManyToMany
+    @JoinTable(
+            name = "PROMOTION_PRODUCT",
+            joinColumns = @JoinColumn(name = "categoryPromotion_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id")
+    )
+    private List<Product> products = new ArrayList<>();
 
+
+
+    public ProductPromotion(Integer id, Double discount) {
+        this.id = id;
+        this.discount = discount;
+    }
 }

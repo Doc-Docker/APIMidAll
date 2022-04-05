@@ -1,5 +1,6 @@
 package com.backend.backend.dto;
 
+import com.backend.backend.domain.CategoryPromotion;
 import com.backend.backend.domain.ProductPromotion;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,10 +8,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
-@Builder
-@AllArgsConstructor
 @NoArgsConstructor
 public class ProductPromotionDTO implements Serializable {
 
@@ -20,12 +21,11 @@ public class ProductPromotionDTO implements Serializable {
 
     private Double discount;
 
-    private Integer product_id;
+    private List<ProductDTO> products = new ArrayList<>();
 
     public ProductPromotionDTO(ProductPromotion obj){
         id = obj.getId();
         discount = obj.getDiscount();
-        product_id = obj.getProduct_id();
     }
 
 }

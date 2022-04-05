@@ -1,6 +1,7 @@
 package com.backend.backend.dto;
 
 import com.backend.backend.domain.Product;
+import com.backend.backend.domain.ProductPromotion;
 import lombok.*;
 
 import javax.validation.constraints.NotBlank;
@@ -25,6 +26,8 @@ public class ProductDTO implements Serializable {
     private Double price;
 
     private List<CategoryDTO> categories = new ArrayList<>();
+
+    private List<ProductPromotionDTO> productPromotions = new ArrayList<>();
 
     public ProductDTO(Product product) {
         this.id = product.getId();
