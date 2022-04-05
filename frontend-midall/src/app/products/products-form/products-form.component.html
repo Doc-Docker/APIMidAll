@@ -4,19 +4,19 @@
 </ol>
 
 <div class="container">
-    <form >
+    <form #productForm="ngForm" (ngSubmit)="onSubmit()">
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                     <label>ID:</label>
-                    <input type="text" class="form-control" disabled="true">
+                    <input type="text" class="form-control" disabled="true" [ngModel]="product.id" name="id">
                 </div>
             </div>
 
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Name:</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" [(ngModel)]="product.name" name="name">
                 </div>
             </div>
             
@@ -26,14 +26,14 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Price:</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" [(ngModel)]="product.price" name="price">
                 </div>
             </div>
 
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Category:</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" [(ngModel)]="product.categories" name="categories">
                 </div>
             </div>
             

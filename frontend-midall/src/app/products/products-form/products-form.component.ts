@@ -10,9 +10,14 @@ export class ProductsFormComponent implements OnInit {
 
   product : Product;
 
-  constructor() { }
+  constructor() {
+    this.product = new Product();
+   }
 
   ngOnInit(): void {
   }
 
+  onSubmit(){
+    console.log(this.product)
+  }
 }
