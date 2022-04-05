@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../Product';
+import { ProductsService } from '../../products.service'
 
 @Component({
   selector: 'app-products-form',
@@ -10,7 +11,7 @@ export class ProductsFormComponent implements OnInit {
 
   product : Product;
 
-  constructor() {
+  constructor(private service : ProductsService) {
     this.product = new Product();
    }
 
@@ -18,6 +19,10 @@ export class ProductsFormComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.product)
+    this.service
+    .insert(this.product)
+    .subscribe( res =>{
+      console.log(res)
+    })
   }
 }
