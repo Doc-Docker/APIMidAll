@@ -62,9 +62,19 @@ Após a conclusão do projeto os seguintes “deliverables” deverão ser produ
 
 ## :sparkles: Wireframe Figma
 
-<h3 align="center">Layout Inicial</h3>
+<p align="center">
+      <h3 align="center"> Tela de Login </h3>
+<p align="center">
+      <img src="https://github.com/Doc-Docker/APIMidAll/blob/main/Images/tela_login.png" width="400" height="250">
+<p align="center">
 
-(imagem)
+Tela Inicial             |  Tela de Cadastro de Produto
+:-------------------------:|:-------------------------:
+![Login](https://github.com/Doc-Docker/APIMidAll/blob/main/Images/tela_home.png)  |  ![Inicial](https://github.com/Doc-Docker/APIMidAll/blob/main/Images/tela_cadastro.png)
+
+Tela de Promoção         |  Carrinho
+:-------------------------:|:-------------------------:
+![Login](https://github.com/Doc-Docker/APIMidAll/blob/main/Images/tela_promocao.png)  |  ![Inicial](https://github.com/Doc-Docker/APIMidAll/blob/main/Images/tela_carrinho.png)
 
 #### 🔗 [Clique aqui para visualizar o Wireframe do Projeto no Figma](https://www.figma.com/file/9x87JgSK0HbLfNtucaYlDW/API-MidAll)
 
