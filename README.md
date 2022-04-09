@@ -5,7 +5,7 @@
 <p align="center">
       <h3 align="center"> API PromoAll </h3>
 <p align="center">
-<img src ="https://github.com/Doc-Docker/APIMidAll/blob/main/Images/imgapi.PNG" width="200" height="200"/>
+<img src ="https://github.com/Doc-Docker/APIMidAll/blob/main/Images/logo2promoall.png" width="300" height="300"/>
 <hr>
 
 <p align="center">
