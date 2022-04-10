@@ -25,6 +25,12 @@ public class ProductService {
 
     public Product findById(Integer id) {
         Optional<Product> product = productRepository.findById(id);
+        
+        if(product.isEmpty()) { //Nenhum produto cadastrado com esse id
+        	throw new BadRequestException("Non-existent product with this id");
+        }
+        
+        
         return product.orElseThrow();
     }
 
@@ -55,12 +61,17 @@ public class ProductService {
                     )
             ).collect(Collectors.toList());
         }
+        
+        if(productList.isEmpty()) { //Nenhum produto cadastrado
+        	throw new BadRequestException("No products registered"); 
+        }	
 
         return productList;
     }
 
     public Product insert(ProductDTO productDTO) {
         this.validateDTOCategories(productDTO);
+        this.validateDTOProducts(null,productDTO); //Validação do produto a ser inserido
         productDTO.setId(null);
 
         return productRepository.save(this.fromDTO(productDTO));
@@ -69,6 +80,7 @@ public class ProductService {
     public Product update(Integer id, ProductDTO productDTO) {
         Product product = this.findById(id);
         this.validateDTOCategories(productDTO);
+        this.validateDTOProducts(id,productDTO); //Validação do produto a ser inserido
 
         Product productReceived = this.fromDTO(productDTO);
 
@@ -89,6 +101,26 @@ public class ProductService {
         this.findById(id);
 
         productRepository.deleteById(id);
+    }
+    
+    private void validateDTOProducts(Integer id,ProductDTO productDTO) {
+    	
+    	if(productDTO.getName().isEmpty()) { //Produto com nome vazio
+        	throw new BadRequestException("Product with empty name"); 
+        }
+
+    	
+        List<Product> productList = productRepository.findAll();
+        int n = productList.size();
+        int i;
+        
+        for (i=0; i<n; i++) { //Produto com nome duplicado
+            if(productList.get(i).getName().equals(productDTO.getName()) && id == null) {
+            	throw new BadRequestException("Product with duplicate name"); 
+            }
+          }
+        
+        
     }
 
     private void validateDTOCategories(ProductDTO productDTO) {
