@@ -35,7 +35,7 @@
 
 <br>
 
-## :pencil2: Desafio
+## :pencil2: desafio
 
 A empresa MidAll situada no Parque Tecnológico de São José dos Campos, propôs o seguinte desafio baseado na metodologia ágil Scrum.
 "Temos um problema para criação de promoções em um Ecommerce. Precisamos de uma solução inteligente
