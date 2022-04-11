@@ -121,7 +121,7 @@ Este projeto está sob a licença MIT - veja o arquivo [LICENSE.md](https://gith
 
 ## :dart: Backlog das Sprints
 
-<h1 align="center"> <img src = "https://github.com/Doc-Docker/APIMidAll/blob/main/Images/sprint_backlog.png" /></h1>
+<h1 align="center"> <img src = "https://github.com/Doc-Docker/APIMidAll/blob/main/Images/sprint_backlogg.png" /></h1>
 
 <br>
 
