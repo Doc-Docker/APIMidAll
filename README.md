@@ -56,7 +56,7 @@ Após a conclusão do projeto os seguintes “deliverables” deverão ser produ
 
 ## :newspaper: Backlog do Produto
 
-#### 🔗 [Visualizar o *Product Backlog* da primeira sprint](https://github.com/Doc-Docker/APIMidAll/blob/main/Images/product_backlog1.png)
+#### 🔗 [Visualizar o *Product Backlog* da primeira sprint](https://github.com/Doc-Docker/APIMidAll/blob/main/docs/ProductBacklog.xlsx)
 
 <br>
 
