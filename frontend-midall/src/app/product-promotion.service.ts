@@ -20,7 +20,7 @@ export class ProductPromotionService {
       ]
   
   }
-    return this.http.post<ProductPromotion>('http://localhost:8080/products', obj)
+    return this.http.post<ProductPromotion>('http://localhost:8080/product-promotions"', obj)
 
   }
 }

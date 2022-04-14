@@ -3,6 +3,7 @@ package com.backend.backend.service;
 import com.backend.backend.domain.Category;
 import com.backend.backend.dto.CategoryDTO;
 import com.backend.backend.exceptions.BadRequestException;
+import com.backend.backend.exceptions.ObjectNotFoundException;
 import com.backend.backend.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,15 +18,9 @@ public class CategoryService {
 
     public Category find(Integer id) {
         Optional<Category> cat = rep.findById(id);
-
-        if (cat.isEmpty()) {
-            throw new BadRequestException("Non-existent category with this id");
-        }
-
-        if (find(id) == null) {
-            throw new BadRequestException("No ID entered");
-        }
-        return cat.orElseThrow();
+        return cat.orElseThrow(() -> new ObjectNotFoundException(
+                "Object not found!: Id: " + id + ", Type: " + Category.class.getName()
+        ));
     }
 
     public Category insert(Category obj){
@@ -60,7 +55,7 @@ public class CategoryService {
     }
 
     public List<Category> findAll() {
-        List<Category> categoryList = findAll();
+        List<Category> categoryList = rep.findAll();
         if (categoryList.isEmpty()) { //Nenhuma categoria cadastrada
             throw new BadRequestException("No category registered");
         }

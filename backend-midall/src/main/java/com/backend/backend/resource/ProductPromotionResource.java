@@ -12,7 +12,6 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("/product-promotions")
-@CrossOrigin("http://localhost:4200")
 public class ProductPromotionResource {
 
     @Autowired
