@@ -1,11 +1,7 @@
 package com.backend.backend.resource;
 
-import com.backend.backend.domain.CategoryPromotion;
-import com.backend.backend.domain.Product;
 import com.backend.backend.domain.ProductPromotion;
-import com.backend.backend.dto.CategoryPromotionDTO;
 import com.backend.backend.dto.ProductPromotionDTO;
-import com.backend.backend.service.CategoryPromotionService;
 import com.backend.backend.service.ProductPromotionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +12,7 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("/product-promotions")
+@CrossOrigin("http://localhost:4200")
 public class ProductPromotionResource {
 
     @Autowired

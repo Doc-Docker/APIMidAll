@@ -16,5 +16,10 @@
       <option name="name" value="JBoss Community repository" />
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="arm-proj-ael-release" />
+      <option name="name" value="arm-proj-ael-release" />
+      <option name="url" value="https://arm.seli.gic.ericsson.se/artifactory/projael-release" />
+    </remote-repository>
   </component>
 </project>
