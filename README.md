@@ -25,16 +25,16 @@ Abaixo elencamos as necessidades identificadas em consulta aos stakeholders, cla
 | 1. Estruturação de Base de Dados local, com a finalidade de unificar e normalizar os dados oriundos do sistema web. | Essencial |
 | 2. Desenvolvimento da aplicação WEB que permitirá a integração do Banco de Dados com o site. | Essencial |
 | 3. Geração de relatórios analíticos/promoções estratégicas. | Importante |
-| 4. Aperfeiçoar a interface, de modo a proporcionar uma boa representação visual dos dados. | Importante |
-| 5. Saída com análises adicionais, proporcionando múltiplas promoções. | Desejável |
+| 4. Saída com análises adicionais, proporcionando múltiplas promoções. | Importante |
+| 5. Aperfeiçoar a interface, de modo a proporcionar uma boa representação visual dos dados. | Desejável |
 
 :pushpin: **Principais deliverables**
 
-Após a conclusão do projeto os seguintes “deliverables” deverão ser produzidos e entregues:
+Soluções que serão entregues na primeira sprint:
 
-> Plano de Teste
+> Cadastro de Produto
 
-> Manual de Operação
+> Aplicação da Promoção
 
 <br>
 
@@ -42,7 +42,7 @@ Após a conclusão do projeto os seguintes “deliverables” deverão ser produ
 
 | Sprints/Entregas do Projeto | Deliverables | Data de Início | Data de Término |
 | :---: | :---: | :---: | :---: |
-| `SPRINT 1` | Layout Figma e Site inicial com compra simples | 25/03/2022 | 14/04/2022 |
+| `SPRINT 1` | Cadastro de Produto e Promoção | 25/03/2022 | 14/04/2022 |
 | `SPRINT 2` | Processo de compra aprimorado e promoções | 25/04/2022 | 15/05/2022 |
 | `SPRINT 3` | Integração da Inteligência Artifical + Promoções Específicas | 16/05/2022 | 05/06/2022 |
 
