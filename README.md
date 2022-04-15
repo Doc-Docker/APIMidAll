@@ -140,6 +140,22 @@ Este projeto está sob a licença MIT - veja o arquivo [LICENSE.md](https://gith
 
 <br>
 
+## :computer: Requisitos para instalação do projeto
+
+**Instalação:**
+
+- Clone the repository
+```
+$ git clone https://github.com/Doc-Docker/APIMidAll.git
+```
+
+- Install requirements
+```
+$ pip install requirements.txt
+```
+
+<br>
+
 ## :dart: Backlog das Sprints
 
 <h1 align="center"> <img src = "https://github.com/Doc-Docker/APIMidAll/blob/main/Images/sprint_backlogg.png" /></h1>
