@@ -50,13 +50,19 @@ Após a conclusão do projeto os seguintes “deliverables” deverão ser produ
 
 ## :chart_with_downwards_trend: Burndown da Equipe
 
-(imagem)
+<img src = "https://github.com/Doc-Docker/APIMidAll/blob/main/Images/burndown_sprint1.png" width="890" height="500"/></h1>
 
 <br>
 
 ## :newspaper: Backlog do Produto
 
-#### 🔗 [Visualizar o *Product Backlog* da primeira sprint](https://github.com/Doc-Docker/APIMidAll/blob/main/docs/ProductBacklog.xlsx)
+#### 🔗 [Visualizar o arquivo do *Product Backlog*](https://github.com/Doc-Docker/APIMidAll/blob/main/docs/ProductBacklog_2.xlsx)
+
+<br>
+
+## :dart: Backlog das Sprints
+
+#### 🔗 [Visualizar o *Sprint Backlog* do projeto](https://github.com/Doc-Docker/APIMidAll/blob/main/Images/sprint_backlogg.png)
 
 <br>
 
