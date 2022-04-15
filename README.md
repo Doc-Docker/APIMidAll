@@ -35,7 +35,11 @@
 
 <br>
 
-## :pencil2: desafio
+> Status do Projeto: <img src = "https://github.com/Doc-Docker/APIMidAll/blob/main/Images/barra1.png" width="90" height="20" /> Em Andamento 🕗
+
+<br>
+
+## :pencil2: Desafio
 
 A empresa MidAll situada no Parque Tecnológico de São José dos Campos, propôs o seguinte desafio baseado na metodologia ágil Scrum.
 "Temos um problema para criação de promoções em um Ecommerce. Precisamos de uma solução inteligente
@@ -51,15 +55,18 @@ Na compra de 3 produtos, ganhe 50% de desconto no item de menor valor.
 
 ## :dart:	Escopo do Projeto
 
+**Pré-requisitos:**
+
+<img align="right" width="190" height="300" src="https://github.com/Doc-Docker/APIMidAll/blob/main/Images/propostaimg.png">
+
  > **Requisitos Funcionais**
 
- - [x]  Interface para cadastros de produtos contendo, ao menos, código, descrição e valor;
- - [x]  Tela que represente um carrinho de compras para adicionar os itens. Pode ter somente os itens selecionados, valor
-unitário, valor total e desconto aplicado;
- - [x]  Interface para criação das promoções;
- - [x]  Como opcional, entregar algum modelo de algoritmo utilizando inteligência artificial baseado no histórico de compras.
-Por exemplo: Tentar criar um modelo de sugestão de produtos mais vendidos ou sugestão de produtos que foram
-comprados juntos com itens que já estão no carrinho, para ser ofertado no fechamento da compra.<br><br>
+ - [x]  Interface para Cadastros Produtos e Promoções
+ - [x]  Edição dos Produtos
+ - [x]  Carrinho de Compras
+ - [x]  Criação de Promoções
+ - [x]  Categoria de Promoções
+ - [x]  Algorimo de inteligência artificial (IA).<br><br>
 
  > **Requisitos Não Funcionais**
 
@@ -76,6 +83,8 @@ comprados juntos com itens que já estão no carrinho, para ser ofertado no fech
 
 ## :hourglass_flowing_sand: Planejamento de Entregas
 
+<img align="right" width="400" height="250" src="https://github.com/Doc-Docker/APIMidAll/blob/main/Images/planejamemtpimg.png">
+
 - [x] [Kickoff](https://github.com/Doc-Docker/APIMidAll/tree/main/docs) - 14/03/2022 a 18/03/2022
 
 - [x] [SPRINT 1](https://github.com/Doc-Docker/APIMidAll/tree/SPRINT-1) - 25/03/2022 a 14/04/2022
@@ -90,6 +99,8 @@ comprados juntos com itens que já estão no carrinho, para ser ofertado no fech
 
 ## :date: As Sprints
 
+<img align="right" width="200" height="180" src="https://github.com/Doc-Docker/APIMidAll/blob/main/Images/sprintsimg.png">
+
 🔖 SPRINT 1 ([Link da Pasta](https://github.com/Doc-Docker/APIMidAll/tree/SPRINT-1)):  Em Andamento 🚧
 
 🔖 SPRINT 2 :  Carregando 🔋
@@ -98,7 +109,14 @@ comprados juntos com itens que já estão no carrinho, para ser ofertado no fech
 
 <br>
 
+## :card_index_dividers: Cards das Sprints
+<img src="#" height="450">
+
+<br>
+
 ## :computer: Tecnologias Utilizadas
+
+<img align="right" width="250" height="190" src="https://github.com/Doc-Docker/APIMidAll/blob/main/Images/tecnologiasimg.png">
 
 * **Banco de Dados:** Microsoft SQL
 * **Back-end:** Java e Spring Boot
@@ -121,7 +139,7 @@ Este projeto está sob a licença MIT - veja o arquivo [LICENSE.md](https://gith
 
 ## :dart: Backlog das Sprints
 
-<h1 align="center"> <img src = "https://github.com/Doc-Docker/APIMidAll/blob/main/Images/sprint_backlog.png" /></h1>
+<h1 align="center"> <img src = "https://github.com/Doc-Docker/APIMidAll/blob/main/Images/sprint_backlogg.png" /></h1>
 
 <br>
 
@@ -131,12 +149,11 @@ Este projeto está sob a licença MIT - veja o arquivo [LICENSE.md](https://gith
 | -------- |-------- |-------- |-------- |-------- |
 |**Carlos Souza**|Scrum Master|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/carlos-fernando-souza-94aa074b/)|[<img src="https://camo.githubusercontent.com/fbc3df79ffe1a99e482b154b29262ecbb10d6ee4ed22faa82683aa653d72c4e1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d3130303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562266c6f676f436f6c6f723d7768697465" />](https://github.com/CarlosSouza87)|<img src = "https://avatars.githubusercontent.com/u/74521818?v=4" height="50"/>|
 |**Zaion Felippe**|Product Owner|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/zaion-gomes-b17657214/)|[<img src="https://camo.githubusercontent.com/fbc3df79ffe1a99e482b154b29262ecbb10d6ee4ed22faa82683aa653d72c4e1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d3130303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562266c6f676f436f6c6f723d7768697465" />](https://github.com/ZaionKun)|<img src = "https://avatars.githubusercontent.com/u/81268185?v=4" height="50"/>|
-|**Bryan Ribeiro**|Dev Team|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/bryanrribeiro/)|[<img src="https://camo.githubusercontent.com/fbc3df79ffe1a99e482b154b29262ecbb10d6ee4ed22faa82683aa653d72c4e1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d3130303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562266c6f676f436f6c6f723d7768697465" />](https://github.com/BryanRibeiro)|<img src = "https://avatars.githubusercontent.com/u/70216549?v=4" height="50"/>|
+|**Bryan Ribeiro**|Dev Team|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/bryanrribeiro/)|[<img src="https://camo.githubusercontent.com/fbc3df79ffe1a99e482b154b29262ecbb10d6ee4ed22faa82683aa653d72c4e1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d3130303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562266c6f676f436f6c6f723d7768697465" />](https://github.com/BryanRibeiro)|<img src = "https://media-exp1.licdn.com/dms/image/C4D03AQE_YMGswoKzqA/profile-displayphoto-shrink_200_200/0/1626219726318?e=1655337600&v=beta&t=CvVXoABR7OfcEDw03fsd2FebdMly_LAm40CmPKF61HI" height="50"/>|
 |**Andrew Augusto**|Dev Team|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/andrew-augusto-778585127/)|[<img src="https://camo.githubusercontent.com/fbc3df79ffe1a99e482b154b29262ecbb10d6ee4ed22faa82683aa653d72c4e1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d3130303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562266c6f676f436f6c6f723d7768697465" />](https://github.com/AndrewAugusto)|<img src = "https://avatars.githubusercontent.com/u/81338441?v=4" height="50"/>|
 |**Victor Cavichioli**|Dev Team|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/victor-araujo-paula-cavichioli-9ab48418b/)|[<img src="https://camo.githubusercontent.com/fbc3df79ffe1a99e482b154b29262ecbb10d6ee4ed22faa82683aa653d72c4e1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d3130303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562266c6f676f436f6c6f723d7768697465" />](https://github.com/VictorCavichioli)|<img src = "https://avatars.githubusercontent.com/u/79488234?v=4" height="50"/>|
 |**Antonio Zago**|Dev Team|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/antonio-zago-24230b206/)|[<img src="https://camo.githubusercontent.com/fbc3df79ffe1a99e482b154b29262ecbb10d6ee4ed22faa82683aa653d72c4e1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d3130303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562266c6f676f436f6c6f723d7768697465" />](https://github.com/Antonio-Zago)|<img src = "https://avatars.githubusercontent.com/u/80283126?v=4" height="50"/>|
 |**Joice Elen**|Dev Team|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/joice-elen-2a6309207/)|[<img src="https://camo.githubusercontent.com/fbc3df79ffe1a99e482b154b29262ecbb10d6ee4ed22faa82683aa653d72c4e1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d3130303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562266c6f676f436f6c6f723d7768697465" />](https://github.com/jojoka1)|<img src = "https://avatars.githubusercontent.com/u/81546153?v=4" height="50"/>|
-|**Jonathan Alves**|Dev Team|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/jonathan-alves-18069118a/)|[<img src="https://camo.githubusercontent.com/fbc3df79ffe1a99e482b154b29262ecbb10d6ee4ed22faa82683aa653d72c4e1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d3130303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562266c6f676f436f6c6f723d7768697465" />](https://github.com/willian96jhon)|<img src = "https://media-exp1.licdn.com/dms/image/C4E03AQGuffHo63hbwA/profile-displayphoto-shrink_200_200/0/1631732498102?e=1654128000&v=beta&t=yANWfwjwjjGVxoXqJ_Q3JlrXhdNeOJ6WpS_5TH0kSFM" height="50"/>|
 
 <br>
 
