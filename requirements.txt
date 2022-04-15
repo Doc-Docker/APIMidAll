@@ -1,0 +1,7 @@
+jdk - 11
+maven - 3.6.0
+SpringBoot 2.6.4
+Intellij IDEA
+Angular 9
+VSCode
+NodeJs
