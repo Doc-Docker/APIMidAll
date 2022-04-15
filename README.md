@@ -35,7 +35,11 @@
 
 <br>
 
-## :pencil2: desafio
+> Status do Projeto: <img src = "https://github.com/Doc-Docker/APIMidAll/blob/main/Images/barra1.png" width="90" height="20" /> Em Andamento 🕗
+
+<br>
+
+## :pencil2: Desafio
 
 A empresa MidAll situada no Parque Tecnológico de São José dos Campos, propôs o seguinte desafio baseado na metodologia ágil Scrum.
 "Temos um problema para criação de promoções em um Ecommerce. Precisamos de uma solução inteligente
@@ -51,15 +55,18 @@ Na compra de 3 produtos, ganhe 50% de desconto no item de menor valor.
 
 ## :dart:	Escopo do Projeto
 
+**Pré-requisitos:**
+
+<img align="right" width="190" height="300" src="https://github.com/Doc-Docker/APIMidAll/blob/main/Images/propostaimg.png">
+
  > **Requisitos Funcionais**
 
- - [x]  Interface para cadastros de produtos contendo, ao menos, código, descrição e valor;
- - [x]  Tela que represente um carrinho de compras para adicionar os itens. Pode ter somente os itens selecionados, valor
-unitário, valor total e desconto aplicado;
- - [x]  Interface para criação das promoções;
- - [x]  Como opcional, entregar algum modelo de algoritmo utilizando inteligência artificial baseado no histórico de compras.
-Por exemplo: Tentar criar um modelo de sugestão de produtos mais vendidos ou sugestão de produtos que foram
-comprados juntos com itens que já estão no carrinho, para ser ofertado no fechamento da compra.<br><br>
+ - [x]  Interface para Cadastros Produtos e Promoções
+ - [x]  Edição dos Produtos
+ - [x]  Carrinho de Compras
+ - [x]  Criação de Promoções
+ - [x]  Categoria de Promoções
+ - [x]  Algorimo de inteligência artificial (IA).<br><br>
 
  > **Requisitos Não Funcionais**
 
@@ -76,6 +83,8 @@ comprados juntos com itens que já estão no carrinho, para ser ofertado no fech
 
 ## :hourglass_flowing_sand: Planejamento de Entregas
 
+<img align="right" width="400" height="250" src="https://github.com/Doc-Docker/APIMidAll/blob/main/Images/planejamemtpimg.png">
+
 - [x] [Kickoff](https://github.com/Doc-Docker/APIMidAll/tree/main/docs) - 14/03/2022 a 18/03/2022
 
 - [x] [SPRINT 1](https://github.com/Doc-Docker/APIMidAll/tree/SPRINT-1) - 25/03/2022 a 14/04/2022
@@ -90,6 +99,8 @@ comprados juntos com itens que já estão no carrinho, para ser ofertado no fech
 
 ## :date: As Sprints
 
+<img align="right" width="200" height="180" src="https://github.com/Doc-Docker/APIMidAll/blob/main/Images/sprintsimg.png">
+
 🔖 SPRINT 1 ([Link da Pasta](https://github.com/Doc-Docker/APIMidAll/tree/SPRINT-1)):  Em Andamento 🚧
 
 🔖 SPRINT 2 :  Carregando 🔋
@@ -98,7 +109,14 @@ comprados juntos com itens que já estão no carrinho, para ser ofertado no fech
 
 <br>
 
+## :card_index_dividers: Cards das Sprints
+<img src="#" height="450">
+
+<br>
+
 ## :computer: Tecnologias Utilizadas
+
+<img align="right" width="250" height="190" src="https://github.com/Doc-Docker/APIMidAll/blob/main/Images/tecnologiasimg.png">
 
 * **Banco de Dados:** Microsoft SQL
 * **Back-end:** Java e Spring Boot
