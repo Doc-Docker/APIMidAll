@@ -79,6 +79,9 @@ Na compra de 3 produtos, ganhe 50% de desconto no item de menor valor.
 **:link: Clique no link abaixo para visualizar o *Wireframe no Figma*:** 
 > [Figma Atualizado](https://www.figma.com/file/9x87JgSK0HbLfNtucaYlDW/API-MidAll)
 
+**:link: Clique no link abaixo para visualizar o *PM Canvas*:** 
+> [Project Model Canvas](https://github.com/Doc-Docker/APIMidAll/blob/main/Images/PM%20Canvas%20Docdocker%20(API).png)
+
 <br>
 
 ## :hourglass_flowing_sand: Planejamento de Entregas
@@ -110,7 +113,7 @@ Na compra de 3 produtos, ganhe 50% de desconto no item de menor valor.
 <br>
 
 ## :card_index_dividers: Cards das Sprints
-<img src="#" height="450">
+<img src="https://github.com/Doc-Docker/APIMidAll/blob/main/Images/story_cards.png" height="450">
 
 <br>
 
