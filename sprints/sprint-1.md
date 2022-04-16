@@ -64,7 +64,7 @@ Soluções que serão entregues na primeira sprint:
 
 #### 🔗 [Visualizar o *Sprint Backlog* do projeto](https://github.com/Doc-Docker/APIMidAll/blob/main/Images/sprint_backlogg.png)
 
-#### 🔗 [Visualizar o as User Stories da Sprint-1](https://github.com/Doc-Docker/APIMidAll/blob/main/Images/userstorie.png)
+#### 🔗 [Visualizar as Users Stories da Sprint-1](https://github.com/Doc-Docker/APIMidAll/blob/main/Images/userstorie.png)
 
 <br>
 
