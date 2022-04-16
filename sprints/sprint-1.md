@@ -82,6 +82,12 @@ Tela de Promoção         |  Carrinho
 
 <br>
 
+## 📈 PM Canvas
+
+<img src = "https://github.com/Doc-Docker/APIMidAll/blob/main/Images/PM%20Canvas%20Docdocker%20(API).png" width="900" height="600"/></h1>
+
+<br>
+
 ## :clubs: Modelo Conceitual
 
 <img src = "https://github.com/Doc-Docker/APIMidAll/blob/main/Images/Modelo_Conceitual.png" width="900" height="600"/></h1>
