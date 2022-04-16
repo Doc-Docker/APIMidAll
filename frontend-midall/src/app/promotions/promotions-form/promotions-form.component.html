@@ -1,0 +1,45 @@
+<h1 class="mt-4">Promotion</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Promotion Registration</li>
+</ol>
+
+<div class="container">
+    <form #promotionForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>ID:</label>
+                    <input type="text" class="form-control" disabled="true" [ngModel]="productPromotion.id" name="id">
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Discount:</label>
+                    <input type="text" class="form-control" [(ngModel)]="productPromotion.discount" name="discount">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Product:</label>
+                    <input type="text" class="form-control" [(ngModel)]="productPromotion.product" name="product">
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-success">
+                    <i class="fa fa-save"></i>
+                    Save Promotion
+                </button>
+            </div>
+        </div>
+    
+    </form>
+</div>
