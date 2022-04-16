@@ -64,6 +64,8 @@ Soluções que serão entregues na primeira sprint:
 
 #### 🔗 [Visualizar o *Sprint Backlog* do projeto](https://github.com/Doc-Docker/APIMidAll/blob/main/Images/sprint_backlogg.png)
 
+#### 🔗 [Visualizar o as User Stories da Sprint-1](https://github.com/Doc-Docker/APIMidAll/blob/main/Images/userstorie.png)
+
 <br>
 
 ## :sparkles: Wireframe Figma
@@ -84,7 +86,7 @@ Tela de Promoção         |  Carrinho
 
 ## 📈 PM Canvas
 
-<img src = "https://github.com/Doc-Docker/APIMidAll/blob/main/Images/PM%20Canvas%20Docdocker%20(API).png" width="900" height="600"/></h1>
+<img src = "https://github.com/Doc-Docker/APIMidAll/blob/main/Images/PM_Canvas_Doc.png" width="900" height="600"/></h1>
 
 <br>
 
