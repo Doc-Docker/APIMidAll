@@ -1,5 +1,6 @@
 package com.backend.backend.domain;
 
+import com.backend.backend.dto.ProductDTO;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -28,12 +29,10 @@ public class ProductPromotion implements Serializable {
     @ManyToMany
     @JoinTable(
             name = "PROMOTION_PRODUCT",
-            joinColumns = @JoinColumn(name = "categoryPromotion_id"),
-            inverseJoinColumns = @JoinColumn(name = "product_id")
+            joinColumns = @JoinColumn(name = "productPromotion_id"),
+            inverseJoinColumns = @JoinColumn(name = "Product_id")
     )
     private List<Product> products = new ArrayList<>();
-
-
 
     public ProductPromotion(Integer id, Double discount) {
         this.id = id;

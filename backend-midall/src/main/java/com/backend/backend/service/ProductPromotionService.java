@@ -32,8 +32,9 @@ public class ProductPromotionService {
     @Autowired
     CategoryRepository categoryRepository;
 
+
     public ProductPromotion insert(ProductPromotionDTO objDto){
-        this.validateDTOCategories(objDto);
+        this.validateDTOProducts(objDto);
         objDto.setId(null);
 
         return productPromotionRepository.save(this.fromDTO(objDto));
@@ -45,7 +46,7 @@ public class ProductPromotionService {
         return productPromotion.orElseThrow();
     }
 
-    private void validateDTOCategories(ProductPromotionDTO productPromotionDTO) {
+    private void validateDTOProducts(ProductPromotionDTO productPromotionDTO) {
         productPromotionDTO.getProducts().forEach(givenProduct -> {
             Product product = productService.findById(givenProduct.getId());
             if(givenProduct.getName() != null && !Objects.equals(givenProduct.getName(), product.getName()))

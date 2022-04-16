@@ -23,6 +23,8 @@ public class CategoryDTO implements Serializable {
 
     private String name;
 
+    private List<CategoryPromotion> catPromotions = new ArrayList<>();
+
     public CategoryDTO(Category obj){
         id = obj.getId();
         name = obj.getName();

@@ -6,6 +6,7 @@ import com.backend.backend.domain.SearchProductFilters;
 import com.backend.backend.dto.CategoryDTO;
 import com.backend.backend.dto.ProductDTO;
 import com.backend.backend.exceptions.BadRequestException;
+import com.backend.backend.exceptions.ObjectNotFoundException;
 import com.backend.backend.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,13 +26,8 @@ public class ProductService {
 
     public Product findById(Integer id) {
         Optional<Product> product = productRepository.findById(id);
-        
-        if(product.isEmpty()) { //Nenhum produto cadastrado com esse id
-        	throw new BadRequestException("Non-existent product with this id");
-        }
-        
-        
-        return product.orElseThrow();
+
+        return product.get();
     }
 
     public List<Product> findAll(SearchProductFilters filters) {
@@ -71,7 +67,6 @@ public class ProductService {
 
     public Product insert(ProductDTO productDTO) {
         this.validateDTOCategories(productDTO);
-        this.validateDTOProducts(null,productDTO); //Validação do produto a ser inserido
         productDTO.setId(null);
 
         return productRepository.save(this.fromDTO(productDTO));
