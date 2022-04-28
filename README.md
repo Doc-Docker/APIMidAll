@@ -1,1 +1,1 @@
-## :bookmark: Primeira Entrega - SPRINT 1
+## :bookmark: Segunda Entrega - SPRINT 2
