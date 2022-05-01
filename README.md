@@ -113,7 +113,7 @@ Na compra de 3 produtos, ganhe 50% de desconto no item de menor valor.
 <br>
 
 ## :card_index_dividers: Cards das Sprints
-<img src="https://github.com/Doc-Docker/APIMidAll/blob/main/Images/story_cards.png" height="450">
+<img src="https://github.com/Doc-Docker/APIMidAll/blob/main/Images/story.png" height="450">
 
 <br>
 
