@@ -13,7 +13,6 @@
   <a href ="#clipboard-proposta"> Proposta </a>  • 
   <a href ="#hourglass_flowing_sand-planejamento-de-entregas"> Planejamento </a>  • 
   <a href ="#date-as-sprints"> Sprints </a>  • 
-  <a href ="#card_index_dividers-cards-das-sprints"> Cards </a>  •
   <a href ="#computer-tecnologias-utilizadas"> Tecnologias </a>  • 
   <a href ="#bulb-metodologia-utilizada"> Metodologia </a>  • 
   <a href ="#dart-backlog-das-sprints"> Backlog </a>  •
@@ -112,8 +111,16 @@ Na compra de 3 produtos, ganhe 50% de desconto no item de menor valor.
 
 <br>
 
-## :card_index_dividers: Cards das Sprints
+## :card_index_dividers: Desenvolvimento das Sprints
 <img src="https://github.com/Doc-Docker/APIMidAll/blob/main/Images/story.png" height="450">
+
+<br>
+
+## 🚀 Apresentação SPRINT 1
+
+**:link: Para visualizar a apresentação da Sprint 1 [clique aqui](https://www.youtube.com/watch?v=UgK59rlTc5M)** 
+
+[![](https://github.com/Doc-Docker/APIMidAll/blob/main/Images/youtubelogo.jpeg)](https://www.youtube.com/watch?v=UgK59rlTc5M)
 
 <br>
 
