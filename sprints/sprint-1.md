@@ -48,6 +48,14 @@ Soluções que serão entregues na primeira sprint:
 
 <br>
 
+## 🚀 Apresentação SPRINT 1
+
+**:link: Para visualizar a apresentação da Sprint 1 [clique aqui](https://www.youtube.com/watch?v=UgK59rlTc5M)** 
+
+[![](https://github.com/Doc-Docker/APIMidAll/blob/main/Images/youtubelogo.jpeg)](https://www.youtube.com/watch?v=UgK59rlTc5M)
+
+<br>
+
 ## :chart_with_downwards_trend: Burndown da Equipe
 
 <img src = "https://github.com/Doc-Docker/APIMidAll/blob/main/Images/burndown_sprint1.png" width="890" height="500"/></h1>
