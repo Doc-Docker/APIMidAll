@@ -79,7 +79,7 @@ Na compra de 3 produtos, ganhe 50% de desconto no item de menor valor.
 > [Figma Atualizado](https://www.figma.com/file/9x87JgSK0HbLfNtucaYlDW/API-MidAll)
 
 **:link: Clique no link abaixo para visualizar o *PM Canvas*:** 
-> [Project Model Canvas](https://github.com/Doc-Docker/APIMidAll/blob/main/Images/PM%20Canvas%20Docdocker%20(API).png)
+> [Project Model Canvas](https://github.com/Doc-Docker/APIMidAll/blob/main/Images/PM_Canvas_Doc.png)
 
 <br>
 
@@ -91,7 +91,7 @@ Na compra de 3 produtos, ganhe 50% de desconto no item de menor valor.
 
 - [x] [SPRINT 1](https://github.com/Doc-Docker/APIMidAll/tree/SPRINT-1) - 25/03/2022 a 14/04/2022
 
-- [ ] SPRINT 2 - 25/04/2022 a 15/05/2022
+- [x] [SPRINT 2](https://github.com/Doc-Docker/APIMidAll/tree/SPRINT-2) - 25/04/2022 a 15/05/2022
 
 - [ ] SPRINT 3 - 16/05/2022 a 05/06/2022
 
@@ -175,7 +175,7 @@ $ pip install requirements.txt
 | -------- |-------- |-------- |-------- |-------- |
 |**Carlos Souza**|Scrum Master|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/carlos-fernando-souza-94aa074b/)|[<img src="https://camo.githubusercontent.com/fbc3df79ffe1a99e482b154b29262ecbb10d6ee4ed22faa82683aa653d72c4e1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d3130303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562266c6f676f436f6c6f723d7768697465" />](https://github.com/CarlosSouza87)|<img src = "https://avatars.githubusercontent.com/u/74521818?v=4" height="50"/>|
 |**Zaion Felippe**|Product Owner|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/zaion-gomes-b17657214/)|[<img src="https://camo.githubusercontent.com/fbc3df79ffe1a99e482b154b29262ecbb10d6ee4ed22faa82683aa653d72c4e1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d3130303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562266c6f676f436f6c6f723d7768697465" />](https://github.com/ZaionKun)|<img src = "https://avatars.githubusercontent.com/u/81268185?v=4" height="50"/>|
-|**Bryan Ribeiro**|Dev Team|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/bryanrribeiro/)|[<img src="https://camo.githubusercontent.com/fbc3df79ffe1a99e482b154b29262ecbb10d6ee4ed22faa82683aa653d72c4e1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d3130303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562266c6f676f436f6c6f723d7768697465" />](https://github.com/BryanRibeiro)|<img src = "https://media-exp1.licdn.com/dms/image/C4D03AQE_YMGswoKzqA/profile-displayphoto-shrink_200_200/0/1626219726318?e=1655337600&v=beta&t=CvVXoABR7OfcEDw03fsd2FebdMly_LAm40CmPKF61HI" height="50"/>|
+|**Bryan Ribeiro**|Dev Team|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/bryanrribeiro/)|[<img src="https://camo.githubusercontent.com/fbc3df79ffe1a99e482b154b29262ecbb10d6ee4ed22faa82683aa653d72c4e1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d3130303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562266c6f676f436f6c6f723d7768697465" />](https://github.com/BryanRibeiro)|<img src = "https://avatars.githubusercontent.com/u/70216549?v=4" height="50"/>|
 |**Andrew Augusto**|Dev Team|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/andrew-augusto-778585127/)|[<img src="https://camo.githubusercontent.com/fbc3df79ffe1a99e482b154b29262ecbb10d6ee4ed22faa82683aa653d72c4e1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d3130303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562266c6f676f436f6c6f723d7768697465" />](https://github.com/AndrewAugusto)|<img src = "https://avatars.githubusercontent.com/u/81338441?v=4" height="50"/>|
 |**Victor Cavichioli**|Dev Team|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/victor-araujo-paula-cavichioli-9ab48418b/)|[<img src="https://camo.githubusercontent.com/fbc3df79ffe1a99e482b154b29262ecbb10d6ee4ed22faa82683aa653d72c4e1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d3130303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562266c6f676f436f6c6f723d7768697465" />](https://github.com/VictorCavichioli)|<img src = "https://avatars.githubusercontent.com/u/79488234?v=4" height="50"/>|
 |**Antonio Zago**|Dev Team|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/antonio-zago-24230b206/)|[<img src="https://camo.githubusercontent.com/fbc3df79ffe1a99e482b154b29262ecbb10d6ee4ed22faa82683aa653d72c4e1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d3130303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562266c6f676f436f6c6f723d7768697465" />](https://github.com/Antonio-Zago)|<img src = "https://avatars.githubusercontent.com/u/80283126?v=4" height="50"/>|
