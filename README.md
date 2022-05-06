@@ -158,7 +158,7 @@ $ git clone https://github.com/Doc-Docker/APIMidAll.git
 
 - Install requirements
 ```
-$ pip install requirements.txt
+$ mvn clean install requirements.txt
 ```
 
 <br>
