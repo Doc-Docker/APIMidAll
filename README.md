@@ -87,7 +87,7 @@ Na compra de 3 produtos, ganhe 50% de desconto no item de menor valor.
 
 <img align="right" width="400" height="250" src="https://github.com/Doc-Docker/APIMidAll/blob/main/Images/planejamemtpimg.png">
 
-- [x] [Kickoff](https://github.com/Doc-Docker/APIMidAll/tree/main/docs) - 14/03/2022 a 18/03/2022
+- [x] [Kickoff](https://github.com/Doc-Docker/APIMidAll/blob/main/docs/MidAll%5BB%5D%20Institucional%202022%20-%20Kickoff%20Fatec%20Final.pdf) - 14/03/2022 a 18/03/2022
 
 - [x] [SPRINT 1](https://github.com/Doc-Docker/APIMidAll/tree/SPRINT-1) - 25/03/2022 a 14/04/2022
 
