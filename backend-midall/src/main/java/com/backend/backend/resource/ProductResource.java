@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -37,7 +38,7 @@ public class ProductResource {
     }
 
     @RequestMapping(value = "/products", method = RequestMethod.POST)
-    public ResponseEntity<?> insert(@RequestBody ProductDTO newProduct) {
+    public ResponseEntity<?> insert(@RequestBody @Valid ProductDTO newProduct) {
         Product insertedProduct = productService.insert(newProduct);
 
         URI location = ServletUriComponentsBuilder

@@ -5,6 +5,7 @@ import com.backend.backend.domain.ProductPromotion;
 import lombok.*;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.PositiveOrZero;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -19,14 +20,16 @@ public class ProductDTO implements Serializable {
 
     private Integer id;
 
-    @NotBlank(message = "Name is required")
+    @NotEmpty(message = "{field.name.mandatory}")
     private String name;
 
     @PositiveOrZero(message = "Price must be a value higher or equal to 0")
     private Double price;
 
+    @NotEmpty(message = "{field.description.mandatory}")
     private String description;
 
+    @NotEmpty(message = "{field.category.mandatory}")
     private List<CategoryDTO> categories = new ArrayList<>();
 
     private List<ProductPromotionDTO> productPromotions = new ArrayList<>();

@@ -66,7 +66,7 @@ public class ProductService {
     }
 
     public Product insert(ProductDTO productDTO) {
-        this.validateDTOCategories(productDTO);
+        //this.validateDTOCategories(productDTO);
         productDTO.setId(null);
 
         return productRepository.save(this.fromDTO(productDTO));
