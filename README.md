@@ -37,7 +37,7 @@ Soluções que serão entregues na segunda sprint:
 
 ## :chart_with_downwards_trend: Burndown da Equipe
 
-(imagem carregando... 🔋)
+(imagem carregando...🔋)
 
 <br>
 
