@@ -60,12 +60,12 @@ Na compra de 3 produtos, ganhe 50% de desconto no item de menor valor.
 
  > **Requisitos Funcionais**
 
- - [x]  Interface para Cadastros Produtos e Promoções
+ - [x]  Interface para Cadastros de Produtos e Promoções
  - [x]  Edição dos Produtos
  - [x]  Carrinho de Compras
  - [x]  Criação de Promoções
  - [x]  Categoria de Promoções
- - [x]  Algorimo de inteligência artificial (IA).<br><br>
+ - [x]  Listagem de Produtos e Promoções.<br><br>
 
  > **Requisitos Não Funcionais**
 
