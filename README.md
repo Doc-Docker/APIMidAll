@@ -39,16 +39,10 @@ Soluções que serão entregues na segunda sprint:
 
 <br>
 
-## :newspaper: Backlog do Produto
-
-#### 🔗 [Visualizar o arquivo do *Product Backlog*]()
-
-<br>
-
 ## :dart: Backlog das Sprints
 
 #### 🔗 [Visualizar o *Sprint Backlog* do projeto](https://github.com/Doc-Docker/APIMidAll/blob/main/Images/sprint_backlogg.png)
 
-#### 🔗 [Visualizar as Users Stories da Sprint-1](https://github.com/Doc-Docker/APIMidAll/projects/3)
+#### 🔗 [Visualizar as Users Stories da Sprint-2](https://github.com/Doc-Docker/APIMidAll/projects/3)
 
 <br>
