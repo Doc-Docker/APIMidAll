@@ -25,8 +25,11 @@ export class ProductsFormComponent implements OnInit {
     .insert(this.product)
     .subscribe( res =>{
       this.success = true;
+      this.errors = null;
+      
     }, errorRes =>{
-      console.log(errorRes.error.message)
+      this.success = false;
+      this.errors = errorRes.error.errors
       
     }
     
