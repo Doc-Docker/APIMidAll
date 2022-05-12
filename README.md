@@ -116,14 +116,6 @@ Na compra de 3 produtos, ganhe 50% de desconto no item de menor valor.
 
 <br>
 
-## 🚀 Apresentação SPRINT 1
-
-**:link: Para visualizar a apresentação da Sprint 1 [clique aqui](https://www.youtube.com/watch?v=UgK59rlTc5M)** 
-
-[![](https://github.com/Doc-Docker/APIMidAll/blob/main/Images/youtubelogo.jpeg)](https://www.youtube.com/watch?v=UgK59rlTc5M)
-
-<br>
-
 ## :computer: Tecnologias Utilizadas
 
 <img align="right" width="250" height="190" src="https://github.com/Doc-Docker/APIMidAll/blob/main/Images/tecnologiasimg.png">
@@ -165,7 +157,7 @@ $ mvn clean install requirements.txt
 
 ## :dart: Backlog das Sprints
 
-<h1 align="center"> <img src = "https://github.com/Doc-Docker/APIMidAll/blob/main/Images/sprint_backlogg.png" /></h1>
+<h1 align="center"> <img src = "https://github.com/Doc-Docker/APIMidAll/blob/main/Images/backlog_sprint2.png" /></h1>
 
 <br>
 
