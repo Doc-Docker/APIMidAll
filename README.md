@@ -35,11 +35,13 @@ Soluções que serão entregues na segunda sprint:
 
 ## :chart_with_downwards_trend: Burndown da Equipe
 
-(imagem carregando...🔋)
+<img src = "https://github.com/Doc-Docker/APIMidAll/blob/main/Images/burndown2.png" width="890" height="500"/></h1>
 
 <br>
 
 ## :newspaper: Backlog do Produto
+
+#### 🔗 [Visualizar o arquivo do *Product Backlog*](https://github.com/Doc-Docker/APIMidAll/blob/main/Images/backlog_22.png)
 
 #### 🔗 [Visualizar as Users Stories da Sprint-2](https://github.com/Doc-Docker/APIMidAll/projects/3)
 
@@ -47,6 +49,6 @@ Soluções que serão entregues na segunda sprint:
 
 ## :dart: Backlog das Sprints
 
-#### 🔗 [Visualizar o *Sprint Backlog* do projeto](https://github.com/Doc-Docker/APIMidAll/blob/main/Images/sprint_backlogg.png)
+#### 🔗 [Visualizar o *Sprint Backlog* do projeto](https://github.com/Doc-Docker/APIMidAll/blob/main/Images/backlog_sprint2.png)
 
 <br>
