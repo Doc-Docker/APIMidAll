@@ -11,6 +11,7 @@ import { ProductsService } from './products.service';
 import { HttpClientModule } from '@angular/common/http'
 import { PromotionsModule } from './promotions/promotions.module';
 import { ProductPromotionService } from './product-promotion.service'
+import { CartModule } from './cart/cart.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,9 @@ import { ProductPromotionService } from './product-promotion.service'
     AppRoutingModule,
     TemplateModule,
     ProductsModule,
-    PromotionsModule
+    PromotionsModule,
+    CartModule
+
   ],
   providers: [
     ProductsService,
