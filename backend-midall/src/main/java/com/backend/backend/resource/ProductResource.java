@@ -1,6 +1,7 @@
 package com.backend.backend.resource;
 
 import com.backend.backend.domain.Product;
+import com.backend.backend.domain.ProductPromotion;
 import com.backend.backend.domain.SearchProductFilters;
 import com.backend.backend.dto.ProductDTO;
 import com.backend.backend.service.ProductService;
@@ -35,6 +36,27 @@ public class ProductResource {
         ).collect(Collectors.toList());
 
         return ResponseEntity.ok().body(response);
+    }
+
+    @GetMapping ("/products/preco")
+    public ResponseEntity<Double> preco(@RequestBody List<Product> lista, SearchProductFilters filters) {
+
+        Double precoTotal = 0.0;
+
+        for(Product produto : lista){
+            precoTotal = precoTotal + produto.getPrice();
+
+            if(!produto.getProductPromotions().isEmpty()){
+                List<ProductPromotion> promocoes = produto.getProductPromotions();
+                for(ProductPromotion promocao : promocoes){
+                    precoTotal = precoTotal - promocao.getDiscount();
+                }
+            }
+
+        }
+
+
+        return ResponseEntity.ok().body(precoTotal);
     }
 
     @RequestMapping(value = "/products", method = RequestMethod.POST)

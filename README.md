@@ -9,9 +9,9 @@ Abaixo elencamos as necessidades identificadas em consulta aos stakeholders, cla
 | :--- | :---: |
 | 1. Listagem dos produtos para visualização e edição. | Essencial |
 | 2. Desenvolvimento do carrinho de compras e suas funcionalidades. | Essencial |
-| 3. Melhora no sistema de promoções com mais autonomia do administrador. | Importante |
-| 4. Edição de produtos e promoções. | Importante |
-| 5. Aperfeiçoar o front-end, de modo a proporcionar uma boa representação visual dos dados. | Desejável |
+| 3. Edição de produtos. | Importante |
+| 4. Aperfeiçoar o front-end, de modo a proporcionar uma boa representação visual dos dados. | Desejável |
+| 5. Melhora no sistema de promoções com mais autonomia do administrador. | Desejável |
 
 :pushpin: **Principais deliverables**
 
@@ -20,8 +20,6 @@ Soluções que serão entregues na segunda sprint:
 > Listagem de Produto
 
 > Carrinho de Compras
-
-> Melhora nas regras de promoções
 
 <br>
 
@@ -37,20 +35,20 @@ Soluções que serão entregues na segunda sprint:
 
 ## :chart_with_downwards_trend: Burndown da Equipe
 
-(imagem carregando...🔋)
+<img src = "https://github.com/Doc-Docker/APIMidAll/blob/main/Images/burndown2.png" width="890" height="500"/></h1>
 
 <br>
 
 ## :newspaper: Backlog do Produto
 
-#### 🔗 [Visualizar o arquivo do *Product Backlog*]()
+#### 🔗 [Visualizar o arquivo do *Product Backlog*](https://github.com/Doc-Docker/APIMidAll/blob/main/Images/backlog_22.png)
+
+#### 🔗 [Visualizar as Users Stories da Sprint-2](https://github.com/Doc-Docker/APIMidAll/projects/3)
 
 <br>
 
 ## :dart: Backlog das Sprints
 
-#### 🔗 [Visualizar o *Sprint Backlog* do projeto](https://github.com/Doc-Docker/APIMidAll/blob/main/Images/sprint_backlogg.png)
-
-#### 🔗 [Visualizar as Users Stories da Sprint-1]()
+#### 🔗 [Visualizar o *Sprint Backlog* do projeto](https://github.com/Doc-Docker/APIMidAll/blob/main/Images/backlog_sprint2.png)
 
 <br>
