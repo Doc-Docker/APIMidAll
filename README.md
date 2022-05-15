@@ -1,19 +1,13 @@
-## :bookmark: Segunda Entrega - SPRINT 2
+ <h5 align="center"> <img src = "https://github.com/Time-1-ADS/ProjetoGSW/blob/sprints/Imagens%20Geral/Fatec_logo.png" width="20" height="20" /> Projeto Integrador - DocDocker | BD </h5>
 
 <br>
 
-## :black_nib: Escopo da Solução
-Abaixo elencamos as necessidades identificadas em consulta aos stakeholders, classificando-as: 
+<p align="center">
+      <h3 align="center"> API PromoAll </h3>
+<p align="center">
+<img src ="https://github.com/Doc-Docker/APIMidAll/blob/main/Images/logo2promoall.png" width="300" height="300"/>
+<hr>
 
-<<<<<<< HEAD
-| Necessidades | Categorias |
-| :--- | :---: |
-| 1. Listagem dos produtos para visualização e edição. | Essencial |
-| 2. Desenvolvimento do carrinho de compras e suas funcionalidades. | Essencial |
-| 3. Edição de produtos. | Importante |
-| 4. Aperfeiçoar o front-end, de modo a proporcionar uma boa representação visual dos dados. | Desejável |
-| 5. Melhora no sistema de promoções com mais autonomia do administrador. | Desejável |
-=======
 <p align="center">
   <a href ="#pencil2-desafio"> Desafio </a>  • 
   <a href ="#clipboard-proposta"> Proposta </a>  • 
@@ -24,41 +18,40 @@ Abaixo elencamos as necessidades identificadas em consulta aos stakeholders, cla
   <a href ="#dart-backlog-das-sprints"> Backlog </a>  •
   <a href ="#mortar_board-equipe"> Equipe </a> 
 </p>
->>>>>>> main
 
-:pushpin: **Principais deliverables**
-
-Soluções que serão entregues na segunda sprint:
-
-> Listagem de Produto
-
-> Carrinho de Compras
-
-<br>
-
-## :rocket: Branches das Entregas
-
-| Sprints/Entregas do Projeto | Deliverables | Data de Início | Data de Término |
-| :---: | :---: | :---: | :---: |
-| `SPRINT 1` | Cadastro de Produto e Promoção | 25/03/2022 | 14/04/2022 |
-| `SPRINT 2` | Processo de compra, listagem e edição de produtos | 25/04/2022 | 15/05/2022 |
-| `SPRINT 3` | Melhorias no motor de regras e desenvolvimento de promoções específicas | 16/05/2022 | 05/06/2022 |
+<h4 align="center"> 
+ <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS"><img src = "https://camo.githubusercontent.com/e8ba07fa7cc79831afca90c574b74f1eefd0bf76af4e498cb0674330a1634e2a/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4353532d3233393132303f267374796c653d666f722d7468652d6261646765266c6f676f3d63737333266c6f676f436f6c6f723d7768697465"/></a>
+ <a href="https://developer.mozilla.org/pt-BR/docs/Web/Guide/HTML/HTML5"><img src = "https://camo.githubusercontent.com/d63d473e728e20a286d22bb2226a7bf45a2b9ac6c72c59c0e61e9730bfe4168c/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f48544d4c352d4533344632363f7374796c653d666f722d7468652d6261646765266c6f676f3d68746d6c35266c6f676f436f6c6f723d7768697465"/></a>
+ <a href="https://www.microsoft.com/en-us/sql-server/sql-server-downloads"><img src = "https://img.shields.io/badge/Microsoft%20SQL%20Sever-CC2927?style=for-the-badge&logo=microsoft%20sql%20server&logoColor=white"/></a>
+ <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript"><img src = "https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white"/></a>
+ <a href="https://www.jetbrains.com/idea/"><img src =
+"https://img.shields.io/badge/IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white" /></a>
+ <a href="https://getbootstrap.com/"><img src =
+"https://camo.githubusercontent.com/b13ed67c809178963ce9d538175b02649800772be1ce0cb02da5879e5614e236/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f426f6f7473747261702d3536334437433f7374796c653d666f722d7468652d6261646765266c6f676f3d626f6f747374726170266c6f676f436f6c6f723d7768697465" /></a>
+  <a href="https://angular.io/"><img src =
+"https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white" /></a>
+</h4>
 
 <br>
 
-## :chart_with_downwards_trend: Burndown da Equipe
-
-<img src = "https://github.com/Doc-Docker/APIMidAll/blob/main/Images/burndown2.png" width="890" height="500"/></h1>
+> Status do Projeto: <img src = "https://github.com/Doc-Docker/APIMidAll/blob/main/Images/barra1.png" width="90" height="20" /> Em Andamento 🕗
 
 <br>
 
-## :newspaper: Backlog do Produto
+## :pencil2: Desafio
 
-#### 🔗 [Visualizar o arquivo do *Product Backlog*](https://github.com/Doc-Docker/APIMidAll/blob/main/Images/backlog_22.png)
+A empresa MidAll situada no Parque Tecnológico de São José dos Campos, propôs o seguinte desafio baseado na metodologia ágil Scrum.
+"Temos um problema para criação de promoções em um Ecommerce. Precisamos de uma solução inteligente
+onde, as mecânicas das promoções sejam feitas de forma flexível e de rápida atualização no sistema".
 
-<<<<<<< HEAD
-#### 🔗 [Visualizar as Users Stories da Sprint-2](https://github.com/Doc-Docker/APIMidAll/projects/3)
-=======
+<br>
+
+## :clipboard: Proposta
+A ideia é criar um mini motor de regras com uma interface onde as regras das promoções possam ser cadastradas e aplicadas no momento que os itens forem para o carrinho de compras. Alguns exemplos de mecânicas: compre 2 produtos e tenha 10% de desconto. Na compra de 2 produtos, ganhe mais 1. 
+Na compra de 3 produtos, ganhe 50% de desconto no item de menor valor.
+
+<br>
+
 ## :dart:	Escopo do Projeto
 
 **Pré-requisitos:**
@@ -159,17 +152,11 @@ $ git clone https://github.com/Doc-Docker/APIMidAll.git
 ```
 $ mvn clean install requirements.txt
 ```
->>>>>>> main
 
 <br>
 
 ## :dart: Backlog das Sprints
 
-<<<<<<< HEAD
-#### 🔗 [Visualizar o *Sprint Backlog* do projeto](https://github.com/Doc-Docker/APIMidAll/blob/main/Images/backlog_sprint2.png)
-
-<br>
-=======
 <h1 align="center"> <img src = "https://github.com/Doc-Docker/APIMidAll/blob/main/Images/backlog_sprint2.png" /></h1>
 
 <br>
@@ -197,4 +184,3 @@ $ mvn clean install requirements.txt
 
 
 
->>>>>>> main
