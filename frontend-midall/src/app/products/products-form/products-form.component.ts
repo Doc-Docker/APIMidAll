@@ -10,6 +10,8 @@ import { ProductsService } from '../../products.service'
 export class ProductsFormComponent implements OnInit {
 
   product : Product;
+  success: boolean = false;
+  errors: String[];
 
   constructor(private service : ProductsService) {
     this.product = new Product();
@@ -22,7 +24,15 @@ export class ProductsFormComponent implements OnInit {
     this.service
     .insert(this.product)
     .subscribe( res =>{
-      console.log(res)
-    })
+      this.success = true;
+      this.errors = null;
+      
+    }, errorRes =>{
+      this.success = false;
+      this.errors = errorRes.error.errors
+      
+    }
+    
+    )
   }
 }

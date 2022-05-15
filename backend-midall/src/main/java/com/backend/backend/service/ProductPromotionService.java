@@ -1,18 +1,12 @@
 package com.backend.backend.service;
 
-import com.backend.backend.domain.Category;
-import com.backend.backend.domain.CategoryPromotion;
 import com.backend.backend.domain.Product;
 import com.backend.backend.domain.ProductPromotion;
-import com.backend.backend.dto.CategoryPromotionDTO;
 import com.backend.backend.dto.ProductPromotionDTO;
 import com.backend.backend.exceptions.BadRequestException;
-import com.backend.backend.repository.CategoryPromotionRepository;
-import com.backend.backend.repository.CategoryRepository;
 import com.backend.backend.repository.ProductPromotionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -24,14 +18,7 @@ public class ProductPromotionService {
     ProductPromotionRepository productPromotionRepository;
 
     @Autowired
-    CategoryService categoryService;
-
-    @Autowired
     ProductService productService;
-
-    @Autowired
-    CategoryRepository categoryRepository;
-
 
     public ProductPromotion insert(ProductPromotionDTO objDto){
         this.validateDTOProducts(objDto);

@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
 @Service
 public class ProductService {
 
@@ -66,7 +65,7 @@ public class ProductService {
     }
 
     public Product insert(ProductDTO productDTO) {
-        this.validateDTOCategories(productDTO);
+        //this.validateDTOCategories(productDTO);
         productDTO.setId(null);
 
         return productRepository.save(this.fromDTO(productDTO));
