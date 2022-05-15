@@ -17,7 +17,7 @@ public class CategoryPromotionResource {
     @Autowired
     CategoryPromotionService categoryPromotionService;
 
-    @RequestMapping(method = RequestMethod.POST)
+    @PostMapping
     public ResponseEntity<?> insert(@RequestBody CategoryPromotionDTO obj){
         CategoryPromotion insertedPromotion = categoryPromotionService.insert(obj);
         URI uri = ServletUriComponentsBuilder
@@ -27,7 +27,7 @@ public class CategoryPromotionResource {
         return ResponseEntity.created(uri).build();
     }
 
-    @RequestMapping(value="/{id}", method = RequestMethod.GET)
+    @GetMapping
     public ResponseEntity<?> find(@PathVariable Integer id){
         CategoryPromotion cat = categoryPromotionService.find(id);
         return ResponseEntity.ok().body(cat);

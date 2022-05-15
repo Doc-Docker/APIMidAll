@@ -21,14 +21,14 @@ public class ProductResource {
     @Autowired
     ProductService productService;
 
-    @RequestMapping(value = "/products/{id}", method = RequestMethod.GET)
+    @GetMapping ("/products/{id}")
     public ResponseEntity<ProductDTO> findById(@PathVariable Integer id) {
         Product foundProduct = productService.findById(id);
 
         return ResponseEntity.ok().body(productService.fromDomain(foundProduct));
     }
 
-    @RequestMapping(value = "/products", method = RequestMethod.GET)
+    @GetMapping ("/products")
     public ResponseEntity<List<ProductDTO>> findAll(SearchProductFilters filters) {
         List<Product> productList = productService.findAll(filters);
         List<ProductDTO> response = productList.stream().map(
@@ -38,6 +38,7 @@ public class ProductResource {
         return ResponseEntity.ok().body(response);
     }
 
+<<<<<<< HEAD
     @GetMapping ("/products/preco")
     public ResponseEntity<Double> preco(@RequestBody List<Product> lista, SearchProductFilters filters) {
 
@@ -61,6 +62,10 @@ public class ProductResource {
 
     @RequestMapping(value = "/products", method = RequestMethod.POST)
     public ResponseEntity<?> insert(@RequestBody @Valid ProductDTO newProduct) {
+=======
+    @PostMapping ("/products")
+    public ResponseEntity<?> insert(@RequestBody ProductDTO newProduct) {
+>>>>>>> main
         Product insertedProduct = productService.insert(newProduct);
 
         URI location = ServletUriComponentsBuilder
@@ -71,14 +76,14 @@ public class ProductResource {
         return ResponseEntity.created(location).build();
     }
 
-    @RequestMapping(value = "/products/{id}", method = RequestMethod.PATCH)
+    @PatchMapping ("/products/{id}")
     public ResponseEntity<?> update(@RequestBody ProductDTO updatedProduct, @PathVariable Integer id) {
         productService.update(id, updatedProduct);
 
         return ResponseEntity.noContent().build();
     }
 
-    @RequestMapping(value = "/products/{id}", method = RequestMethod.DELETE)
+    @DeleteMapping ("/products/{id}")
     public ResponseEntity<?> delete(@PathVariable Integer id) {
         productService.delete(id);
 

@@ -17,7 +17,7 @@ public class ProductPromotionResource {
     @Autowired
     ProductPromotionService productPromotionService;
 
-    @RequestMapping(method = RequestMethod.POST)
+    @PostMapping                           //@RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<?> insert(@RequestBody ProductPromotionDTO obj){
         ProductPromotion insertedPromotion = productPromotionService.insert(obj);
         URI uri = ServletUriComponentsBuilder
@@ -27,7 +27,7 @@ public class ProductPromotionResource {
         return ResponseEntity.created(uri).build();
     }
 
-    @RequestMapping(value="/{id}", method = RequestMethod.GET)
+    @GetMapping ("/{id}")                               //@RequestMapping(value="/{id}", method = RequestMethod.GET)
     public ResponseEntity<?> find(@PathVariable Integer id){
         ProductPromotion productPromotion = productPromotionService.find(id);
         return ResponseEntity.ok().body(productPromotion);
