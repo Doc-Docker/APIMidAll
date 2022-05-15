@@ -59,7 +59,7 @@ public class ProductResource {
         return ResponseEntity.ok().body(precoTotal);
     }
 
-    @RequestMapping(value = "/products", method = RequestMethod.POST)
+    @PostMapping(value = "/products")
     public ResponseEntity<?> insert(@RequestBody @Valid ProductDTO newProduct){
         Product insertedProduct = productService.insert(newProduct);
 
