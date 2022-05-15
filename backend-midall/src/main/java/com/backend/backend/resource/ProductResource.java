@@ -38,7 +38,6 @@ public class ProductResource {
         return ResponseEntity.ok().body(response);
     }
 
-<<<<<<< HEAD
     @GetMapping ("/products/preco")
     public ResponseEntity<Double> preco(@RequestBody List<Product> lista, SearchProductFilters filters) {
 
@@ -60,12 +59,8 @@ public class ProductResource {
         return ResponseEntity.ok().body(precoTotal);
     }
 
-    @RequestMapping(value = "/products", method = RequestMethod.POST)
-    public ResponseEntity<?> insert(@RequestBody @Valid ProductDTO newProduct) {
-=======
-    @PostMapping ("/products")
-    public ResponseEntity<?> insert(@RequestBody ProductDTO newProduct) {
->>>>>>> main
+    @PostMapping(value = "/products")
+    public ResponseEntity<?> insert(@RequestBody @Valid ProductDTO newProduct){
         Product insertedProduct = productService.insert(newProduct);
 
         URI location = ServletUriComponentsBuilder
