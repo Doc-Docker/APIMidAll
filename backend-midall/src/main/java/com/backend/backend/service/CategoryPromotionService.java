@@ -2,13 +2,18 @@ package com.backend.backend.service;
 
 import com.backend.backend.domain.Category;
 import com.backend.backend.domain.CategoryPromotion;
+import com.backend.backend.dto.CategoryDTO;
 import com.backend.backend.dto.CategoryPromotionDTO;
 import com.backend.backend.exceptions.BadRequestException;
 import com.backend.backend.repository.CategoryRepository;
 import com.backend.backend.repository.CategoryPromotionRepository;
+
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -21,6 +26,9 @@ public class CategoryPromotionService {
 
     @Autowired
     CategoryService categoryService;
+    
+    @Autowired
+    private ModelMapper mapper;
 
     @Autowired
     CategoryRepository categoryRepository;
@@ -48,12 +56,14 @@ public class CategoryPromotionService {
 
     private CategoryPromotion fromDTO(CategoryPromotionDTO categoryPromotionDTO) {
         CategoryPromotion catpromo = new CategoryPromotion(categoryPromotionDTO.getId(),categoryPromotionDTO.getDiscount());
-
+        
         catpromo.getCategories().addAll(categoryPromotionDTO.getCategories().stream().map(
-                categoryDTO -> new Category(categoryDTO.getId(), categoryDTO.getName())
-        ).collect(Collectors.toList()));
+              categoryDTO -> new Category (categoryDTO.getId(), categoryDTO.getName())
+      ).collect(Collectors.toList()));
+
 
         return catpromo;
     }
 
+    
 }

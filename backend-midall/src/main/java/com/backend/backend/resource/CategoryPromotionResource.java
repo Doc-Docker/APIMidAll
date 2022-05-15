@@ -27,7 +27,7 @@ public class CategoryPromotionResource {
         return ResponseEntity.created(uri).build();
     }
 
-    @GetMapping
+    @GetMapping ("/{id}")
     public ResponseEntity<?> find(@PathVariable Integer id){
         CategoryPromotion cat = categoryPromotionService.find(id);
         return ResponseEntity.ok().body(cat);

@@ -11,17 +11,17 @@ import java.util.List;
 @NoArgsConstructor
 public class CategoryPromotionDTO implements Serializable {
 
-    private static final long serialVerionUID = 1L;
+	private static final long serialVerionUID = 1L;
 
-    private Integer id;
+	private Integer id;
 
-    private Double discount;
+	private Double discount;
+	
+	private List<CategoryDTO> categories = new ArrayList<>();
 
-    private List<CategoryDTO> categories = new ArrayList<>();
-
-    public CategoryPromotionDTO(CategoryPromotion obj){
-        id = obj.getId();
-        discount = obj.getDiscount();
-    }
+	public CategoryPromotionDTO(CategoryPromotion obj) {
+		id = obj.getId();
+		discount = obj.getDiscount();
+	}
 
 }

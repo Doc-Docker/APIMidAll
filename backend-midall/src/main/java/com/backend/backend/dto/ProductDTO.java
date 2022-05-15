@@ -6,36 +6,42 @@ import lombok.*;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.PositiveOrZero;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@EqualsAndHashCode(of={"id"})
+@EqualsAndHashCode(of = { "id" })
 public class ProductDTO implements Serializable {
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    private Integer id;
+	private Integer id;
 
-    @NotBlank(message = "Name is required")
-    private String name;
+	@NotBlank(message = "Name is required")
+	private String name;
 
-    @PositiveOrZero(message = "Price must be a value higher or equal to 0")
-    private Double price;
+	@PositiveOrZero(message = "Price must be a value higher or equal to 0")
+	private Double price;
 
-    private String description;
+	private String description;
+	 
+	private List<CategoryDTO> categories = new ArrayList<>();
 
-    private List<CategoryDTO> categories = new ArrayList<>();
+    private List<ProductDTO> productPromotions = new ArrayList<>();
 
-    private List<ProductPromotionDTO> productPromotions = new ArrayList<>();
-
-    public ProductDTO(Product product) {
-        this.id = product.getId();
-        this.name = product.getName();
-        this.price = product.getPrice();
-        this.description = product.getDescription();
-    }
+	public ProductDTO(Product product) {
+		this.id = product.getId();
+		this.name = product.getName();
+		this.price = product.getPrice();
+		this.description = product.getDescription();
+	}
+ 
 
 }

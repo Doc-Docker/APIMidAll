@@ -17,16 +17,15 @@ import java.util.List;
 @NoArgsConstructor
 public class CategoryDTO implements Serializable {
 
-    private static final long serialVerionUID = 1L;
+	private static final long serialVerionUID = 1L;
 
-    private Integer id;
+	private Integer id;
 
-    private String name;
+	private String name;
 
-
-    public CategoryDTO(Category obj){
-        id = obj.getId();
-        name = obj.getName();
-    }
+	public CategoryDTO(Category obj) {
+		id = obj.getId();
+		name = obj.getName();
+	}
 
 }

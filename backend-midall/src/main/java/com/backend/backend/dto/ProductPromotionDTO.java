@@ -15,17 +15,16 @@ import java.util.List;
 @NoArgsConstructor
 public class ProductPromotionDTO implements Serializable {
 
-    private static final long serialVerionUID = 1L;
+	private static final long serialVerionUID = 1L;
 
-    private Integer id;
+	private Integer id;
 
-    private Double discount;
-
-    private List<ProductDTO> products = new ArrayList<>();
-
-    public ProductPromotionDTO(ProductPromotion obj){
-        id = obj.getId();
-        discount = obj.getDiscount();
-    }
+	private Double discount;
+	
+	 private List<ProductDTO> products = new ArrayList<>();
+	public ProductPromotionDTO(ProductPromotion obj) {
+		id = obj.getId();
+		discount = obj.getDiscount();
+	}
 
 }
