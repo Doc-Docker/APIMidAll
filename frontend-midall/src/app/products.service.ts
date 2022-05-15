@@ -25,4 +25,12 @@ export class ProductsService {
     return this.http.post<Product>('http://localhost:8080/products', obj)
 
   }
+
+  
+  getProducts() : Observable<any[]> {
+    return this.http.get<Product[]>('http://localhost:8080/products')
+
+  }
+
+  
 }

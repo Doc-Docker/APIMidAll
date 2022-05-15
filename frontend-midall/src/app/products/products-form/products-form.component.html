@@ -5,11 +5,24 @@
 
 <div class="container">
     <form #productForm="ngForm" (ngSubmit)="onSubmit()">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-success" role="alert" *ngIf="success == true">
+                    Product saved/updated successfully!
+                </div>
+
+                <div class="alert alert-danger" role="alert" *ngFor="let erro of errors">
+                    {{ erro }}
+                </div>
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
                     <label>ID:</label>
-                    <input type="text" class="form-control" disabled="true" [ngModel]="product.id" name="id">
+                    <input type="text" class="form-control" disabled="true" [(ngModel)]="product.id" name="id">
                 </div>
             </div>
         </div>
@@ -50,12 +63,18 @@
         </div>
 
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-4">
                 <button type="submit" class="btn btn-success">
                     <i class="fa fa-save"></i>
                     Save Product
                 </button>
+
+                <button type="submit" class="btn btn-danger ml-2" routerLink="/products-list">
+                    <i class="fa fa-arrow-alt-circle-left"></i>
+                    return
+                </button>
             </div>
+
         </div>
     
     </form>

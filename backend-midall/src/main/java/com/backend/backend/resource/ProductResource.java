@@ -1,6 +1,7 @@
 package com.backend.backend.resource;
 
 import com.backend.backend.domain.Product;
+import com.backend.backend.domain.ProductPromotion;
 import com.backend.backend.domain.SearchProductFilters;
 import com.backend.backend.dto.ProductDTO;
 import com.backend.backend.service.ProductService;
@@ -9,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -36,8 +38,34 @@ public class ProductResource {
         return ResponseEntity.ok().body(response);
     }
 
+<<<<<<< HEAD
+    @GetMapping ("/products/preco")
+    public ResponseEntity<Double> preco(@RequestBody List<Product> lista, SearchProductFilters filters) {
+
+        Double precoTotal = 0.0;
+
+        for(Product produto : lista){
+            precoTotal = precoTotal + produto.getPrice();
+
+            if(!produto.getProductPromotions().isEmpty()){
+                List<ProductPromotion> promocoes = produto.getProductPromotions();
+                for(ProductPromotion promocao : promocoes){
+                    precoTotal = precoTotal - promocao.getDiscount();
+                }
+            }
+
+        }
+
+
+        return ResponseEntity.ok().body(precoTotal);
+    }
+
+    @RequestMapping(value = "/products", method = RequestMethod.POST)
+    public ResponseEntity<?> insert(@RequestBody @Valid ProductDTO newProduct) {
+=======
     @PostMapping ("/products")
     public ResponseEntity<?> insert(@RequestBody ProductDTO newProduct) {
+>>>>>>> main
         Product insertedProduct = productService.insert(newProduct);
 
         URI location = ServletUriComponentsBuilder
