@@ -26,19 +26,6 @@ public class ProductDTO implements Serializable {
 
 	private Integer id;
 
-
-	@NotBlank(message = "Name is required")
-	private String name;
-
-	@PositiveOrZero(message = "Price must be a value higher or equal to 0")
-	private Double price;
-
-	private String description;
-	 
-	private List<CategoryDTO> categories = new ArrayList<>();
-
-    private List<ProductDTO> productPromotions = new ArrayList<>();
-
     @NotEmpty(message = "{field.name.mandatory}")
     private String name;
 
