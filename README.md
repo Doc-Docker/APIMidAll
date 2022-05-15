@@ -27,7 +27,7 @@ Soluções que serão entregues na segunda sprint:
 
 | Sprints/Entregas do Projeto | Deliverables | Data de Início | Data de Término |
 | :---: | :---: | :---: | :---: |
-| `SPRINT 1` | Cadastro de Produto e Promoção | 25/03/2022 | 14/04/2022 |
+| `SPRINT 1` | Cadastro de Produtos e Promoções | 25/03/2022 | 14/04/2022 |
 | `SPRINT 2` | Processo de compra, listagem e edição de produtos | 25/04/2022 | 15/05/2022 |
 | `SPRINT 3` | Melhorias no motor de regras e desenvolvimento de promoções específicas | 16/05/2022 | 05/06/2022 |
 
