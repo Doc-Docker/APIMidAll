@@ -22,6 +22,7 @@ public class ProductPromotionDTO implements Serializable {
 	private Double discount;
 	
 	 private List<ProductDTO> products = new ArrayList<>();
+
 	public ProductPromotionDTO(ProductPromotion obj) {
 		id = obj.getId();
 		discount = obj.getDiscount();

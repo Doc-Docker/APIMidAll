@@ -5,6 +5,7 @@ import com.backend.backend.domain.Product;
 import com.backend.backend.domain.SearchProductFilters;
 import com.backend.backend.dto.CategoryDTO;
 import com.backend.backend.dto.ProductDTO;
+import com.backend.backend.dto.ProductPromotionDTO;
 import com.backend.backend.exceptions.BadRequestException;
 import com.backend.backend.exceptions.ObjectNotFoundException;
 import com.backend.backend.repository.ProductRepository;
@@ -139,6 +140,11 @@ public class ProductService {
         productDTO.getCategories().addAll(product.getCategories().stream().map(
                 category -> new CategoryDTO(category)
         ).collect(Collectors.toList()));
+
+        productDTO.getPromotions().addAll(product.getProductPromotions().stream().map(
+                productPromotion -> new ProductPromotionDTO(productPromotion))
+                .collect(Collectors.toList())
+        );
 
         return productDTO;
     }
