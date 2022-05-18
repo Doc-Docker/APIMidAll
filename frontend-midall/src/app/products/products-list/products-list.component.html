@@ -30,7 +30,13 @@
                         <td>{{ product.name }}</td>
                         <td>{{ product.price }}</td>
                         <td>{{ product.description }}</td>
-                        <td></td>
+                        <td>
+
+                            <button class="btn btn-primary" routerLink="/products-form/{{ product.id }}">
+                                <i class="fa fa-edit"></i>
+                            </button>
+
+                        </td>
                 
                     </tr>
                 </tbody>
