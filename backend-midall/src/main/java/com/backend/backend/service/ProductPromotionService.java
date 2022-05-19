@@ -1,5 +1,6 @@
 package com.backend.backend.service;
 
+import com.backend.backend.domain.Category;
 import com.backend.backend.domain.Product;
 import com.backend.backend.domain.ProductPromotion;
 import com.backend.backend.dto.ProductPromotionDTO;
@@ -7,6 +8,8 @@ import com.backend.backend.exceptions.BadRequestException;
 import com.backend.backend.repository.ProductPromotionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -19,6 +22,7 @@ public class ProductPromotionService {
 
     @Autowired
     ProductService productService;
+    
 
     public ProductPromotion insert(ProductPromotionDTO objDto){
         this.validateDTOProducts(objDto);
@@ -49,6 +53,13 @@ public class ProductPromotionService {
         ).collect(Collectors.toList()));
 
         return productPromotion;
+    }
+    public List<ProductPromotion> findAll() {
+        List<ProductPromotion> promotionList = productPromotionRepository.findAll();
+        if (promotionList.isEmpty()) { 
+            throw new BadRequestException("");
+        }
+        return productPromotionRepository.findAll();
     }
 
 }

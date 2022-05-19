@@ -28,9 +28,6 @@ public class CategoryPromotionService {
     CategoryService categoryService;
     
     @Autowired
-    private ModelMapper mapper;
-
-    @Autowired
     CategoryRepository categoryRepository;
 
     public CategoryPromotion insert(CategoryPromotionDTO objDto){
