@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../Product';
 import { ProductsService } from '../../products.service'
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-products-form',
@@ -23,16 +24,20 @@ export class ProductsFormComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    let params = this.activatedRoute.params
-    if(params && params.value && params.value.id){
-      this.id = params.value.id
-      this.service
+    let params : Observable<any> =  this.activatedRoute.params;
+    params.subscribe(urlParams=>{
+      this.id = urlParams['id'];
+      if(this.id){
+        this.service
         .getProductById(this.id)
         .subscribe(
-          res => this.product = res,
-          errorRes => this.product = new Product()
-        )
-    }
+          response => this.product = response,
+          errorResponse => this.product = new Product()
+          )
+      }
+        
+
+    })
   }
 
   onSubmit(){
