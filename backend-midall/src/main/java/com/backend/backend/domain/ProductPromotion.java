@@ -7,7 +7,11 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +26,17 @@ public class ProductPromotion implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
+    
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    private LocalDate startDate;
+    
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    private LocalDate finalDate;
+    
+    private Boolean isActive;
+    
+    private String typePromotion;
+    
     private Double discount;
 
     @JsonIgnore
@@ -34,8 +48,12 @@ public class ProductPromotion implements Serializable {
     )
     private List<Product> products = new ArrayList<>();
 
-    public ProductPromotion(Integer id, Double discount) {
+    public ProductPromotion(Integer id,LocalDate startDate, LocalDate finalDate, Boolean isActive, String typePromotion, Double discount) {
         this.id = id;
+        this.startDate = startDate;
+        this.finalDate = finalDate;
+        this.isActive = isActive;
+        this.typePromotion =typePromotion;
         this.discount = discount;
     }
 }

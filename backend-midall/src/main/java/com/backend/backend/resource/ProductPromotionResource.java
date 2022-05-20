@@ -4,12 +4,15 @@ import com.backend.backend.domain.Category;
 import com.backend.backend.domain.ProductPromotion;
 import com.backend.backend.dto.CategoryDTO;
 import com.backend.backend.dto.ProductPromotionDTO;
+import com.backend.backend.repository.ProductPromotionRepository;
 import com.backend.backend.service.ProductPromotionService;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
@@ -23,6 +26,9 @@ public class ProductPromotionResource {
     @Autowired
     ProductPromotionService productPromotionService;
     
+	@Autowired
+	ProductPromotionRepository productPromotionRepository;
+	
     @Autowired
     private ModelMapper mapper;
 
@@ -41,6 +47,20 @@ public class ProductPromotionResource {
         ProductPromotion productPromotion = productPromotionService.find(id);
         return ResponseEntity.ok().body(productPromotion);
     }
+    
+    @PutMapping("{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void update(@PathVariable Integer id, @RequestBody ProductPromotion promotion) {
+    
+    	productPromotionRepository.findById(id).map(ProductPromotion-> {
+    	promotion.setIsActive(promotion.getIsActive());
+    	return productPromotionRepository.save(promotion);
+    	}).orElseThrow(()-> new ResponseStatusException(HttpStatus.NO_CONTENT));
+    	
+    	                   
+    }
+    
+    
     @GetMapping
     public ResponseEntity<List<ProductPromotionDTO>> findAll() {
         List<ProductPromotion> listProductPromotion = productPromotionService.findAll();
