@@ -93,7 +93,7 @@ Na compra de 3 produtos, ganhe 50% de desconto no item de menor valor.
 
 - [x] [SPRINT 2](https://github.com/Doc-Docker/APIMidAll/tree/SPRINT-2) - 25/04/2022 a 15/05/2022
 
-- [ ] SPRINT 3 - 16/05/2022 a 05/06/2022
+- [x] [SPRINT 3](https://github.com/Doc-Docker/APIMidAll/tree/SPRINT-3) - 16/05/2022 a 05/06/2022
 
 - [ ] Feira de Soluções - 15/06/2022 às 19h
 
@@ -107,7 +107,7 @@ Na compra de 3 produtos, ganhe 50% de desconto no item de menor valor.
 
 🔖 SPRINT 2 ([Link da Pasta](https://github.com/Doc-Docker/APIMidAll/tree/SPRINT-2)):  Concluído ☑️
 
-🔖 SPRINT 3 :  Em Andamento 🚧
+🔖 SPRINT 3 ([Link da Pasta](https://github.com/Doc-Docker/APIMidAll/tree/SPRINT-3)):  Em Andamento 🚧
 
 <br>
 
