@@ -41,18 +41,32 @@ export class ProductsFormComponent implements OnInit {
   }
 
   onSubmit(){
-    this.service
-    .insert(this.product)
-    .subscribe( res =>{
-      this.success = true;
-      this.errors = null;
-      
-    }, errorRes =>{
-      this.success = false;
-      this.errors = errorRes.error.errors
-      
+
+    if(this.id){
+      this.service.update(this.id, this.product)
+      .subscribe( res => {
+        this.success = true;
+        this.errors = null;
+      }
+      )
     }
+    else{
+
+      this.service
+        .insert(this.product)
+        .subscribe( res =>{
+          this.success = true;
+          this.errors = null;
+          
+        }, errorRes =>{
+          this.success = false;
+          this.errors = errorRes.error.errors
+          
+        }
+        
+        )
+    }
+
     
-    )
   }
 }

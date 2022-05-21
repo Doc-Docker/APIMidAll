@@ -21,7 +21,7 @@ export class ProductsService {
           }
       ]
   
-  }
+    }
     return this.http.post<Product>('http://localhost:8080/products', obj)
 
   }
@@ -36,4 +36,18 @@ export class ProductsService {
     return this.http.get<any>(`http://localhost:8080/products/${id}`)
   }
   
+  update(id : number, product : Product) : Observable<Product> {
+    let obj = {
+      "name": product.name,
+      "price": product.price,
+      "categories": [
+          {
+              "id": product.categories
+          }
+      ]
+  
+    }
+    return this.http.patch<Product>(`http://localhost:8080/products/${id}`, obj)
+  }
 }
+ 

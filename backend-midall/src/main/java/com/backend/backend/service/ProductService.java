@@ -88,6 +88,11 @@ public class ProductService {
         finalProduct.setCategories(
                 productReceived.getCategories() != null ? productReceived.getCategories() : product.getCategories()
         );
+        finalProduct
+                .setProductPromotions(
+                        productReceived.getProductPromotions() != null ?
+                                productReceived.getProductPromotions() :
+                                product.getProductPromotions() );
 
         return productRepository.save(finalProduct);
     }
