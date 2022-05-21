@@ -2,6 +2,8 @@ package com.backend.backend.dto;
 
 import com.backend.backend.domain.CategoryPromotion;
 import com.backend.backend.domain.ProductPromotion;
+import com.backend.backend.enumerate.TypePromotion;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,6 +18,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 @Data
 @NoArgsConstructor
+
 public class ProductPromotionDTO implements Serializable {
 
 	private static final long serialVerionUID = 1L;
@@ -29,7 +32,7 @@ public class ProductPromotionDTO implements Serializable {
 
 	private Boolean isActive;
 
-	private String typePromotion;
+	private TypePromotion typePromotion;
 
 	private Double discount;
 

@@ -3,9 +3,13 @@ package com.backend.backend.service;
 import com.backend.backend.domain.Category;
 import com.backend.backend.domain.Product;
 import com.backend.backend.domain.ProductPromotion;
+import com.backend.backend.dto.CategoryDTO;
+import com.backend.backend.dto.ProductDTO;
 import com.backend.backend.dto.ProductPromotionDTO;
+import com.backend.backend.enumerate.TypePromotion;
 import com.backend.backend.exceptions.BadRequestException;
 import com.backend.backend.repository.ProductPromotionRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,20 +26,21 @@ public class ProductPromotionService {
 
 	@Autowired
 	ProductService productService;
-	
-	  public ProductPromotion findById(Integer id) {
-	        Optional<ProductPromotion> promotion = productPromotionRepository.findById(id);
 
-	        return promotion.get();
-	    }
-	
+	ProductPromotionService promotionService;
+
+	public ProductPromotion findById(Integer id) {
+		Optional<ProductPromotion> promotion = productPromotionRepository.findById(id);
+
+		return promotion.get();
+	}
 
 	public ProductPromotion insert(ProductPromotionDTO objDto) {
 		this.validateDTOProducts(objDto);
 		objDto.setId(null);
 
 		return productPromotionRepository.save(this.fromDTO(objDto));
-		// return catPromoRep.saveAndFlush(this.fromDTO(objDto));
+
 	}
 
 	public ProductPromotion find(Integer id) {
@@ -64,7 +69,33 @@ public class ProductPromotionService {
 
 		return productPromotion;
 	}
-	
+
+	public ProductPromotionDTO fromDomain(ProductPromotion promotion) {
+		ProductPromotionDTO promotionDTO = new ProductPromotionDTO(promotion);
+		promotionDTO.getProducts().addAll(
+				promotion.getProducts().stream().map(product -> new ProductDTO(product)).collect(Collectors.toList()));
+		return promotionDTO;
+
+	}
+
+	public Double applyPromotion(List<Product> products, Double value) {
+
+
+		for (Product product : products) {
+			if (product.getProductPromotions().get(0).getIsActive() == true) {
+				if (product.getProductPromotions().get(0).getTypePromotion().getCode() == 1) {
+					if (product.getPrice() > value) {
+						Double type = product.getPrice() - value;
+
+						return type;
+					}
+				}
+			}
+		}
+
+		return 1.0;
+
+	}
 
 	public List<ProductPromotion> findAll() {
 		List<ProductPromotion> promotionList = productPromotionRepository.findAll();
