@@ -12,6 +12,7 @@
                     <tr>
                         <th>Name</th>
                         <th>Preço</th>
+                        <th>Quantidade</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -19,13 +20,15 @@
                     <tr *ngFor="let p of products">
                         <td>{{ p.name }}</td>
                         <td>{{ p.price }}</td>
-                        
+                        <td>{{ p.quantidade}}</td>
+
                         <td> 
                             <button  class="btn btn-warning" (click)="deleteProduct(p)">
                                 <i class="fa fa-trash"></i>
                                 Delete
                             </button>
                         </td>
+                        
                 
                     </tr>
                 </tbody>
@@ -33,6 +36,7 @@
                     <tr>
                         <th>Preço Total:</th>
                         <th>{{ finalPrice }}</th>
+                        <th></th>
                         <th></th>
                     </tr>
                 </tfoot>

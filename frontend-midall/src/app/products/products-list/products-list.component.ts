@@ -11,6 +11,8 @@ import { Product } from '../Product';
 export class ProductsListComponent implements OnInit {
 
   products : Product[] = []
+  id: number;
+  lista : number[] = [1,2,3,4,5];
 
   constructor(private service: ProductsService) { }
 
@@ -21,8 +23,13 @@ export class ProductsListComponent implements OnInit {
   }
 
   addProduct(product : Product){
+
+    if(product.quantidade != null){
+      Cart.products.push(product);
+    }
     
-    Cart.products.push(product);
+
+      
     this.ngOnInit();
   }
 

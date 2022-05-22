@@ -21,7 +21,7 @@ export class CartItemsComponent implements OnInit {
     Cart.products.forEach(element => {
       
       this.products.push(element);
-      this.finalPrice = this.finalPrice += element.price;
+      this.finalPrice = this.finalPrice += (element.price * element.quantidade);
     });
   }
 

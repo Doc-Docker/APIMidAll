@@ -23,6 +23,7 @@
                         <th>Description</th>
                         <th></th>
                         <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,6 +32,15 @@
                         <td>{{ product.name }}</td>
                         <td>{{ product.price }}</td>
                         <td>{{ product.description }}</td>
+
+                        <td>
+                            <select class="form-control" type="number" [(ngModel)]="product.quantidade">
+                                <option [value]="n" *ngFor="let n of lista" >
+                                  <p>{{n}}</p>
+                                </option>
+                              </select>
+                        </td>
+
                         <td>
 
                             <button class="btn btn-primary" routerLink="/products-form/{{ product.id }}">
@@ -42,7 +52,7 @@
                         </td>
 
                         <td>
-                            <button  class="btn btn-success" (click)="addProduct(product)">
+                            <button  class="btn btn-success" (click)="addProduct(product)" >
                                 <i class="fa fa-plus"></i>
                             </button>
                         </td>
