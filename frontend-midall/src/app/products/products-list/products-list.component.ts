@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Cart } from 'src/app/cart/Cart';
 import { ProductsService } from 'src/app/products.service';
 import { Product } from '../Product';
 
@@ -17,6 +18,12 @@ export class ProductsListComponent implements OnInit {
     this.service
       .getProducts()
       .subscribe( res => this.products = res )
+  }
+
+  addProduct(product : Product){
+    
+    Cart.products.push(product);
+    this.ngOnInit();
   }
 
 }

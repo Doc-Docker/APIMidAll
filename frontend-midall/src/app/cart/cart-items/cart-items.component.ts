@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/products/Product';
+import { Cart } from '../Cart';
 
 @Component({
   selector: 'app-cart-items',
@@ -7,9 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartItemsComponent implements OnInit {
 
+  cart : Cart;
+  finalPrice : number = 0;
+  products : Product[] = [];
+  
   constructor() { }
 
   ngOnInit(): void {
+    this.products = [];
+    this.finalPrice = 0;
+    Cart.products.forEach(element => {
+      
+      this.products.push(element);
+      this.finalPrice = this.finalPrice += element.price;
+    });
   }
 
+  deleteProduct(product : Product){
+    
+
+    let position = Cart.products.indexOf(product);
+    if (position !== -1) {
+      Cart.products.splice(position, 1);
+  }    
+    this.ngOnInit();
+  }
 }
