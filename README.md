@@ -2,6 +2,27 @@
 
 <br>
 
+## :black_nib: Escopo da Solução
+Abaixo elencamos as necessidades identificadas em consulta aos stakeholders, classificando-as: 
+
+| Necessidades | Categorias |
+| :--- | :---: |
+| 1. Desenvolvimento do Motor de Regras para as promoções. | Essencial |
+| 2. Finalização do processo de compra no carrinho. | Essencial |
+| 3. Implementação dos tipos de promoção (Valor, Porcentagem e Quantidade). | Importante |
+| 4. Edição da listagem de promoções e produtos. | Desejável |
+| 5. Melhora no sistema de promoções com mais autonomia do administrador. | Desejável |
+
+:pushpin: **Principais deliverables**
+
+Soluções que serão entregues na segunda sprint:
+
+> Motor de Regras das Promoções
+
+> Processo de compra inteligente
+
+<br>
+
 ## 🚀 Apresentação SPRINT 3
 
 vídeo carregando...🔋
