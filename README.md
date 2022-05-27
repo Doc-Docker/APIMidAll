@@ -15,7 +15,7 @@ Abaixo elencamos as necessidades identificadas em consulta aos stakeholders, cla
 
 :pushpin: **Principais deliverables**
 
-Soluções que serão entregues na segunda sprint:
+Soluções que serão entregues na terceira sprint:
 
 > Motor de Regras das Promoções
 
