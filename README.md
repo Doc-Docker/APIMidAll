@@ -5,7 +5,7 @@
 ## :black_nib: Escopo da Solução
 Abaixo elencamos as necessidades identificadas em consulta aos stakeholders, classificando-as: 
 
-| Necessidades | Categorias |
+| Necessidades - SPRINT 3 | Categorias |
 | :--- | :---: |
 | 1. Desenvolvimento do Motor de Regras para as promoções. | Essencial |
 | 2. Finalização do processo de compra no carrinho. | Essencial |
