@@ -34,7 +34,7 @@
 
 <br>
 
-> Status do Projeto: <img src = "https://github.com/Doc-Docker/APIMidAll/blob/main/Images/barra1.png" width="90" height="20" /> Em Andamento 🕗
+> Status do Projeto: <img src = "https://github.com/Doc-Docker/APIMidAll/blob/main/Images/barra2.png" width="90" height="20" /> Em Andamento 🕗
 
 <br>
 
