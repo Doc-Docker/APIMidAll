@@ -75,9 +75,6 @@ Na compra de 3 produtos, ganhe 50% de desconto no item de menor valor.
 
 <br>
 
-**:link: Clique no link abaixo para visualizar o *Wireframe no Figma*:** 
-> [Figma Atualizado](https://www.figma.com/file/9x87JgSK0HbLfNtucaYlDW/API-MidAll)
-
 **:link: Clique no link abaixo para visualizar o *PM Canvas*:** 
 > [Project Model Canvas](https://github.com/Doc-Docker/APIMidAll/blob/main/Images/PM_Canvas_Doc.png)
 
