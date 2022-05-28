@@ -10,12 +10,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-public enum TypePromotion {
-	VALUE(1), PERCENTAGE(2);
+public enum ReceivePromotion {
+	PRODUCT(1), TOTAL(2), PRODUCT_QUANTITY(3), CATEGORY(4);
 
 	private int code;
 
-	private TypePromotion(int code) {
+	private ReceivePromotion(int code) {
 		this.code = code;    
 	}
 
@@ -23,8 +23,8 @@ public enum TypePromotion {
 		return code;
 	}
 
-	public static TypePromotion valueOf(int code) {
-		for (TypePromotion value : TypePromotion.values()) {
+	public static ReceivePromotion valueOf(int code) {
+		for (ReceivePromotion value : ReceivePromotion.values()) {
 			if (code == value.getCode()) {
 				return value;
 			}

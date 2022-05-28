@@ -13,6 +13,10 @@ import com.backend.backend.repository.ProductPromotionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -26,8 +30,6 @@ public class ProductPromotionService {
 
 	@Autowired
 	ProductService productService;
-
-	ProductPromotionService promotionService;
 
 	public ProductPromotion findById(Integer id) {
 		Optional<ProductPromotion> promotion = productPromotionRepository.findById(id);
@@ -58,9 +60,9 @@ public class ProductPromotionService {
 
 	private ProductPromotion fromDTO(ProductPromotionDTO productPromotionDTO) {
 		ProductPromotion productPromotion = new ProductPromotion(productPromotionDTO.getId(),
-				productPromotionDTO.getStartDate(), productPromotionDTO.getFinalDate(),
+				productPromotionDTO.getName(), productPromotionDTO.getStartDate(), productPromotionDTO.getFinalDate(),
 				productPromotionDTO.getIsActive(), productPromotionDTO.getTypePromotion(),
-				productPromotionDTO.getDiscount());
+				productPromotionDTO.getReceivePromotion(), productPromotionDTO.getDiscount());
 
 		productPromotion.getProducts()
 				.addAll(productPromotionDTO.getProducts().stream().map(productDTO -> new Product(productDTO.getId(),
@@ -78,25 +80,78 @@ public class ProductPromotionService {
 
 	}
 
-	public Double applyPromotion(List<Product> products, Double value) {
+//	public Double applyPromotion(List<Product> products) {
+//		Double type = 0.0;
+//		for (Product product : products) {
+//
+//			if (product.getProductPromotions().get(0).getIsActive() == true) {
+//
+//				type = promotionService.retornaProdutoPromocao(product);
+//
+////				if (product.getProductPromotions().get(0).getTypePromotion().getCode() == 1
+////						|| product.getProductPromotions().get(0).getTypePromotion().getCode() == 2) {
+////
+////					if (product.getPrice() > product.getProductPromotions().get(0).getDiscount()) {
+////						type = product.getPrice() - product.getProductPromotions().get(0).getDiscount();
+//
+//				return type;
+//			}
+//		}
+////			}
+////
+////		}
+//
+//		return type;
+//
+//	}
 
+	public Double retornaProdutoPromocao(List<Product> product) {
+         
+		List<ProductPromotion> productPromotion  = new ArrayList<ProductPromotion>(); 
+		
+	    productPromotion.addAll(product.get(0).getProductPromotions());
+		int n = productPromotion.size();
+		int i = 0;
+		Double desconto = 0.0;
+		for (i = 0; i < n; i++) {
 
-		for (Product product : products) {
-			if (product.getProductPromotions().get(0).getIsActive() == true) {
-				if (product.getProductPromotions().get(0).getTypePromotion().getCode() == 1) {
-					if (product.getPrice() > value) {
-						Double type = product.getPrice() - value;
+			
+			while(i<n) {
+				Double valor = 0.0;
+				Double valor2 = 0.0;
+				if (product.get(0).getProductPromotions().get(i).getIsActive() == true) {
+					if (product.get(0).getProductPromotions().get(i).getReceivePromition().getCode() == productPromotion.get(i).getReceivePromition().getCode()) {
+						if (product.get(0).getProductPromotions().get(i).getTypePromotion().getCode() == 1) {
+							desconto = product.get(0).getPrice() - product.get(0).getProductPromotions().get(i).getDiscount();
+							valor2 = desconto;
+							if ( valor < valor2) {
+								desconto = valor2;
 
-						return type;
+							}
+						}
+
+						if (product.get(0).getProductPromotions().get(i).getTypePromotion().getCode() == 2) {
+							desconto = product.get(0).getPrice() - ((product.get(0).getProductPromotions().get(i).getDiscount() / 100)
+									* product.get(0).getPrice());
+							valor2 = desconto;
+							if (valor < valor2) {
+								desconto = valor2;
+
+							}
+						}
+
 					}
 				}
+				valor = desconto;
+				i++;
 			}
+			
+			
 		}
-
-		return 1.0;
-
+		
+		return desconto;
 	}
-
+	
 	public List<ProductPromotion> findAll() {
 		List<ProductPromotion> promotionList = productPromotionRepository.findAll();
 		if (promotionList.isEmpty()) {

@@ -5,6 +5,7 @@ import com.backend.backend.domain.Product;
 import com.backend.backend.domain.ProductPromotion;
 import com.backend.backend.domain.SearchProductFilters;
 import com.backend.backend.dto.CategoryDTO;
+import com.backend.backend.dto.ProductDTO;
 import com.backend.backend.dto.ProductPromotionDTO;
 import com.backend.backend.repository.ProductPromotionRepository;
 import com.backend.backend.repository.ProductRepository;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.io.Serializable;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,8 +39,7 @@ public class ProductPromotionResource {
 	@Autowired
 	ProductService products;
 
-	@Autowired
-	private ModelMapper mapper;
+
 
 	@PostMapping
 	public ResponseEntity<?> insert(@RequestBody ProductPromotionDTO obj) {
@@ -50,14 +51,10 @@ public class ProductPromotionResource {
 	@GetMapping("/{id}")
 	public ResponseEntity<?> find(@PathVariable Integer id) {
 		ProductPromotion productPromotion = productPromotionService.find(id);
-		
-	
-
-		Double value = 1000.00;
 
 		ProductPromotionService promotion = new ProductPromotionService();
 
-		Double teste = promotion.applyPromotion(productPromotion.getProducts(), value);
+		Double teste = promotion.retornaProdutoPromocao(productPromotion.getProducts());
 
 		System.out.println(teste);
 		return ResponseEntity.ok().body(productPromotion);
@@ -99,18 +96,14 @@ public class ProductPromotionResource {
 	@GetMapping("/promotions")
 	public ResponseEntity<List<ProductPromotionDTO>> findAll() {
 		List<ProductPromotion> listProductPromotion = productPromotionService.findAll();
-
 		List<ProductPromotionDTO> listProductPromotionDto = listProductPromotion.stream()
-				.map(productPromotionService -> mapper.map(productPromotionService, ProductPromotionDTO.class))
+				.map(productPromotion -> productPromotionService.fromDomain(productPromotion))
 				.collect(Collectors.toList());
+				
 
 		return ResponseEntity.ok().body(listProductPromotionDto);
 
-	}
+	} 
 
-	@GetMapping("/teste")
-	public void teste() {
-		
 
-	}
 }

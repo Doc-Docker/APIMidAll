@@ -2,6 +2,7 @@ package com.backend.backend.dto;
 
 import com.backend.backend.domain.CategoryPromotion;
 import com.backend.backend.domain.ProductPromotion;
+import com.backend.backend.enumerate.ReceivePromotion;
 import com.backend.backend.enumerate.TypePromotion;
 
 import lombok.AllArgsConstructor;
@@ -24,6 +25,9 @@ public class ProductPromotionDTO implements Serializable {
 	private static final long serialVerionUID = 1L;
 
 	private Integer id;
+	
+	private String name;
+	
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private LocalDate startDate;
 
@@ -33,6 +37,8 @@ public class ProductPromotionDTO implements Serializable {
 	private Boolean isActive;
 
 	private TypePromotion typePromotion;
+	
+	private ReceivePromotion receivePromotion;
 
 	private Double discount;
 
@@ -40,10 +46,12 @@ public class ProductPromotionDTO implements Serializable {
 
 	public ProductPromotionDTO(ProductPromotion obj) {
 		id = obj.getId();
+		name= obj.getName();
 		startDate = obj.getStartDate();
 		finalDate = obj.getFinalDate();
 		isActive = obj.getIsActive();
 		typePromotion = obj.getTypePromotion();
+		receivePromotion = obj.getReceivePromition();
 		discount = obj.getDiscount();
 		
 	}

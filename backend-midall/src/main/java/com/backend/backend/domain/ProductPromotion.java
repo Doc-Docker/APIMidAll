@@ -1,6 +1,7 @@
 package com.backend.backend.domain;
 
 import com.backend.backend.dto.ProductDTO;
+import com.backend.backend.enumerate.ReceivePromotion;
 import com.backend.backend.enumerate.TypePromotion;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
@@ -27,6 +28,8 @@ public class ProductPromotion implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	
+	private String name;
 
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private LocalDate startDate;
@@ -38,6 +41,8 @@ public class ProductPromotion implements Serializable {
 
 	private Integer typePromotion;
 
+	private Integer receivePromition;
+
 	private Double discount;
 
 	@JsonIgnore
@@ -45,15 +50,24 @@ public class ProductPromotion implements Serializable {
 	@JoinTable(name = "PROMOTION_PRODUCT", joinColumns = @JoinColumn(name = "productPromotion_id"), inverseJoinColumns = @JoinColumn(name = "Product_id"))
 	private List<Product> products = new ArrayList<>();
 
-	public ProductPromotion(Integer id, LocalDate startDate, LocalDate finalDate, Boolean isActive,
-			TypePromotion typePromotion, Double discount) {
+	public ProductPromotion(Integer id,String name, LocalDate startDate, LocalDate finalDate, Boolean isActive,
+			TypePromotion typePromotion, ReceivePromotion receivePromition,  Double discount) {
 		this.id = id;
+		this.name= name;
 		this.startDate = startDate;
 		this.finalDate = finalDate;
 		this.isActive = isActive;
 		setTypePromotion(typePromotion);
+		setReceivePromition(receivePromition);
 		this.discount = discount;
 
+	}
+
+	private void setReceivePromition(ReceivePromotion receivePromition) {
+		if (receivePromition != null) {
+			this.receivePromition = receivePromition.getCode();
+		}
+		
 	}
 
 	public void setTypePromotion(TypePromotion typePromotion) {
@@ -67,4 +81,8 @@ public class ProductPromotion implements Serializable {
 		return TypePromotion.valueOf(typePromotion);
 	}
 
+	
+	public ReceivePromotion getReceivePromition() {
+		return ReceivePromotion.valueOf(receivePromition);
+	}
 }
