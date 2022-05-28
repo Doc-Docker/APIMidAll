@@ -20,14 +20,14 @@ public class Category implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
+    
     private String name;
 
     @ManyToMany(mappedBy = "categories")
     private List<Product> products = new ArrayList<>();
 
-    @ManyToMany(mappedBy = "categories")
-    private List<CategoryPromotion> catPromotions = new ArrayList<>();
+//    @ManyToMany(mappedBy = "categories")
+//    private List<CategoryPromotion> catPromotions = new ArrayList<>();
 
     public Category(Integer id, String name) {
         this.id = id;

@@ -60,9 +60,9 @@ public class ProductPromotionService {
 
 	private ProductPromotion fromDTO(ProductPromotionDTO productPromotionDTO) {
 		ProductPromotion productPromotion = new ProductPromotion(productPromotionDTO.getId(),
-				productPromotionDTO.getName(), productPromotionDTO.getStartDate(), productPromotionDTO.getFinalDate(),
-				productPromotionDTO.getIsActive(), productPromotionDTO.getTypePromotion(),
-				productPromotionDTO.getReceivePromotion(), productPromotionDTO.getDiscount());
+				productPromotionDTO.getName(), productPromotionDTO.getIsActive(),
+				productPromotionDTO.getTypePromotion(), productPromotionDTO.getReceivePromotion(),
+				productPromotionDTO.getQuantidade(), productPromotionDTO.getDiscount());
 
 		productPromotion.getProducts()
 				.addAll(productPromotionDTO.getProducts().stream().map(productDTO -> new Product(productDTO.getId(),
@@ -80,59 +80,85 @@ public class ProductPromotionService {
 
 	}
 
-//	public Double applyPromotion(List<Product> products) {
-//		Double type = 0.0;
-//		for (Product product : products) {
-//
-//			if (product.getProductPromotions().get(0).getIsActive() == true) {
-//
-//				type = promotionService.retornaProdutoPromocao(product);
-//
-////				if (product.getProductPromotions().get(0).getTypePromotion().getCode() == 1
-////						|| product.getProductPromotions().get(0).getTypePromotion().getCode() == 2) {
-////
-////					if (product.getPrice() > product.getProductPromotions().get(0).getDiscount()) {
-////						type = product.getPrice() - product.getProductPromotions().get(0).getDiscount();
-//
-//				return type;
-//			}
-//		}
-////			}
-////
-////		}
-//
-//		return type;
-//
-//	}
-
-	public Double retornaProdutoPromocao(List<Product> product) {
-         
-		List<ProductPromotion> productPromotion  = new ArrayList<ProductPromotion>(); 
+	public Double retornaProdutoPromocao(List<Product> product) {			
 		
-	    productPromotion.addAll(product.get(0).getProductPromotions());
+		List<ProductPromotion> productPromotion = new ArrayList<ProductPromotion>();
+
+		productPromotion.addAll(product.get(0).getProductPromotions());
 		int n = productPromotion.size();
 		int i = 0;
 		Double desconto = 0.0;
 		for (i = 0; i < n; i++) {
 
-			
-			while(i<n) {
+			while (i < n) {
 				Double valor = 0.0;
 				Double valor2 = 0.0;
 				if (product.get(0).getProductPromotions().get(i).getIsActive() == true) {
-					if (product.get(0).getProductPromotions().get(i).getReceivePromition().getCode() == productPromotion.get(i).getReceivePromition().getCode()) {
+					if (product.get(0).getProductPromotions().get(i).getReceivePromition().getCode() == 1) {
 						if (product.get(0).getProductPromotions().get(i).getTypePromotion().getCode() == 1) {
-							desconto = product.get(0).getPrice() - product.get(0).getProductPromotions().get(i).getDiscount();
+							desconto = product.get(0).getPrice()
+									- product.get(0).getProductPromotions().get(i).getDiscount();
 							valor2 = desconto;
-							if ( valor < valor2) {
+							if (valor < valor2) {
 								desconto = valor2;
 
 							}
 						}
 
 						if (product.get(0).getProductPromotions().get(i).getTypePromotion().getCode() == 2) {
-							desconto = product.get(0).getPrice() - ((product.get(0).getProductPromotions().get(i).getDiscount() / 100)
-									* product.get(0).getPrice());
+							desconto = product.get(0).getPrice()
+									- ((product.get(0).getProductPromotions().get(i).getDiscount() / 100)
+											* product.get(0).getPrice());
+							valor2 = desconto;
+							if (valor < valor2) {
+								desconto = valor2;
+
+							}
+						}
+
+					}
+				
+					// quantidade
+					if (product.get(0).getProductPromotions().get(i).getReceivePromition().getCode() == 3
+							&& product.get(i).getId() > product.get(0).getProductPromotions().get(i).getQuantidade()) {
+						if (product.get(0).getProductPromotions().get(i).getTypePromotion().getCode() == 1) {
+							desconto = product.get(0).getPrice()
+									- product.get(0).getProductPromotions().get(i).getDiscount();
+							valor2 = desconto;
+							if (valor < valor2) {
+								desconto = valor2;
+
+							}
+						}
+
+						if (product.get(0).getProductPromotions().get(i).getTypePromotion().getCode() == 2) {
+							desconto = product.get(0).getPrice()
+									- ((product.get(0).getProductPromotions().get(i).getDiscount() / 100)
+											* product.get(0).getPrice());
+							valor2 = desconto;
+							if (valor < valor2) {
+								desconto = valor2;
+
+							}
+						}
+
+					}
+					if (product.get(0).getProductPromotions().get(i).getReceivePromition().getCode() == 4
+							&& product.get(i).getId() == product.get(0).getProductPromotions().get(i).getNumberCategory()) {
+						if (product.get(0).getProductPromotions().get(i).getTypePromotion().getCode() == 1) {
+							desconto = product.get(0).getPrice()
+									- product.get(0).getProductPromotions().get(i).getDiscount();
+							valor2 = desconto;
+							if (valor < valor2) {
+								desconto = valor2;
+
+							}
+						}
+
+						if (product.get(0).getProductPromotions().get(i).getTypePromotion().getCode() == 2) {
+							desconto = product.get(0).getPrice()
+									- ((product.get(0).getProductPromotions().get(i).getDiscount() / 100)
+											* product.get(0).getPrice());
 							valor2 = desconto;
 							if (valor < valor2) {
 								desconto = valor2;
@@ -145,13 +171,12 @@ public class ProductPromotionService {
 				valor = desconto;
 				i++;
 			}
-			
-			
+
 		}
-		
+
 		return desconto;
 	}
-	
+
 	public List<ProductPromotion> findAll() {
 		List<ProductPromotion> promotionList = productPromotionRepository.findAll();
 		if (promotionList.isEmpty()) {

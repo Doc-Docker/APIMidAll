@@ -36,22 +36,30 @@ public class Bootstrap implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		Category cat1 = new Category(null, "informatica");
 		Category cat2 = new Category(null, "Escritorio");
+	
+
 
 		Product p1 = new Product(null, "Computador", 2000.00, "Description p1");
 		Product p2 = new Product(null, "Impressora", 800.00, "Description p2");
 		Product p3 = new Product(null, "Mouse", 80.00, "Description p3");
+		Product p4 = new Product(null, "Mouse sem fio", 100.00, "Description p4");
+		Product p5 = new Product(null, "Criado Mudo", 200.00, "Description p5");
+		Product p6 = new Product(null, "Mesa", 300.00, "Description p6");
 
-		cat1.getProducts().addAll(Arrays.asList(p1, p2, p3));
-		cat2.getProducts().addAll(Arrays.asList(p2));
+		cat1.getProducts().addAll(Arrays.asList(p1, p2, p3, p4));
+		cat2.getProducts().addAll(Arrays.asList(p2, p5, p6));
 		p1.getCategories().addAll(Arrays.asList(cat1));
 		p2.getCategories().addAll(Arrays.asList(cat1, cat2));
 		p3.getCategories().addAll(Arrays.asList(cat1));
+		p4.getCategories().addAll(Arrays.asList(cat1));
+		p5.getCategories().addAll(Arrays.asList(cat2));
+		p6.getCategories().addAll(Arrays.asList(cat2));
 
 		
 
 		categoryRepository.saveAll(Arrays.asList(cat1, cat2));
 
-		productRepository.saveAll(Arrays.asList(p1, p2, p3));
+		productRepository.saveAll(Arrays.asList(p1, p2, p3, p4, p5, p6));
 
 	
 

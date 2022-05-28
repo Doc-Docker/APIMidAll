@@ -29,13 +29,9 @@ public class ProductPromotion implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
+	private Integer numberCategory;
+	
 	private String name;
-
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
-	private LocalDate startDate;
-
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
-	private LocalDate finalDate;
 
 	private Boolean isActive;
 
@@ -43,22 +39,24 @@ public class ProductPromotion implements Serializable {
 
 	private Integer receivePromition;
 
+	private Integer quantidade;
+	
 	private Double discount;
 
 	@JsonIgnore
 	@ManyToMany
 	@JoinTable(name = "PROMOTION_PRODUCT", joinColumns = @JoinColumn(name = "productPromotion_id"), inverseJoinColumns = @JoinColumn(name = "Product_id"))
 	private List<Product> products = new ArrayList<>();
+	
 
-	public ProductPromotion(Integer id,String name, LocalDate startDate, LocalDate finalDate, Boolean isActive,
-			TypePromotion typePromotion, ReceivePromotion receivePromition,  Double discount) {
+	public ProductPromotion(Integer id,String name, Boolean isActive,
+			TypePromotion typePromotion, ReceivePromotion receivePromition, Integer quantidade, Double discount) {
 		this.id = id;
 		this.name= name;
-		this.startDate = startDate;
-		this.finalDate = finalDate;
 		this.isActive = isActive;
 		setTypePromotion(typePromotion);
 		setReceivePromition(receivePromition);
+		this.quantidade = quantidade;
 		this.discount = discount;
 
 	}
@@ -85,4 +83,6 @@ public class ProductPromotion implements Serializable {
 	public ReceivePromotion getReceivePromition() {
 		return ReceivePromotion.valueOf(receivePromition);
 	}
+
+	
 }

@@ -39,10 +39,8 @@ public class ProductPromotionResource {
 	@Autowired
 	ProductService products;
 
-
-
 	@PostMapping
-	public ResponseEntity<?> insert(@RequestBody ProductPromotionDTO obj) {
+	public ResponseEntity<?> createPromotion(@RequestBody ProductPromotionDTO obj) {
 		ProductPromotion insertedPromotion = productPromotionService.insert(obj);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
 		return ResponseEntity.created(uri).build();
@@ -60,38 +58,39 @@ public class ProductPromotionResource {
 		return ResponseEntity.ok().body(productPromotion);
 	}
 
-	@PutMapping("{id}")
+	@PutMapping("disable/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void update(@PathVariable Integer id, @RequestBody ProductPromotion promotion) {
+	public void disablePromotion(@PathVariable Integer id, @RequestBody ProductPromotion promotion) {
 
 		productPromotionRepository.findById(id).map(ProductPromotion -> {
-			promotion.setIsActive(promotion.getIsActive());
+			if (promotion.getIsActive() == false) {
+
+				promotion.setIsActive(true);
+				return productPromotionRepository.save(promotion);
+			}
+
+			if (promotion.getIsActive() == true) {
+
+				promotion.setIsActive(false);
+				return productPromotionRepository.save(promotion);
+			}
+
 			return productPromotionRepository.save(promotion);
 		}).orElseThrow(() -> new ResponseStatusException(HttpStatus.NO_CONTENT));
 
 	}
 
-	@PutMapping("/insert/{id}")
-	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void insertProduct(@PathVariable Integer id, @RequestBody ProductPromotion promotion) {
-		SearchProductFilters filters = new SearchProductFilters();
-		productPromotionRepository.findById(id).map(ProductPromotion -> {
-			promotion.setProducts(products.findAll(filters));
-			return productPromotionRepository.save(promotion);
-		}).orElseThrow(() -> new ResponseStatusException(HttpStatus.NO_CONTENT));
 
-	}
-
-	@PutMapping("/remove/{id}")
-	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void removeProduct(@PathVariable Integer id, @RequestBody ProductPromotion promotion) {
-		SearchProductFilters filters = new SearchProductFilters();
-		productPromotionRepository.findById(id).map(ProductPromotion -> {
-			products.delete(id);
-			return productPromotionRepository.save(promotion);
-		}).orElseThrow(() -> new ResponseStatusException(HttpStatus.NO_CONTENT));
-
-	}
+//	@PutMapping("/remove/{id}")
+//	@ResponseStatus(HttpStatus.NO_CONTENT)
+//	public void removeProduct(@PathVariable Integer id, @RequestBody ProductPromotion promotion) {
+//		SearchProductFilters filters = new SearchProductFilters();
+//		productPromotionRepository.findById(id).map(ProductPromotion -> {
+//			products.delete(id);
+//			return productPromotionRepository.save(promotion);
+//		}).orElseThrow(() -> new ResponseStatusException(HttpStatus.NO_CONTENT));
+//
+//	}
 
 	@GetMapping("/promotions")
 	public ResponseEntity<List<ProductPromotionDTO>> findAll() {
@@ -99,11 +98,9 @@ public class ProductPromotionResource {
 		List<ProductPromotionDTO> listProductPromotionDto = listProductPromotion.stream()
 				.map(productPromotion -> productPromotionService.fromDomain(productPromotion))
 				.collect(Collectors.toList());
-				
 
 		return ResponseEntity.ok().body(listProductPromotionDto);
 
-	} 
-
+	}
 
 }

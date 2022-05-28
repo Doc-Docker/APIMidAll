@@ -26,19 +26,17 @@ public class ProductPromotionDTO implements Serializable {
 
 	private Integer id;
 	
+	private Integer numberCategory;
+	
 	private String name;
 	
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
-	private LocalDate startDate;
-
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
-	private LocalDate finalDate;
-
 	private Boolean isActive;
 
 	private TypePromotion typePromotion;
 	
 	private ReceivePromotion receivePromotion;
+	
+    private Integer quantidade;
 
 	private Double discount;
 
@@ -47,11 +45,10 @@ public class ProductPromotionDTO implements Serializable {
 	public ProductPromotionDTO(ProductPromotion obj) {
 		id = obj.getId();
 		name= obj.getName();
-		startDate = obj.getStartDate();
-		finalDate = obj.getFinalDate();
 		isActive = obj.getIsActive();
 		typePromotion = obj.getTypePromotion();
 		receivePromotion = obj.getReceivePromition();
+		quantidade = obj.getQuantidade();
 		discount = obj.getDiscount();
 		
 	}
