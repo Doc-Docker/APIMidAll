@@ -20,10 +20,12 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.io.Serializable;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
@@ -40,7 +42,7 @@ public class ProductPromotionResource {
 	ProductService products;
 
 	@PostMapping
-	public ResponseEntity<?> createPromotion(@RequestBody ProductPromotionDTO obj) {
+	public ResponseEntity<?> createPromotion(@RequestBody @Valid ProductPromotionDTO obj) {
 		ProductPromotion insertedPromotion = productPromotionService.insert(obj);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
 		return ResponseEntity.created(uri).build();
@@ -60,7 +62,10 @@ public class ProductPromotionResource {
 
 	@PutMapping("disable/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void disablePromotion(@PathVariable Integer id, @RequestBody ProductPromotion promotion) {
+	public void disablePromotion(@PathVariable Integer id) {
+
+		Optional<ProductPromotion> productPromotion = productPromotionRepository.findById(id);
+		ProductPromotion promotion = productPromotion.get();
 
 		productPromotionRepository.findById(id).map(ProductPromotion -> {
 			if (promotion.getIsActive() == false) {
@@ -79,18 +84,6 @@ public class ProductPromotionResource {
 		}).orElseThrow(() -> new ResponseStatusException(HttpStatus.NO_CONTENT));
 
 	}
-
-
-//	@PutMapping("/remove/{id}")
-//	@ResponseStatus(HttpStatus.NO_CONTENT)
-//	public void removeProduct(@PathVariable Integer id, @RequestBody ProductPromotion promotion) {
-//		SearchProductFilters filters = new SearchProductFilters();
-//		productPromotionRepository.findById(id).map(ProductPromotion -> {
-//			products.delete(id);
-//			return productPromotionRepository.save(promotion);
-//		}).orElseThrow(() -> new ResponseStatusException(HttpStatus.NO_CONTENT));
-//
-//	}
 
 	@GetMapping("/promotions")
 	public ResponseEntity<List<ProductPromotionDTO>> findAll() {

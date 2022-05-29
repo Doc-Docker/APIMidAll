@@ -10,6 +10,9 @@ import { ProductPromotion } from '../ProductPromotion';
 export class PromotionsFormComponent implements OnInit {
 
   productPromotion : ProductPromotion
+  success: boolean = false;
+  errors: String[];
+  id : number;
 
   constructor(private service : ProductPromotionService) {
     this.productPromotion = new ProductPromotion();
@@ -20,10 +23,18 @@ export class PromotionsFormComponent implements OnInit {
 
   onSubmit(){
     this.service
-    .insert(this.productPromotion)
-    .subscribe( res =>{
-      console.log(res)
-    })
+        .insert(this.productPromotion)
+        .subscribe( res =>{
+          this.success = true;
+          this.errors = null;
+          
+        }, errorRes =>{
+          this.success = false;
+          this.errors = errorRes.error.errors
+          
+        }
+        
+        )
   }
 
 }

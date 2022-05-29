@@ -40,6 +40,7 @@ public class ProductPromotionService {
 	public ProductPromotion insert(ProductPromotionDTO objDto) {
 		this.validateDTOProducts(objDto);
 		objDto.setId(null);
+		objDto.setIsActive(true);
 
 		return productPromotionRepository.save(this.fromDTO(objDto));
 
@@ -61,8 +62,8 @@ public class ProductPromotionService {
 	private ProductPromotion fromDTO(ProductPromotionDTO productPromotionDTO) {
 		ProductPromotion productPromotion = new ProductPromotion(productPromotionDTO.getId(),
 				productPromotionDTO.getName(), productPromotionDTO.getIsActive(),
-				productPromotionDTO.getTypePromotion(), productPromotionDTO.getReceivePromotion(),
-				productPromotionDTO.getQuantidade(), productPromotionDTO.getDiscount());
+				productPromotionDTO.getTypePromotion(), productPromotionDTO.getQuantidade(),
+				productPromotionDTO.getDiscount());
 
 		productPromotion.getProducts()
 				.addAll(productPromotionDTO.getProducts().stream().map(productDTO -> new Product(productDTO.getId(),
@@ -94,79 +95,71 @@ public class ProductPromotionService {
 				Double valor = 0.0;
 				Double valor2 = 0.0;
 				if (product.get(0).getProductPromotions().get(i).getIsActive() == true) {
-					if (product.get(0).getProductPromotions().get(i).getReceivePromition().getCode() == 1) {
-						if (product.get(0).getProductPromotions().get(i).getTypePromotion().getCode() == 1) {
-							desconto = product.get(0).getPrice()
-									- product.get(0).getProductPromotions().get(i).getDiscount();
-							valor2 = desconto;
-							if (valor < valor2) {
-								desconto = valor2;
+					if (product.get(0).getProductPromotions().get(i).getTypePromotion().getCode() == 1) {
+						desconto = product.get(0).getPrice()
+								- product.get(0).getProductPromotions().get(i).getDiscount();
+						valor2 = desconto;
+						if (valor < valor2) {
+							desconto = valor2;
 
-							}
 						}
-
-						if (product.get(0).getProductPromotions().get(i).getTypePromotion().getCode() == 2) {
-							desconto = product.get(0).getPrice()
-									- ((product.get(0).getProductPromotions().get(i).getDiscount() / 100)
-											* product.get(0).getPrice());
-							valor2 = desconto;
-							if (valor < valor2) {
-								desconto = valor2;
-
-							}
-						}
-
 					}
-				
+
+					if (product.get(0).getProductPromotions().get(i).getTypePromotion().getCode() == 2) {
+						desconto = product.get(0).getPrice()
+								- ((product.get(0).getProductPromotions().get(i).getDiscount() / 100)
+								* product.get(0).getPrice());
+						valor2 = desconto;
+						if (valor < valor2) {
+							desconto = valor2;
+
+						}
+					}
+
+
 					// quantidade
-					if (product.get(0).getProductPromotions().get(i).getReceivePromition().getCode() == 3
-							&& product.get(i).getId() > product.get(0).getProductPromotions().get(i).getQuantidade()) {
-						if (product.get(0).getProductPromotions().get(i).getTypePromotion().getCode() == 1) {
-							desconto = product.get(0).getPrice()
-									- product.get(0).getProductPromotions().get(i).getDiscount();
-							valor2 = desconto;
-							if (valor < valor2) {
-								desconto = valor2;
+					if (product.get(0).getProductPromotions().get(i).getTypePromotion().getCode() == 1) {
+						desconto = product.get(0).getPrice()
+								- product.get(0).getProductPromotions().get(i).getDiscount();
+						valor2 = desconto;
+						if (valor < valor2) {
+							desconto = valor2;
 
-							}
 						}
-
-						if (product.get(0).getProductPromotions().get(i).getTypePromotion().getCode() == 2) {
-							desconto = product.get(0).getPrice()
-									- ((product.get(0).getProductPromotions().get(i).getDiscount() / 100)
-											* product.get(0).getPrice());
-							valor2 = desconto;
-							if (valor < valor2) {
-								desconto = valor2;
-
-							}
-						}
-
 					}
-					if (product.get(0).getProductPromotions().get(i).getReceivePromition().getCode() == 4
-							&& product.get(i).getId() == product.get(0).getProductPromotions().get(i).getNumberCategory()) {
-						if (product.get(0).getProductPromotions().get(i).getTypePromotion().getCode() == 1) {
-							desconto = product.get(0).getPrice()
-									- product.get(0).getProductPromotions().get(i).getDiscount();
-							valor2 = desconto;
-							if (valor < valor2) {
-								desconto = valor2;
 
-							}
+					if (product.get(0).getProductPromotions().get(i).getTypePromotion().getCode() == 2) {
+						desconto = product.get(0).getPrice()
+								- ((product.get(0).getProductPromotions().get(i).getDiscount() / 100)
+								* product.get(0).getPrice());
+						valor2 = desconto;
+						if (valor < valor2) {
+							desconto = valor2;
+
 						}
-
-						if (product.get(0).getProductPromotions().get(i).getTypePromotion().getCode() == 2) {
-							desconto = product.get(0).getPrice()
-									- ((product.get(0).getProductPromotions().get(i).getDiscount() / 100)
-											* product.get(0).getPrice());
-							valor2 = desconto;
-							if (valor < valor2) {
-								desconto = valor2;
-
-							}
-						}
-
 					}
+
+					if (product.get(0).getProductPromotions().get(i).getTypePromotion().getCode() == 1) {
+						desconto = product.get(0).getPrice()
+								- product.get(0).getProductPromotions().get(i).getDiscount();
+						valor2 = desconto;
+						if (valor < valor2) {
+							desconto = valor2;
+
+						}
+					}
+
+					if (product.get(0).getProductPromotions().get(i).getTypePromotion().getCode() == 2) {
+						desconto = product.get(0).getPrice()
+								- ((product.get(0).getProductPromotions().get(i).getDiscount() / 100)
+								* product.get(0).getPrice());
+						valor2 = desconto;
+						if (valor < valor2) {
+							desconto = valor2;
+
+						}
+					}
+
 				}
 				valor = desconto;
 				i++;

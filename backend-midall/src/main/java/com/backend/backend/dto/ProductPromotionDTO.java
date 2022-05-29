@@ -17,6 +17,11 @@ import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
 @Data
 @NoArgsConstructor
 
@@ -25,19 +30,18 @@ public class ProductPromotionDTO implements Serializable {
 	private static final long serialVerionUID = 1L;
 
 	private Integer id;
-	
-	private Integer numberCategory;
-	
+
+	@NotEmpty(message = "{field.name.mandatory}")
 	private String name;
-	
+
 	private Boolean isActive;
 
 	private TypePromotion typePromotion;
-	
-	private ReceivePromotion receivePromotion;
-	
+
+	@Min(value = 0L, message = "Quantidade value must be positive")
     private Integer quantidade;
 
+	@Min(value = 0L, message = "Discount value must be positive")
 	private Double discount;
 
 	private List<ProductDTO> products = new ArrayList<>();
@@ -47,7 +51,6 @@ public class ProductPromotionDTO implements Serializable {
 		name= obj.getName();
 		isActive = obj.getIsActive();
 		typePromotion = obj.getTypePromotion();
-		receivePromotion = obj.getReceivePromition();
 		quantidade = obj.getQuantidade();
 		discount = obj.getDiscount();
 		

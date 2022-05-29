@@ -1,12 +1,5 @@
 package com.backend.backend.enumerate;
 
-import java.time.LocalDate;
-import java.util.List;
-
-import com.backend.backend.dto.ProductDTO;
-import com.backend.backend.dto.ProductPromotionDTO;
-
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
@@ -31,6 +24,5 @@ public enum TypePromotion {
 		}
 		throw new IllegalArgumentException("Invalid Type promotion code");
 	}
-	
-	
+
 }

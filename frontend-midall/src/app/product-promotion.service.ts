@@ -12,15 +12,20 @@ export class ProductPromotionService {
 
   insert( productPromotion : ProductPromotion) : Observable<ProductPromotion>{
     let obj = {
+      "name" : productPromotion.name,
+      "isActive" : true,
+      "typePromotion" : "VALUE",
+      "quantidade" : productPromotion.quantidade,
       "discount" : productPromotion.discount,
       "products" : [
           {
-              "id": productPromotion.product
+              "id" : productPromotion.product
           }
-      ]
+        ]
+    }
+
+    return this.http.post<ProductPromotion>('http://localhost:8080/product-promotions', obj)
   
   }
-    return this.http.post<ProductPromotion>('http://localhost:8080/product-promotions', obj)
-
-  }
+    
 }
