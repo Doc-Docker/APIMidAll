@@ -37,7 +37,7 @@ vídeo carregando...🔋
 
 ## :newspaper: Backlog do Produto
 
-#### 🔗 [Visualizar o arquivo do *Product Backlog*](https://github.com/Doc-Docker/APIMidAll/projects/3)
+#### 🔗 [Visualizar o arquivo do Product Backlog](https://github.com/Doc-Docker/APIMidAll/projects/3)
 
 #### 🔗 [Visualizar as Users Stories da Sprint-3](https://github.com/Doc-Docker/APIMidAll/blob/main/Images/backlog_3.png)
 
@@ -45,6 +45,6 @@ vídeo carregando...🔋
 
 ## :dart: Backlog das Sprints
 
-#### 🔗 [Visualizar o *Sprint Backlog* do projeto](https://github.com/Doc-Docker/APIMidAll/blob/main/Images/backlog_sprint2.png)
+#### 🔗 [Visualizar o Sprint Backlog do Projeto](https://github.com/Doc-Docker/APIMidAll/blob/main/Images/backlog_sprint2.png)
 
 <br>
