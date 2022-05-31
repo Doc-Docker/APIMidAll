@@ -85,7 +85,7 @@ public class ProductPromotionResource {
 
 	}
 
-	@GetMapping("/promotions")
+	@GetMapping("/list")
 	public ResponseEntity<List<ProductPromotionDTO>> findAll() {
 		List<ProductPromotion> listProductPromotion = productPromotionService.findAll();
 		List<ProductPromotionDTO> listProductPromotionDto = listProductPromotion.stream()
