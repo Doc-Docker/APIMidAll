@@ -1,3 +1,5 @@
+import { PromotionsFormComponent } from "../promotions/promotions-form/promotions-form.component";
+
 export class Product{
     id : number;
     name : string;
@@ -5,4 +7,5 @@ export class Product{
     description : string;
     categories : number;
     quantidade : number;
+    promotion : number[];
 }

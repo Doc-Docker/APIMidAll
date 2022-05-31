@@ -12,6 +12,7 @@ export class CartItemsComponent implements OnInit {
   cart : Cart;
   finalPrice : number = 0;
   products : Product[] = [];
+  promotion : number;
   
   constructor() { }
 
