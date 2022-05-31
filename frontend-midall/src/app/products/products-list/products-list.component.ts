@@ -13,6 +13,9 @@ export class ProductsListComponent implements OnInit {
   products : Product[] = []
   id: number;
   lista : number[] = [1,2,3,4,5];
+  selectedProduct : Product;
+  success : string;
+  failed : string;
 
   constructor(private service: ProductsService) { }
 
@@ -28,9 +31,21 @@ export class ProductsListComponent implements OnInit {
       Cart.products.push(product);
     }
     
-
-      
     this.ngOnInit();
+  }
+
+  preDelete(product : Product){
+    this.selectedProduct = product;
+
+  }
+
+  deleteProduct(){
+    this.service.delete(this.selectedProduct)
+    .subscribe(
+      res => this.success = 'Product successfully deleted',
+      erro => this.failed = 'There was an error deleting the Product'
+      )
+
   }
 
 }

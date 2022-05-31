@@ -49,5 +49,9 @@ export class ProductsService {
     }
     return this.http.patch<Product>(`http://localhost:8080/products/${id}`, obj)
   }
+
+  delete(product : Product) : Observable<any>{
+    return this.http.delete<any>(`http://localhost:8080/products/${product.id}`)
+  }
 }
  
