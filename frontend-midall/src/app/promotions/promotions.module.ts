@@ -4,10 +4,11 @@ import { FormsModule } from '@angular/forms'
 
 import { PromotionsRoutingModule } from './promotions-routing.module';
 import { PromotionsFormComponent } from './promotions-form/promotions-form.component';
+import { PromotionsListComponent } from './promotions-list/promotions-list.component';
 
 
 @NgModule({
-  declarations: [PromotionsFormComponent],
+  declarations: [PromotionsFormComponent, PromotionsListComponent],
   imports: [
     CommonModule,
     FormsModule,
