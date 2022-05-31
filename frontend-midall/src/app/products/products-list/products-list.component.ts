@@ -27,7 +27,7 @@ export class ProductsListComponent implements OnInit {
 
   addProduct(product : Product){
 
-    if(product.quantidade != null){
+    if(product.categories != null){ //teste José .quantidade
       Cart.products.push(product);
     }
     

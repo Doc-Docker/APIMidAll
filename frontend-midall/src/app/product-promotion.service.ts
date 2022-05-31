@@ -27,5 +27,9 @@ export class ProductPromotionService {
     return this.http.post<ProductPromotion>('http://localhost:8080/product-promotions', obj)
   
   }
+
+  getAll() : Observable<ProductPromotion[]> {
+    return this.http.get<ProductPromotion[]>('http://localhost:8080/product-promotions/list')
+  }
     
 }

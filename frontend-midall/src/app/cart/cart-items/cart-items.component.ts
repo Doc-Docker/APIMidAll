@@ -12,6 +12,7 @@ export class CartItemsComponent implements OnInit {
   cart : Cart;
   finalPrice : number = 0;
   products : Product[] = [];
+  promotion : number;
   
   constructor() { }
 
@@ -21,7 +22,7 @@ export class CartItemsComponent implements OnInit {
     Cart.products.forEach(element => {
       
       this.products.push(element);
-      this.finalPrice = this.finalPrice += (element.price * element.quantidade);
+      this.finalPrice = this.finalPrice += (element.price * element.categories);//teste José
     });
   }
 
