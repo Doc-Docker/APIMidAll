@@ -28,8 +28,36 @@ export class ProductPromotionService {
   
   }
 
+  update(id : number, productPromotion : ProductPromotion) : Observable<ProductPromotion>{
+    let obj = {
+      "name" : productPromotion.name,
+      "isActive" : true,
+      "typePromotion" : "VALUE",
+      "quantidade" : productPromotion.quantidade,
+      "discount" : productPromotion.discount,
+      "products" : [
+          {
+              "id" : productPromotion.product
+          }
+        ]
+    }
+
+    return this.http.put<ProductPromotion>(`http://localhost:8080/product-promotions/${id}`, obj)
+  
+  }
+
   getAll() : Observable<ProductPromotion[]> {
     return this.http.get<ProductPromotion[]>('http://localhost:8080/product-promotions/list')
+  }
+
+  getPromotionById(id:number) : Observable<ProductPromotion>{
+
+    return this.http.get<ProductPromotion>(`http://localhost:8080/product-promotions/${id}`)
+
+  }
+
+  delete(productPromotion : ProductPromotion) : Observable<any>{
+    return this.http.delete<any>(`http://localhost:8080/product-promotions/${productPromotion.id}`)
   }
     
 }

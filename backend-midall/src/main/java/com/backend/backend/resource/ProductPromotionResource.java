@@ -48,16 +48,11 @@ public class ProductPromotionResource {
 		return ResponseEntity.created(uri).build();
 	}
 
-	@GetMapping("/{id}")
-	public ResponseEntity<?> find(@PathVariable Integer id) {
-		ProductPromotion productPromotion = productPromotionService.find(id);
+	@GetMapping ("/{id}")
+	public ResponseEntity<ProductPromotionDTO> findById(@PathVariable Integer id) {
+		ProductPromotion foundProduct = productPromotionService.findById(id);
 
-		ProductPromotionService promotion = new ProductPromotionService();
-
-		Double teste = promotion.retornaProdutoPromocao(productPromotion.getProducts());
-
-		System.out.println(teste);
-		return ResponseEntity.ok().body(productPromotion);
+		return ResponseEntity.ok().body(productPromotionService.fromDomain(foundProduct));
 	}
 
 	@PutMapping("disable/{id}")
@@ -94,6 +89,13 @@ public class ProductPromotionResource {
 
 		return ResponseEntity.ok().body(listProductPromotionDto);
 
+	}
+
+	@DeleteMapping ("/{id}")
+	public ResponseEntity<?> delete(@PathVariable Integer id) {
+		productPromotionService.delete(id);
+
+		return ResponseEntity.noContent().build();
 	}
 
 }

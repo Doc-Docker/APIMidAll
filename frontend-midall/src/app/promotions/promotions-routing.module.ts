@@ -6,6 +6,7 @@ import { PromotionsListComponent } from './promotions-list/promotions-list.compo
 
 const routes: Routes = [
   { path : 'promotions-form', component : PromotionsFormComponent },
+  { path : 'promotions-form/:id', component : PromotionsFormComponent },
   { path : 'promotions-list', component : PromotionsListComponent}
 ];
 

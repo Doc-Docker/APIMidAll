@@ -42,7 +42,9 @@ export class ProductsListComponent implements OnInit {
   deleteProduct(){
     this.service.delete(this.selectedProduct)
     .subscribe(
-      res => this.success = 'Product successfully deleted',
+      res => {this.success = 'Product successfully deleted',
+      this.ngOnInit();
+    },
       erro => this.failed = 'There was an error deleting the Product'
       )
 

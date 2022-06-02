@@ -5,6 +5,18 @@
 
 <div class="container">
     <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-success" role="alert" *ngIf="success">
+                {{ success }}
+            </div>
+
+            <div class="alert alert-danger" role="alert" *ngIf="failed">
+                {{ failed }}
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
         <div class="col-md-2">
             <button class="btn btn-warning" routerLink="/promotions-form">
                 <i class="fa fa-plus"></i> New
@@ -31,10 +43,46 @@
                         <td>{{ promotion.name }}</td>
                         <td>{{ promotion.discount }}</td>
                 
+                        <td>
+
+                            <button class="btn btn-primary" routerLink="/promotions-form/{{ promotion.id }}">
+                                <i class="fa fa-edit"></i>
+                            </button>
+
+                        </td>
+
+                        <td>
+                            <button  class="btn btn-danger" (click)="preDelete(promotion)"
+                                    data-toggle="modal" data-target="#deleteModal" >
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </td>
+
                     </tr>
                 </tbody>
             </table>
         </div>
             
+    </div>
+    
+    <div id="deleteModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Confirmation</h4>
+                </div>
+
+                <div class="modal-body" *ngIf="selectedPromotion">
+                    Confirm the deletion of the product  "{{selectedPromotion.name}}"?
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-success"
+                     (click)="deletePromotion()"
+                     data-dismiss="modal">Confirm</button>
+                    <button class="btn btn-default" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

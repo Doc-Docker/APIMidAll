@@ -46,6 +46,12 @@ public class ProductPromotionService {
 
 	}
 
+	public void delete(Integer id) {
+		this.findById(id);
+
+		productPromotionRepository.deleteById(id);
+	}
+
 	public ProductPromotion find(Integer id) {
 		Optional<ProductPromotion> productPromotion = productPromotionRepository.findById(id);
 		return productPromotion.orElseThrow();
