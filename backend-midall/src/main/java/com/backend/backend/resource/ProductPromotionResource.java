@@ -108,14 +108,14 @@ public class ProductPromotionResource {
 //
 //		return discount;
 //	}
-	
+
 	@PostMapping("/discount")
-	public ResponseEntity<?> methos(@RequestBody Json json){
-	  Integer id = json.getId();
-	  Integer quantidade = json.getQuantidade();
-	  Integer total = json.getTotal();
-	   ResponseEntity<?> discount = productPromotionService.retornaProdutoPromocao(id, quantidade, total);
-	     return discount;
-}
+	public ResponseEntity<?> methos(@RequestBody Json json) {
+		Integer id = json.getId();
+		Integer quantidade = json.getQuantidade();
+		Integer total = json.getTotal();
+		ResponseEntity<?> discount = productPromotionService.retornaProdutoPromocao(id, quantidade, total);
+		return discount;
+	}
 
 }
