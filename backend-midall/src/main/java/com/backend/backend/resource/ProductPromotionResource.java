@@ -23,6 +23,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import javax.validation.Valid;
 import java.io.Serializable;
 import java.net.URI;
+import java.security.DomainLoadStoreParameter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -96,6 +97,13 @@ public class ProductPromotionResource {
 		productPromotionService.delete(id);
 
 		return ResponseEntity.noContent().build();
+	}
+
+	@PostMapping("/discount")
+	public ResponseEntity<?> getPromotionTypes(@RequestBody List<Product> product){
+		ResponseEntity<?>  discount = productPromotionService.retornaProdutoPromocao(product);
+
+		return discount;
 	}
 
 }

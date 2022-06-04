@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/app/cart.service';
+import { ProductsService } from 'src/app/products.service';
 import { Product } from 'src/app/products/Product';
 import { Cart } from '../Cart';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-cart-items',
@@ -13,8 +16,9 @@ export class CartItemsComponent implements OnInit {
   finalPrice : number = 0;
   products : Product[] = [];
   promotion : number;
+  discount : Observable<number>;
   
-  constructor() { }
+  constructor(private service : CartService) { }
 
   ngOnInit(): void {
     this.products = [];
@@ -22,8 +26,16 @@ export class CartItemsComponent implements OnInit {
     Cart.products.forEach(element => {
       
       this.products.push(element);
-      this.finalPrice = this.finalPrice += (element.price * element.categories);//teste José
+
+      this.service.getDiscount(this.products).subscribe(
+        response => console.log(response),
+        errorResponse => console.log(errorResponse)
+        ) 
+
+      this.finalPrice = this.finalPrice += (element.price * element.quantidade);//teste José
     });
+
+    console.log('' + this.discount)
   }
 
   deleteProduct(product : Product){

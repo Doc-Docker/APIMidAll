@@ -11,6 +11,8 @@ import com.backend.backend.exceptions.BadRequestException;
 import com.backend.backend.repository.ProductPromotionRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.io.Serializable;
@@ -87,7 +89,7 @@ public class ProductPromotionService {
 
 	}
 
-	public Double retornaProdutoPromocao(List<Product> product) {			
+	public ResponseEntity<?> retornaProdutoPromocao(List<Product> product) {
 		
 		List<ProductPromotion> productPromotion = new ArrayList<ProductPromotion>();
 
@@ -173,7 +175,7 @@ public class ProductPromotionService {
 
 		}
 
-		return desconto;
+		return  new ResponseEntity<>(desconto, HttpStatus.OK);
 	}
 
 	public List<ProductPromotion> findAll() {
