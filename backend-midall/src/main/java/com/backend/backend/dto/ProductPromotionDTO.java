@@ -37,6 +37,8 @@ public class ProductPromotionDTO implements Serializable {
 	private Boolean isActive;
 
 	private TypePromotion typePromotion;
+	
+	private ReceivePromotion receivePromotion;
 
 	@Min(value = 0L, message = "Quantidade value must be positive")
     private Integer quantidade;
@@ -51,6 +53,7 @@ public class ProductPromotionDTO implements Serializable {
 		name= obj.getName();
 		isActive = obj.getIsActive();
 		typePromotion = obj.getTypePromotion();
+		receivePromotion = obj.getReceivePromotion();
 		quantidade = obj.getQuantidade();
 		discount = obj.getDiscount();
 		

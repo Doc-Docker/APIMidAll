@@ -15,24 +15,29 @@ export class CartItemsComponent implements OnInit {
   cart : Cart;
   finalPrice : number = 0;
   products : Product[] = [];
+  product : Product;
   promotion : number;
-  discount : Observable<number>;
-  
+  discount : number;
+  json: JSON;
   constructor(private service : CartService) { }
 
   ngOnInit(): void {
     this.products = [];
     this.finalPrice = 0;
+    this.product;
+    
     Cart.products.forEach(element => {
-      
+      this.product= element;
       this.products.push(element);
 
-      this.service.getDiscount(this.products).subscribe(
+     
+      
+      this.service.getDiscount(this.json).subscribe(
         response => console.log(response),
         errorResponse => console.log(errorResponse)
         ) 
-
-      this.finalPrice = this.finalPrice += (element.price * element.quantidade);//teste José
+      
+      this.finalPrice = this.finalPrice += (element.price  * element.quantidade);
     });
 
     console.log('' + this.discount)

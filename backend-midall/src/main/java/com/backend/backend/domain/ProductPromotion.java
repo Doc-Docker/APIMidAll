@@ -32,8 +32,12 @@ public class ProductPromotion implements Serializable {
 	private String name;
 
 	private Boolean isActive;
+	
+	private Integer idCategory;
 
 	private Integer typePromotion;
+	
+	private Integer receivePromotion;
 
 	private Integer quantidade;
 	
@@ -46,15 +50,29 @@ public class ProductPromotion implements Serializable {
 	
 
 	public ProductPromotion(Integer id,String name, Boolean isActive,
-			TypePromotion typePromotion, Integer quantidade, Double discount) {
+			TypePromotion typePromotion, ReceivePromotion receivePromotion, Integer quantidade, Double discount) {
 		this.id = id;
 		this.name= name;
 		this.isActive = isActive;
 		setTypePromotion(typePromotion);
+		setReceivePromotion(receivePromotion);
 		this.quantidade = quantidade;
 		this.discount = discount;
 
 	}
+
+	public void setReceivePromotion(ReceivePromotion receivePromotion) {
+		if (receivePromotion != null) {
+			this.receivePromotion = receivePromotion.getCode();
+		}
+
+	}
+
+	public ReceivePromotion getReceivePromotion() {
+		return ReceivePromotion.valueOf(receivePromotion);
+	}
+	
+	
 
 	public void setTypePromotion(TypePromotion typePromotion) {
 		if (typePromotion != null) {

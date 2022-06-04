@@ -9,6 +9,7 @@ import com.backend.backend.dto.ProductDTO;
 import com.backend.backend.dto.ProductPromotionDTO;
 import com.backend.backend.repository.ProductPromotionRepository;
 import com.backend.backend.repository.ProductRepository;
+import com.backend.backend.service.Json;
 import com.backend.backend.service.ProductPromotionService;
 import com.backend.backend.service.ProductService;
 
@@ -49,7 +50,7 @@ public class ProductPromotionResource {
 		return ResponseEntity.created(uri).build();
 	}
 
-	@GetMapping ("/{id}")
+	@GetMapping("/{id}")
 	public ResponseEntity<ProductPromotionDTO> findById(@PathVariable Integer id) {
 		ProductPromotion foundProduct = productPromotionService.findById(id);
 
@@ -92,18 +93,29 @@ public class ProductPromotionResource {
 
 	}
 
-	@DeleteMapping ("/{id}")
+	@DeleteMapping("/{id}")
 	public ResponseEntity<?> delete(@PathVariable Integer id) {
 		productPromotionService.delete(id);
 
 		return ResponseEntity.noContent().build();
 	}
 
+//	@PostMapping("/discount")
+//	public ResponseEntity<?> getPromotionTypes(@RequestBody Integer id) {
+//
+//		ResponseEntity<?> discount = productPromotionService.retornaProdutoPromocao(id);
+//		System.out.println();
+//
+//		return discount;
+//	}
+	
 	@PostMapping("/discount")
-	public ResponseEntity<?> getPromotionTypes(@RequestBody List<Product> product){
-		ResponseEntity<?>  discount = productPromotionService.retornaProdutoPromocao(product);
-
-		return discount;
-	}
+	public ResponseEntity<?> methos(@RequestBody Json json){
+	  Integer id = json.getId();
+	  Integer quantidade = json.getQuantidade();
+	  Integer total = json.getTotal();
+	   ResponseEntity<?> discount = productPromotionService.retornaProdutoPromocao(id, quantidade, total);
+	     return discount;
+}
 
 }
