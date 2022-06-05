@@ -100,14 +100,6 @@ public class ProductPromotionResource {
 		return ResponseEntity.noContent().build();
 	}
 
-//	@PostMapping("/discount")
-//	public ResponseEntity<?> getPromotionTypes(@RequestBody Integer id) {
-//
-//		ResponseEntity<?> discount = productPromotionService.retornaProdutoPromocao(id);
-//		System.out.println();
-//
-//		return discount;
-//	}
 
 	@PostMapping("/discount")
 	public ResponseEntity<?> methos(@RequestBody Json json) {

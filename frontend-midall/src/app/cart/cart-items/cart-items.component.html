@@ -13,7 +13,7 @@
                         <th>Name</th>
                         <th>Preço</th>
                         <th>Quantidade</th>
-                        <th>promotion</th>
+                        <th>Discount</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -22,6 +22,8 @@
                         <td>{{ p.name }}</td>
                         <td>{{ p.price }}</td>
                         <td>{{ p.quantidade}}</td>
+                        <td>-{{ discount}}</td>
+                        
                         
 
                         <td> 
@@ -38,9 +40,13 @@
                     <tr>
                         <th>Preço Total:</th>
                         <th>{{ finalPrice }}</th>
-                        <th></th>
-                        <th></th>
                     </tr>
+                    <tr>
+                        <th>Preço sem desconto:</th>
+                        <th>{{ noDiscount }}</th>
+                    </tr>
+                       
+                   
                 </tfoot>
             </table>
         </div>

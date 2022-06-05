@@ -41,6 +41,8 @@ public class ProductPromotion implements Serializable {
 
 	private Integer quantidade;
 	
+	private Integer totalCompra;
+	
 	private Double discount;
 
 	@JsonIgnore
@@ -49,14 +51,16 @@ public class ProductPromotion implements Serializable {
 	private List<Product> products = new ArrayList<>();
 	
 
-	public ProductPromotion(Integer id,String name, Boolean isActive,
-			TypePromotion typePromotion, ReceivePromotion receivePromotion, Integer quantidade, Double discount) {
+	public ProductPromotion(Integer id,String name, Boolean isActive, Integer idCategory,
+			TypePromotion typePromotion, ReceivePromotion receivePromotion, Integer quantidade, Integer totalCompra, Double discount) {
 		this.id = id;
 		this.name= name;
 		this.isActive = isActive;
+		this.idCategory = idCategory;
 		setTypePromotion(typePromotion);
 		setReceivePromotion(receivePromotion);
 		this.quantidade = quantidade;
+		this.totalCompra = totalCompra;
 		this.discount = discount;
 
 	}

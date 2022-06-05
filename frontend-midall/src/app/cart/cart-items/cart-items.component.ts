@@ -17,39 +17,55 @@ export class CartItemsComponent implements OnInit {
   products : Product[] = [];
   product : Product;
   promotion : number;
-  discount : number;
-  json: JSON;
+  discount :any = 0;
+  noDiscount : number = 0;
+
+  id : number;
+  quantidade : number;
+  total: number;
+
   constructor(private service : CartService) { }
 
   ngOnInit(): void {
     this.products = [];
     this.finalPrice = 0;
     this.product;
-    
+    this.discount;
+    this.noDiscount = 0;
+
+
     Cart.products.forEach(element => {
       this.product= element;
-      this.products.push(element);
+      this.id  = element.id;
+      this.quantidade = element.quantidade;
 
      
-      
-      this.service.getDiscount(this.json).subscribe(
-        response => console.log(response),
+      this.products.push(element);
+     
+      this.total =this.noDiscount += (element.price  * element.quantidade);
+       
+    this.service.getDiscount(this.id, this.quantidade, this.total).subscribe(
+        response => 
+        { this.discount = response,
+        this.finalPrice = this.finalPrice += (element.price  * element.quantidade)-(this.discount);
+        
         errorResponse => console.log(errorResponse)
-        ) 
-      
-      this.finalPrice = this.finalPrice += (element.price  * element.quantidade);
+    })
+
+    this.noDiscount = this.total;
+     
     });
 
-    console.log('' + this.discount)
+  
   }
 
   deleteProduct(product : Product){
-    
+
 
     let position = Cart.products.indexOf(product);
     if (position !== -1) {
       Cart.products.splice(position, 1);
-  }    
+  }
     this.ngOnInit();
   }
 }

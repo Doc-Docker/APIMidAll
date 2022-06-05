@@ -71,9 +71,10 @@ public class ProductPromotionService {
 
 	private ProductPromotion fromDTO(ProductPromotionDTO productPromotionDTO) {
 		ProductPromotion productPromotion = new ProductPromotion(productPromotionDTO.getId(),
-				productPromotionDTO.getName(), productPromotionDTO.getIsActive(),
+				productPromotionDTO.getName(), productPromotionDTO.getIsActive(), productPromotionDTO.getIdCategory(),
 				productPromotionDTO.getTypePromotion(), productPromotionDTO.getReceivePromotion(),
-				productPromotionDTO.getQuantidade(), productPromotionDTO.getDiscount());
+				productPromotionDTO.getQuantidade(), productPromotionDTO.getTotalCompra(),
+				productPromotionDTO.getDiscount());
 
 		productPromotion.getProducts()
 				.addAll(productPromotionDTO.getProducts().stream().map(productDTO -> new Product(productDTO.getId(),
@@ -92,103 +93,95 @@ public class ProductPromotionService {
 	}
 
 	public ResponseEntity<?> retornaProdutoPromocao(@RequestBody Integer id, Integer quantidade, Integer total) {
-	
+
+		List<ProductPromotion> promotios = productPromotionRepository.findAll();
+
 		List<ProductPromotion> productPromotion = new ArrayList<ProductPromotion>();
-        Product product = productService.findById(id);
-		
-        System.out.println(product.getName());
+
+		Product product = productService.findById(id);
+
 		productPromotion.addAll(product.getProductPromotions());
 		int n = productPromotion.size();
-	    System.out.println(n);
+
 		int i = 0;
 		Double desconto = 0.0;
+		Double valor = 0.0;
+		Double valor2 = 0.0;
+		
+		
+		if (total > 0) {
+			System.out.println("Total");
+			for (ProductPromotion promocao : promotios) {
+				System.out.println("Total");
+				if (promocao.getReceivePromotion().getCode() == 2 && total > promocao.getTotalCompra()) {
+					if (promocao.getTypePromotion().getCode() == 1) {
+						valor2 = total - promocao.getDiscount();
+
+						if (valor2 > valor) {
+							desconto = valor2;
+
+						}
+					}
+
+					if (promocao.getTypePromotion().getCode() == 2) {
+						valor2 = ((promocao.getDiscount() / 100) *  total );
+
+						if (valor2 > valor) {
+							desconto = valor2;
+
+						}
+						System.out.println(desconto);
+					}
+				}
+			}
+		}
 		for (i = 0; i < n; i++) {
 
-			System.out.println("Teste");
-		
-			
-			
 			while (i < n) {
-				Double valor = 0.0;
-				Double valor2 = 0.0;
-				
-				
+
 				if (product.getProductPromotions().get(i).getIsActive() == true) {
-					
-					System.out.println("Teste VALIDADE");
-				
-					
+
 					// Promotion Product
 					if (product.getProductPromotions().get(i).getReceivePromotion().getCode() == 1) {
-						
-						System.out.println(product.getName());
+
 						if (product.getProductPromotions().get(i).getTypePromotion().getCode() == 1) {
-							desconto = product.getPrice()
-									- product.getProductPromotions().get(i).getDiscount();
-							valor2 = desconto;
-							if (valor < valor2) {
+							valor2 = quantidade * product.getProductPromotions().get(i).getDiscount();
+							;
+							if (valor2 > valor) {
 								desconto = valor2;
 
 							}
 						}
 
 						if (product.getProductPromotions().get(i).getTypePromotion().getCode() == 2) {
-							desconto = product.getPrice()
-									- ((product.getProductPromotions().get(i).getDiscount() / 100)
-											* product.getPrice());
-							valor2 = desconto;
-							if (valor < valor2) {
+							valor2 = ((product.getProductPromotions().get(i).getDiscount() / 100)
+									* (product.getPrice() * quantidade));
+
+							if (valor2 > valor) {
 								desconto = valor2;
 
 							}
 						}
 					}
 
-					// Promotion Total
-					if (product.getProductPromotions().get(i).getReceivePromotion().getCode() == 2
-							&& total > product.getProductPromotions().get(i).getQuantidade()) {
-						if (product.getProductPromotions().get(i).getTypePromotion().getCode() == 1) {
-							desconto = product.getPrice()
-									- product.getProductPromotions().get(i).getDiscount();
-							valor2 = desconto;
-							if (valor < valor2) {
-								desconto = valor2;
 
-							}
-						}
-
-						if (product.getProductPromotions().get(i).getTypePromotion().getCode() == 2) {
-							desconto = product.getPrice()
-									- ((product.getProductPromotions().get(i).getDiscount() / 100)
-											* product.getPrice());
-							valor2 = desconto;
-							if (valor < valor2) {
-								desconto = valor2;
-
-							}
-						}
-					}
-
-					
 					// Promotion quantidade
 					if (product.getProductPromotions().get(i).getReceivePromotion().getCode() == 3
 							&& quantidade > product.getProductPromotions().get(i).getQuantidade()) {
 						if (product.getProductPromotions().get(i).getTypePromotion().getCode() == 1) {
-							desconto = product.getPrice()
-									- product.getProductPromotions().get(i).getDiscount();
-							valor2 = desconto;
-							if (valor < valor2) {
+							valor2 = quantidade * product.getProductPromotions().get(i).getDiscount();
+
+							if (valor2 > valor) {
 								desconto = valor2;
 
 							}
 						}
 
 						if (product.getProductPromotions().get(i).getTypePromotion().getCode() == 2) {
-							desconto = product.getPrice()
-									- ((product.getProductPromotions().get(i).getDiscount() / 100)
-											* product.getPrice());
-							valor2 = desconto;
-							if (valor < valor2) {
+							valor2 = ((product.getProductPromotions().get(i).getDiscount() / 100)
+									* (product.getPrice() * quantidade));
+
+							if (valor2 > valor) {
 								desconto = valor2;
 
 							}
@@ -196,25 +189,22 @@ public class ProductPromotionService {
 					}
 
 					// Promotion Category
-					if (product.getProductPromotions().get(i).getReceivePromotion().getCode() == 4
-							&& product.getProductPromotions().get(i).getIdCategory() == product
-									.getCategories().get(i).getId()){
+					if (product.getProductPromotions().get(i).getReceivePromotion().getCode() == 4 && product
+							.getProductPromotions().get(i).getIdCategory() == product.getCategories().get(0).getId()) {
 						if (product.getProductPromotions().get(i).getTypePromotion().getCode() == 1) {
-							desconto = product.getPrice()
-									- product.getProductPromotions().get(i).getDiscount();
-							valor2 = desconto;
-							if (valor < valor2) {
+							valor2 = quantidade * product.getProductPromotions().get(i).getDiscount();
+
+							if (valor2 > valor) {
 								desconto = valor2;
 
 							}
 						}
 
 						if (product.getProductPromotions().get(i).getTypePromotion().getCode() == 2) {
-							desconto = product.getPrice()
-									- ((product.getProductPromotions().get(i).getDiscount() / 100)
-											* product.getPrice());
-							valor2 = desconto;
-							if (valor < valor2) {
+							valor2 = ((product.getProductPromotions().get(i).getDiscount() / 100)
+									* (product.getPrice() * quantidade));
+
+							if (valor2 > valor) {
 								desconto = valor2;
 
 							}
