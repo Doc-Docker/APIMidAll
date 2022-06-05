@@ -3,7 +3,7 @@ import { ProductPromotionService } from 'src/app/product-promotion.service';
 import { ProductPromotion } from '../ProductPromotion';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-
+import { Product } from 'src/app/products/Product';
 @Component({
   selector: 'app-promotions-form',
   templateUrl: './promotions-form.component.html',
@@ -15,6 +15,9 @@ export class PromotionsFormComponent implements OnInit {
   success: boolean = false;
   errors: String[];
   id : number;
+  lista_promotion : String[] = ['PRODUCT','TOTAL','PRODUCT_QUANTITY','CATEGORY'];
+  lista_type: String[] = ['VALUE', 'PERCENTAGE'];
+
 
   constructor(
     private service : ProductPromotionService,
@@ -35,7 +38,7 @@ export class PromotionsFormComponent implements OnInit {
           errorResponse => this.productPromotion = new ProductPromotion()
           )
       }
-        
+
 
     })
   }
@@ -56,13 +59,13 @@ export class PromotionsFormComponent implements OnInit {
         .subscribe( res =>{
           this.success = true;
           this.errors = null;
-          
+
         }, errorRes =>{
           this.success = false;
           this.errors = errorRes.error.errors
-          
+
         }
-        
+
         )
     }
   }

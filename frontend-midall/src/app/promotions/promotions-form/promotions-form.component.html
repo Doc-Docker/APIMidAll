@@ -18,49 +18,76 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label>ID:</label>
-                    <input type="text" class="form-control" disabled="true" [ngModel]="productPromotion.id" name="id">
-                </div>
-            </div>
-            
-        </div>
 
-        <div class="row">
-            <div class="col-md-6">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Type Promtion</label>
+                    <select type="text" class="form-control" [(ngModel)]="productPromotion.typePromotion" name="typePromotion">
+                      <option [value]="n"  *ngFor="let n of lista_type" >
+                        <p>{{n}}</p>
+                      </option>
+                    </select>
+                  </div>
+               </div>
+
+              <div class="col-md-6">
                 <div class="form-group">
-                    <label>Name:</label>
-                    <input type="text" class="form-control" [(ngModel)]="productPromotion.name" name="name">
+                  <label>Receive Promtion</label>
+                  <select type="text" class="form-control" [(ngModel)]="productPromotion.receivePromotion" name="receivePromotion">
+                    <option [value]="n"  *ngFor="let n of lista_promotion" >
+                      <p>{{n}}</p>
+                    </option>
+                  </select>
                 </div>
+             </div>
+
+
+
+              <div class="col col-md-6">
+                <div class="form-group">
+                  <label>Name:</label>
+                  <input type="text" class="form-control" [(ngModel)]="productPromotion.name" name="name">
+                </div>
+              </div>
+
+
+
+        <tr *ngFor="let promotions of productPromotion">
+
+        </tr>
+
+              <div class="col col-md-6">
+                <div class="form-group">
+                  <label>Quantidade/Produto:</label>
+                  <input type="text" class="form-control" [(ngModel)]="productPromotion.quantidade" name="quantidade">
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label>Product:</label>
+                      <input type="text" class="form-control" [(ngModel)]="productPromotion.product" name="product">
+                  </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                    <label>Total Compra:</label>
+                    <input type="text" class="form-control" [(ngModel)]="productPromotion.totalCompra" name="discount">
+                </div>
+              </div>
             </div>
 
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Quantidade:</label>
-                    <input type="text" class="form-control" [(ngModel)]="productPromotion.quantidade" name="quantidade">
-                </div>
-            </div>
-        </div>
-        
-        <div class="row">
-            
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Discount:</label>
-                    <input type="text" class="form-control" [(ngModel)]="productPromotion.discount" name="discount">
-                </div>
-            </div>
+            <div class="row">
 
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Product:</label>
-                    <input type="text" class="form-control" [(ngModel)]="productPromotion.product" name="product">
-                </div>
+              <div class="col-md-6">
+              <div class="form-group">
+                  <label>Discount:</label>
+                  <input type="text" class="form-control" [(ngModel)]="productPromotion.discount" name="discount">
+              </div>
             </div>
-            
-        </div>
+            </div>
 
         <div class="row">
             <div class="col-md-4">
@@ -75,6 +102,6 @@
                 </button>
             </div>
         </div>
-    
+
     </form>
 </div>

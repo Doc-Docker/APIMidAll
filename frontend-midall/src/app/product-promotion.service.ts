@@ -14,10 +14,13 @@ export class ProductPromotionService {
     let obj = {
       "name" : productPromotion.name,
       "isActive" : true,
-      "typePromotion" : "VALUE",
+      "typePromotion" : productPromotion.typePromotion,
+      "receivePromotion" : productPromotion.receivePromotion,
       "quantidade" : productPromotion.quantidade,
       "discount" : productPromotion.discount,
+      "totalCompra" : productPromotion.totalCompra,
       "products" : [
+
           {
               "id" : productPromotion.product
           }
@@ -25,14 +28,15 @@ export class ProductPromotionService {
     }
 
     return this.http.post<ProductPromotion>('http://localhost:8080/product-promotions', obj)
-  
+
   }
 
   update(id : number, productPromotion : ProductPromotion) : Observable<ProductPromotion>{
     let obj = {
       "name" : productPromotion.name,
       "isActive" : true,
-      "typePromotion" : "VALUE",
+      "typePromotion" : productPromotion.typePromotion,
+      "receivePromotion" : productPromotion.receivePromotion,
       "quantidade" : productPromotion.quantidade,
       "discount" : productPromotion.discount,
       "products" : [
@@ -43,7 +47,7 @@ export class ProductPromotionService {
     }
 
     return this.http.put<ProductPromotion>(`http://localhost:8080/product-promotions/${id}`, obj)
-  
+
   }
 
   getAll() : Observable<ProductPromotion[]> {
@@ -59,5 +63,5 @@ export class ProductPromotionService {
   delete(productPromotion : ProductPromotion) : Observable<any>{
     return this.http.delete<any>(`http://localhost:8080/product-promotions/${productPromotion.id}`)
   }
-    
+
 }

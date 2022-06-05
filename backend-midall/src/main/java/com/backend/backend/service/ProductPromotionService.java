@@ -115,7 +115,7 @@ public class ProductPromotionService {
 				System.out.println("Total");
 				if (promocao.getReceivePromotion().getCode() == 2 && total > promocao.getTotalCompra()) {
 					if (promocao.getTypePromotion().getCode() == 1) {
-						valor2 = total - promocao.getDiscount();
+						valor2 = promocao.getDiscount();
 
 						if (valor2 > valor) {
 							desconto = valor2;
