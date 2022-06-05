@@ -31,7 +31,7 @@ vídeo carregando...🔋
 
 ## :chart_with_downwards_trend: Burndown da Equipe
 
-<img src = "https://github.com/Doc-Docker/APIMidAll/blob/main/Images/burndown_333.png" width="890" height="500"/></h1>
+<img src = "https://github.com/Doc-Docker/APIMidAll/blob/main/Images/burndow_sprint3.png" width="890" height="500"/></h1>
 
 <br>
 
