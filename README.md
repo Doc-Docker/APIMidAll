@@ -104,7 +104,7 @@ Na compra de 3 produtos, ganhe 50% de desconto no item de menor valor.
 
 🔖 SPRINT 2 ([Link da Pasta](https://github.com/Doc-Docker/APIMidAll/tree/SPRINT-2)):  Concluído ☑️
 
-🔖 SPRINT 3 ([Link da Pasta](https://github.com/Doc-Docker/APIMidAll/tree/SPRINT-3)):  Em Andamento 🚧
+🔖 SPRINT 3 ([Link da Pasta](https://github.com/Doc-Docker/APIMidAll/tree/SPRINT-3)):  Concluído ☑️
 
 <br>
 
