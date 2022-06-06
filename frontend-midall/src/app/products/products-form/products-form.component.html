@@ -1,6 +1,6 @@
 <h1 class="mt-4">Products</h1>
 <ol class="breadcrumb mb-4">
-    <li class="breadcrumb-item active">Products Registration</li>
+    <li class="breadcrumb-item active">{{ product.id ? 'Product Editing' : 'Product Registration' }}</li>
 </ol>
 
 <div class="container">
@@ -64,9 +64,14 @@
 
         <div class="row">
             <div class="col-md-4">
-                <button type="submit" class="btn btn-success">
+                <button type="submit" class="btn btn-success" *ngIf="!product.id" >
                     <i class="fa fa-save"></i>
                     Save Product
+                </button>
+
+                <button type="submit" class="btn btn-primary" *ngIf="product.id" >
+                    <i class="fa fa-sync-alt"></i>
+                    Update Product
                 </button>
 
                 <button type="submit" class="btn btn-danger ml-2" routerLink="/products-list">

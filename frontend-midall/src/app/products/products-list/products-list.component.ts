@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Cart } from 'src/app/cart/Cart';
 import { ProductsService } from 'src/app/products.service';
 import { Product } from '../Product';
 
@@ -10,6 +11,11 @@ import { Product } from '../Product';
 export class ProductsListComponent implements OnInit {
 
   products : Product[] = []
+  id: number;
+  lista : number[] = [1,2,3,4,5];
+  selectedProduct : Product;
+  success : string;
+  failed : string;
 
   constructor(private service: ProductsService) { }
 
@@ -17,6 +23,31 @@ export class ProductsListComponent implements OnInit {
     this.service
       .getProducts()
       .subscribe( res => this.products = res )
+  }
+
+  addProduct(product : Product){
+
+    if(product.quantidade != null){ 
+      Cart.products.push(product);
+    }
+    
+    this.ngOnInit();
+  }
+
+  preDelete(product : Product){
+    this.selectedProduct = product;
+
+  }
+
+  deleteProduct(){
+    this.service.delete(this.selectedProduct)
+    .subscribe(
+      res => {this.success = 'Product successfully deleted',
+      this.ngOnInit();
+    },
+      erro => this.failed = 'There was an error deleting the Product'
+      )
+
   }
 
 }

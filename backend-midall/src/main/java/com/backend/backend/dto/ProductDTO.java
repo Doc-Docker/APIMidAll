@@ -38,6 +38,7 @@ public class ProductDTO implements Serializable {
     @NotEmpty(message = "{field.category.mandatory}")
     private List<CategoryDTO> categories = new ArrayList<>();
 
+    private List<ProductPromotionDTO> promotions = new ArrayList<>();
 
 	public ProductDTO(Product product) {
 		this.id = product.getId();

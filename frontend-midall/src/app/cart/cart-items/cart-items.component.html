@@ -2,3 +2,57 @@
 <ol class="breadcrumb mb-4">
     <li class="breadcrumb-item active">Items visualization</li>
 </ol>
+
+<div class="container">
+    
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                       <!--<th>Discount</th>-->
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let p of products">
+                        <td>{{ p.name }}</td>
+                        <td>{{ p.price }}</td>
+                        <td>{{ p.quantidade}}</td>
+                        <!--<td>-{{ discount }}</td>-->
+
+                        <td> 
+                            <button  class="btn btn-warning" (click)="deleteProduct(p)">
+                                <i class="fa fa-trash"></i>
+                                Delete
+                            </button>
+                        </td>
+                        
+                
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Total Price:</th>
+                        <th>{{ finalPrice }}</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th>Price Without Discount:</th>
+                        <th>{{ noDiscount }}</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    
+                </tfoot>
+            </table>
+        </div>
+            
+    </div>
+    <br/>
+
+</div>

@@ -1,6 +1,6 @@
-<h1 class="mt-4">Products</h1>
+<h1 class="mt-4">Promotions</h1>
 <ol class="breadcrumb mb-4">
-    <li class="breadcrumb-item active">Products visualization</li>
+    <li class="breadcrumb-item active">Promotions visualization</li>
 </ol>
 
 <div class="container">
@@ -18,11 +18,11 @@
 
     <div class="row">
         <div class="col-md-2">
-            <button class="btn btn-warning" routerLink="/products-form">
+            <button class="btn btn-warning" routerLink="/promotions-form">
                 <i class="fa fa-plus"></i> New
             </button>
         </div>
-    </div>   
+    </div>
     <br/>
     <div class="row">
         <div class="col-md-12">
@@ -31,56 +31,38 @@
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
-                        <th>Price</th>
-                        <th>Description</th>
+                        <th>Discount</th>
                         <th></th>
                         <th></th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let product of products">
-                        <td>{{ product.id }}</td>
-                        <td>{{ product.name }}</td>
-                        <td>{{ product.price }}</td>
-                        <td>{{ product.description }}</td>
-
-                        <td>
-                            <select class="form-control" type="number" [(ngModel)]="product.quantidade">
-                                <option [value]="n" *ngFor="let n of lista" >
-                                  <p>{{n}}</p>
-                                </option>
-                            </select>
-                        </td>
+                    <tr *ngFor="let promotion of promotions">
+                        <td>{{ promotion.id }}</td>
+                        <td>{{ promotion.name }}</td>
+                        <td>{{ promotion.discount }}</td>
 
                         <td>
 
-                            <button class="btn btn-primary" routerLink="/products-form/{{ product.id }}">
+                            <button class="btn btn-primary" routerLink="/promotions-form/{{ promotion.id }}">
                                 <i class="fa fa-edit"></i>
                             </button>
 
-                           
-
                         </td>
 
                         <td>
-                            <button  class="btn btn-success" (click)="addProduct(product)" >
-                                <i class="fa fa-plus"></i>
-                            </button>
-                        </td>
-
-                        <td>
-                            <button  class="btn btn-danger" (click)="preDelete(product)"
+                            <button  class="btn btn-danger" (click)="preDelete(promotion)"
                                     data-toggle="modal" data-target="#deleteModal" >
                                 <i class="fa fa-trash"></i>
                             </button>
                         </td>
-                
+
                     </tr>
                 </tbody>
             </table>
         </div>
-            
+
     </div>
 
     <div id="deleteModal" class="modal fade" role="dialog">
@@ -90,13 +72,13 @@
                     <h4>Confirmation</h4>
                 </div>
 
-                <div class="modal-body" *ngIf="selectedProduct">
-                    Confirm the deletion of the product  "{{selectedProduct.name}}"?
+                <div class="modal-body" *ngIf="selectedPromotion">
+                    Confirm the deletion of the product  "{{selectedPromotion.name}}"?
                 </div>
 
                 <div class="modal-footer">
                     <button class="btn btn-success"
-                     (click)="deleteProduct()"
+                     (click)="deletePromotion()"
                      data-dismiss="modal">Confirm</button>
                     <button class="btn btn-default" data-dismiss="modal">Cancel</button>
                 </div>
