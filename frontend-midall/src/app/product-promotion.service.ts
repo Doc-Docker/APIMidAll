@@ -14,6 +14,7 @@ export class ProductPromotionService {
     let obj = {
       "name" : productPromotion.name,
       "isActive" : true,
+      "idCategory" : productPromotion.idCategory,
       "typePromotion" : productPromotion.typePromotion,
       "receivePromotion" : productPromotion.receivePromotion,
       "quantidade" : productPromotion.quantidade,

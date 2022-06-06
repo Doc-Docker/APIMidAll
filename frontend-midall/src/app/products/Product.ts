@@ -6,7 +6,6 @@ export class Product{
     price : number;
     description : string;
     categories : number;
-
     quantidade : number;
     promotion : number[];
 }

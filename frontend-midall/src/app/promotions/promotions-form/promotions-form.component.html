@@ -7,86 +7,84 @@
     <form #promotionForm="ngForm" (ngSubmit)="onSubmit()">
 
         <div class="row">
-            <div class="col-md-12">
-                <div class="alert alert-success" role="alert" *ngIf="success == true">
-                    Promotion saved/updated successfully!
-                </div>
-
-                <div class="alert alert-danger" role="alert" *ngFor="let erro of errors">
-                    {{ erro }}
-                </div>
+          <div class="col-md-12">
+            <div class="alert alert-success" role="alert" *ngIf="success == true">
+              Promotion saved/updated successfully!
             </div>
+            <div class="alert alert-danger" role="alert" *ngFor="let erro of errors">
+              {{ erro }}
+            </div>
+          </div>
         </div>
 
-
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>Type Promtion</label>
-                    <select type="text" class="form-control" [(ngModel)]="productPromotion.typePromotion" name="typePromotion">
-                      <option [value]="n"  *ngFor="let n of lista_type" >
-                        <p>{{n}}</p>
-                      </option>
-                    </select>
-                  </div>
-               </div>
-
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Receive Promtion</label>
-                  <select type="text" class="form-control" [(ngModel)]="productPromotion.receivePromotion" name="receivePromotion">
-                    <option [value]="n"  *ngFor="let n of lista_promotion" >
-                      <p>{{n}}</p>
-                    </option>
-                  </select>
-                </div>
-             </div>
-
-
-
-              <div class="col col-md-6">
-                <div class="form-group">
-                  <label>Name:</label>
-                  <input type="text" class="form-control" [(ngModel)]="productPromotion.name" name="name">
-                </div>
-              </div>
-
-
-
-        <tr *ngFor="let promotions of productPromotion">
-
-        </tr>
-
-              <div class="col col-md-6">
-                <div class="form-group">
-                  <label>Quantidade/Produto:</label>
-                  <input type="text" class="form-control" [(ngModel)]="productPromotion.quantidade" name="quantidade">
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                  <div class="form-group">
-                      <label>Product:</label>
-                      <input type="text" class="form-control" [(ngModel)]="productPromotion.product" name="product">
-                  </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="form-group">
-                    <label>Total Compra:</label>
-                    <input type="text" class="form-control" [(ngModel)]="productPromotion.totalCompra" name="discount">
-                </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Type Promotion</label>
+                <select type="text" class="form-control" [(ngModel)]="productPromotion.typePromotion" name="typePromotion">
+                  <option [value]="n"  *ngFor="let n of lista_type" >
+                    <p>{{n}}</p>
+                  </option>
+                </select>
               </div>
             </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Receive Promotion</label>
+                <select type="text" class="form-control" [(ngModel)]="productPromotion.receivePromotion" name="receivePromotion">
+                  <option [value]="n"  *ngFor="let n of lista_promotion" >
+                    <p>{{n}}</p>
+                  </option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col col-md-6">
+              <div class="form-group">
+                <label>Name:</label>
+                <input type="text" class="form-control" [(ngModel)]="productPromotion.name" name="name">
+              </div>
+            </div>
+
+            <tr *ngFor="let promotions of productPromotion"></tr>
+
+            <div class="col col-md-6">
+              <div class="form-group">
+                <label>Quantity/Product:</label>
+                <input type="text" class="form-control" [(ngModel)]="productPromotion.quantidade" name="quantidade">
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Product:</label>
+                <input type="text" class="form-control" [(ngModel)]="productPromotion.product" name="product">
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Total Purchase:</label>
+                <input type="text" class="form-control" [(ngModel)]="productPromotion.totalCompra" name="discount">
+              </div>
+            </div>
+          </div>
 
             <div class="row">
-
               <div class="col-md-6">
-              <div class="form-group">
+                <div class="form-group">
                   <label>Discount:</label>
                   <input type="text" class="form-control" [(ngModel)]="productPromotion.discount" name="discount">
+                </div>
               </div>
-            </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Category:</label>
+                  <input type="text" class="form-control" [(ngModel)]="productPromotion.idCategory" name="idCategory">
+                </div>
+              </div>
             </div>
 
         <div class="row">
@@ -95,13 +93,11 @@
                     <i class="fa fa-save"></i>
                     Save Promotion
                 </button>
-
                 <button type="submit" class="btn btn-danger ml-2" routerLink="/promotions-list">
                     <i class="fa fa-arrow-alt-circle-left"></i>
                     return
                 </button>
             </div>
         </div>
-
     </form>
 </div>

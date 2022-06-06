@@ -11,9 +11,9 @@
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Preço</th>
-                        <th>Quantidade</th>
-                        <th>Discount</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                       <!--<th>Discount</th>-->
                         <th></th>
                     </tr>
                 </thead>
@@ -22,9 +22,7 @@
                         <td>{{ p.name }}</td>
                         <td>{{ p.price }}</td>
                         <td>{{ p.quantidade}}</td>
-                        <td>-{{ discount}}</td>
-                        
-                        
+                        <!--<td>-{{ discount }}</td>-->
 
                         <td> 
                             <button  class="btn btn-warning" (click)="deleteProduct(p)">
@@ -38,15 +36,18 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th>Preço Total:</th>
+                        <th>Total Price:</th>
                         <th>{{ finalPrice }}</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                     <tr>
-                        <th>Preço sem desconto:</th>
+                        <th>Price Without Discount:</th>
                         <th>{{ noDiscount }}</th>
+                        <th></th>
+                        <th></th>
                     </tr>
-                       
-                   
+                    
                 </tfoot>
             </table>
         </div>
