@@ -13,19 +13,19 @@
                         <th>Name</th>
                         <th>Price</th>
                         <th>Quantity</th>
-                       <!--<th>Discount</th>-->
+                        <th>Discount</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let p of products">
+                    <tr *ngFor="let p of teste">
                         <td>{{ p.name }}</td>
                         <td>{{ p.price }}</td>
-                        <td>{{ p.quantidade}}</td>
-                        <!--<td>-{{ discount }}</td>-->
+                        <td>{{ p.quantity}}</td>
+                        <td>-{{ p.discount }}</td>
 
                         <td> 
-                            <button  class="btn btn-warning" (click)="deleteProduct(p)">
+                            <button  class="btn btn-warning" (click)="deleteProductDto(p)">
                                 <i class="fa fa-trash"></i>
                                 Delete
                             </button>
