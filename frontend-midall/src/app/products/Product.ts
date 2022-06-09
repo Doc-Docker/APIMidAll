@@ -1,4 +1,3 @@
-import { PromotionsFormComponent } from "../promotions/promotions-form/promotions-form.component";
 
 export class Product{
     id : number;

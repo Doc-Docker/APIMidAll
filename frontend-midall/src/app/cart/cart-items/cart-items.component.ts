@@ -4,6 +4,7 @@ import { ProductsService } from 'src/app/products.service';
 import { Product } from 'src/app/products/Product';
 import { Cart } from '../Cart';
 import { Observable } from 'rxjs';
+import { ProductDTO } from 'src/app/products/ProductDTO';
 
 @Component({
   selector: 'app-cart-items',
@@ -22,7 +23,9 @@ export class CartItemsComponent implements OnInit {
   id : number;
   quantidade : number;
   total: number;
+  lista: Product[] = [];
 
+  teste : ProductDTO[] = []
   constructor(private service : CartService) { }
 
   ngOnInit(): void {
@@ -31,31 +34,37 @@ export class CartItemsComponent implements OnInit {
     this.product;
     this.discount;
     this.noDiscount = 0;
-
+    this.lista = [];
+    this.teste = [];
 
     Cart.products.forEach(element => {
-      this.product= element;
+      this.product = element;
       this.id  = element.id;
       this.quantidade = element.quantidade;
-      this.products.push(element);
+     
 
-      if(this.product.promotion != []){
+      this.products.push(element);
 
         this.total = this.noDiscount += (element.price  * element.quantidade);
 
         this.service.getDiscount(this.id, this.quantidade, this.total).subscribe(
             response => 
-            { this.discount = response,
-            this.finalPrice = this.finalPrice += (element.price * element.quantidade)-(this.discount);
+            { const productDto : ProductDTO = new ProductDTO();
+              productDto.discount = response
+              productDto.name = element.name;
+              productDto.price = element.price;
+              productDto.quantity = element.quantidade;
+              this.discount = response;
+              this.teste.push(productDto)
+              this.finalPrice = this.finalPrice += (element.price * element.quantidade)-(this.discount)
             
             errorResponse => console.log(errorResponse)
         })
-        element.promotion = this.discount;
-        this.noDiscount = this.total;
-      }
-      else {
-        this.finalPrice += (element.price * element.quantidade);
-      }
+
+      
+       
+     
+     
     });
 
   
