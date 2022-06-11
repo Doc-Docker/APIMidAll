@@ -2,6 +2,7 @@ import { PromotionsFormComponent } from "../promotions/promotions-form/promotion
 
 export class Product{
     id : number;
+    discount : number;
     name : string;
     price : number;
     description : string;

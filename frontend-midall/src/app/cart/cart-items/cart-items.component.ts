@@ -46,16 +46,12 @@ export class CartItemsComponent implements OnInit {
         this.total = this.noDiscount += (element.price  * element.quantidade);
 
         this.service.getDiscount(this.id, this.quantidade, this.total).subscribe(
-            response => 
-            { const productDto : ProductDTO = new ProductDTO();
-              productDto.discount = response
-              productDto.name = element.name;
-              productDto.price = element.price;
-              productDto.quantity = element.quantidade;
+            response =>
+            { const product : Product = new Product();
               this.discount = response;
-              this.teste.push(productDto)
+              this.product.discount = this.discount
               this.finalPrice = this.finalPrice += (element.price * element.quantidade)-(this.discount)
-            
+
             errorResponse => console.log(errorResponse)
         })
     });
