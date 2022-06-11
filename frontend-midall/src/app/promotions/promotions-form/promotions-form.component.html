@@ -16,6 +16,14 @@
             </div>
           </div>
         </div>
+        <div class="row">
+          <div class="col-md-12">
+              <div class="form-group">
+                  <label>ID:</label>
+                  <input type="text" class="form-control" disabled="true" [(ngModel)]="productPromotion.id" name="id">
+              </div>
+          </div>
+        </div>
 
           <div class="row">
             <div class="col-md-6">
@@ -89,10 +97,16 @@
 
         <div class="row">
             <div class="col-md-4">
-                <button type="submit" class="btn btn-success">
+                <button type="submit" class="btn btn-success" *ngIf="!productPromotion.id" >
                     <i class="fa fa-save"></i>
                     Save Promotion
                 </button>
+
+                <button type="submit" class="btn btn-primary" *ngIf="productPromotion.id" >
+                  <i class="fa fa-sync-alt"></i>
+                  Update Promotion
+                </button>
+
                 <button type="submit" class="btn btn-danger ml-2" routerLink="/promotions-list">
                     <i class="fa fa-arrow-alt-circle-left"></i>
                     return

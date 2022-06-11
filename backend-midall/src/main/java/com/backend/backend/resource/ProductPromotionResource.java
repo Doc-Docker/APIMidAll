@@ -92,6 +92,16 @@ public class ProductPromotionResource {
 		return ResponseEntity.ok().body(listProductPromotionDto);
 
 	}
+	@PutMapping("{id}")
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	public void update(@PathVariable Integer id, @RequestBody ProductPromotion promotion) {
+
+		productPromotionRepository.findById(id).map(ProductPromotion-> {
+			promotion.setIsActive(promotion.getIsActive());
+			return productPromotionRepository.save(promotion);
+		}).orElseThrow(()-> new ResponseStatusException(HttpStatus.NO_CONTENT));
+
+	}
 
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> delete(@PathVariable Integer id) {

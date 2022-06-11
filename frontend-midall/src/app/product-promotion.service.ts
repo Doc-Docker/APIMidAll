@@ -34,6 +34,7 @@ export class ProductPromotionService {
 
   update(id : number, productPromotion : ProductPromotion) : Observable<ProductPromotion>{
     let obj = {
+      "id" : productPromotion.id,
       "name" : productPromotion.name,
       "isActive" : true,
       "typePromotion" : productPromotion.typePromotion,

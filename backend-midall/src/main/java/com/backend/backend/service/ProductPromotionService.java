@@ -49,6 +49,34 @@ public class ProductPromotionService {
 		return productPromotionRepository.save(this.fromDTO(objDto));
 
 	}
+	public ProductPromotion update(Integer id, ProductPromotionDTO promotionDTO) {
+		ProductPromotion promotion = this.findById(id);
+		//this.validateDTOCategories(productDTO);
+		//this.validateDTOProducts(id,productDTO); //Validação do produto a ser inserido
+
+		ProductPromotion promotionReceived = this.fromDTO(promotionDTO);
+
+		ProductPromotion finalPromotion = new ProductPromotion(
+				id,
+				promotionReceived.getName() != null ? promotionReceived.getName() : promotion.getName(),
+				promotionReceived.getIsActive() != null ? promotionReceived.getIsActive() : promotion.getIsActive(),
+				promotionReceived.getIdCategory() != null? promotionReceived.getIdCategory() : promotion.getIdCategory(),
+				promotionReceived.getTypePromotion() != null? promotionReceived.getTypePromotion() : promotion.getTypePromotion(),
+				promotionReceived.getReceivePromotion() != null? promotionReceived.getReceivePromotion() : promotion.getReceivePromotion()	,
+				promotionReceived.getQuantidade() != null? promotionReceived.getQuantidade() : promotion.getQuantidade(),
+				promotionReceived.getTotalCompra() != null? promotionReceived.getTotalCompra() : promotion.getTotalCompra(),
+				promotionReceived.getDiscount() != null? promotionReceived.getDiscount() : promotion.getDiscount()
+		);
+
+		finalPromotion
+				.setProducts(
+						promotionReceived.getProducts() != null ?
+								promotionReceived.getProducts() :
+								promotion.getProducts() );
+
+		return productPromotionRepository.save(finalPromotion);
+	}
+
 
 	public void delete(Integer id) {
 		this.findById(id);
