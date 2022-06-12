@@ -34,7 +34,7 @@
 
 <br>
 
-> Status do Projeto: <img src = "https://github.com/Doc-Docker/APIMidAll/blob/main/Images/barra2.png" width="90" height="20" /> Em Andamento 🕗
+> Status do Projeto: <img src = "https://github.com/Doc-Docker/APIMidAll/blob/main/Images/barra3.png" width="90" height="20" /> Concluído ☑️
 
 <br>
 
@@ -92,7 +92,7 @@ Na compra de 3 produtos, ganhe 50% de desconto no item de menor valor.
 
 - [x] [SPRINT 3](https://github.com/Doc-Docker/APIMidAll/tree/SPRINT-3) - 16/05/2022 a 05/06/2022
 
-- [ ] Feira de Soluções - 15/06/2022 às 19h
+- [x] Feira de Soluções - 15/06/2022 às 19h
 
 <br>
 
