@@ -62,8 +62,7 @@
 
                 <label>Quantity/Product:</label>
                 <input type="text" class="form-control" [(ngModel)]="productPromotion.quantidade" name="quantidade" >
-                <!-- <input type="date" *ngIf="linha.tipo == 'date'" class="form-control" id="{{linha.coluna}}"
-                #input value="{{linha.valor}}" placeholder="Informe o Conteúdo sobre {{ linha.coluna }}" /> -->
+
               </div>
             </div>
 
@@ -90,14 +89,14 @@
                 </div>
               </div>
 
-              <div class="col-md-6">
+              <!-- <div class="col-md-6">
                 <div class="form-group" [hidden]="p4">
                   <label>Category:</label>
                   <input type="text" class="form-control" [(ngModel)]="productPromotion.idCategory" name="idCategory">
                 </div>
               </div>
-            </div>
-
+            </div> -->
+          </div>
         <div class="row">
             <div class="col-md-4">
                 <button type="submit" class="btn btn-success" *ngIf="!productPromotion.id" >

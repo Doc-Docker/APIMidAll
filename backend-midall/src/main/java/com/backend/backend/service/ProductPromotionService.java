@@ -49,34 +49,35 @@ public class ProductPromotionService {
 		return productPromotionRepository.save(this.fromDTO(objDto));
 
 	}
+
 	public ProductPromotion update(Integer id, ProductPromotionDTO promotionDTO) {
 		ProductPromotion promotion = this.findById(id);
-		//this.validateDTOCategories(productDTO);
-		//this.validateDTOProducts(id,productDTO); //Validação do produto a ser inserido
+		// this.validateDTOCategories(productDTO);
+		// this.validateDTOProducts(id,productDTO); //Validação do produto a ser
+		// inserido
 
 		ProductPromotion promotionReceived = this.fromDTO(promotionDTO);
 
-		ProductPromotion finalPromotion = new ProductPromotion(
-				id,
+		ProductPromotion finalPromotion = new ProductPromotion(id,
 				promotionReceived.getName() != null ? promotionReceived.getName() : promotion.getName(),
 				promotionReceived.getIsActive() != null ? promotionReceived.getIsActive() : promotion.getIsActive(),
-				promotionReceived.getIdCategory() != null? promotionReceived.getIdCategory() : promotion.getIdCategory(),
-				promotionReceived.getTypePromotion() != null? promotionReceived.getTypePromotion() : promotion.getTypePromotion(),
-				promotionReceived.getReceivePromotion() != null? promotionReceived.getReceivePromotion() : promotion.getReceivePromotion()	,
-				promotionReceived.getQuantidade() != null? promotionReceived.getQuantidade() : promotion.getQuantidade(),
-				promotionReceived.getTotalCompra() != null? promotionReceived.getTotalCompra() : promotion.getTotalCompra(),
-				promotionReceived.getDiscount() != null? promotionReceived.getDiscount() : promotion.getDiscount()
-		);
+				promotionReceived.getIdCategory() != null ? promotionReceived.getIdCategory()
+						: promotion.getIdCategory(),
+				promotionReceived.getTypePromotion() != null ? promotionReceived.getTypePromotion()
+						: promotion.getTypePromotion(),
+				promotionReceived.getReceivePromotion() != null ? promotionReceived.getReceivePromotion()
+						: promotion.getReceivePromotion(),
+				promotionReceived.getQuantidade() != null ? promotionReceived.getQuantidade()
+						: promotion.getQuantidade(),
+				promotionReceived.getTotalCompra() != null ? promotionReceived.getTotalCompra()
+						: promotion.getTotalCompra(),
+				promotionReceived.getDiscount() != null ? promotionReceived.getDiscount() : promotion.getDiscount());
 
-		finalPromotion
-				.setProducts(
-						promotionReceived.getProducts().get(0) != null ?
-								promotionReceived.getProducts() :
-								promotion.getProducts() );
+		finalPromotion.setProducts(promotionReceived.getProducts().get(0) != null ? promotionReceived.getProducts()
+				: promotion.getProducts());
 
 		return productPromotionRepository.save(finalPromotion);
 	}
-
 
 	public void delete(Integer id) {
 		this.findById(id);
@@ -105,8 +106,9 @@ public class ProductPromotionService {
 				productPromotionDTO.getDiscount());
 
 		productPromotion.getProducts()
-				.addAll(productPromotionDTO.getProducts().stream().map(productDTO -> new Product(productDTO.getId(),
-						productDTO.getDiscount(),productDTO.getName(), productDTO.getPrice(), productDTO.getDescription()))
+				.addAll(productPromotionDTO.getProducts().stream()
+						.map(productDTO -> new Product(productDTO.getId(), productDTO.getDiscount(),
+								productDTO.getName(), productDTO.getPrice(), productDTO.getDescription()))
 						.collect(Collectors.toList()));
 
 		return productPromotion;
@@ -120,7 +122,8 @@ public class ProductPromotionService {
 
 	}
 
-	public ResponseEntity<?> retornaProdutoPromocao(@RequestBody Integer id, Integer quantidade, Integer total, Integer categoria) {
+	public ResponseEntity<?> retornaProdutoPromocao(@RequestBody Integer id, Integer quantidade, Integer total,
+			Integer categoria) {
 
 		List<ProductPromotion> promotios = productPromotionRepository.findAll();
 
@@ -135,13 +138,11 @@ public class ProductPromotionService {
 		Double desconto = 0.0;
 		Double valor = 0.0;
 		Double valor2 = 0.0;
-		
-		
-		if (total > 0 || categoria !=0) {
-			 System.out.println( categoria );
-			 System.out.println("tetse categoria 1");
+
+		if (total > 0) {
+			System.out.println("Total");
 			for (ProductPromotion promocao : promotios) {
-				System.out.println("Total " +  promocao.getTotalCompra());
+				System.out.println("Total");
 				if (promocao.getReceivePromotion().getCode() == 2 && total > promocao.getTotalCompra()) {
 					if (promocao.getTypePromotion().getCode() == 1) {
 						valor2 = promocao.getDiscount();
@@ -161,32 +162,6 @@ public class ProductPromotionService {
 						}
 						System.out.println(desconto);
 					}
-				}
-				// Promotion Category
-				
-				System.out.println("produto " + product.getName()+ " "+ product.getId() + " "+ promocao.getReceivePromotion().getCode()+ " "+ promocao.getIdCategory());
-				if (promocao.getReceivePromotion().getCode() == 4 && promocao.getIdCategory() == product.getCategories().get(1).getId()) {
-				  System.out.println("tetse categoria 2");
-					if (promocao.getTypePromotion().getCode() == 1) {
-						System.out.println( promocao.getTypePromotion().getCode());
-						valor2 = quantidade * product.getProductPromotions().get(0).getDiscount();
-						System.out.println("tetse categoria code");
-						if (valor2 > valor) {
-							desconto = valor2;
-
-						}
-					}
-
-					if (promocao.getTypePromotion().getCode()  == 2) {
-						valor2 = ((product.getProductPromotions().get(i).getDiscount() / 100)
-								* (product.getPrice() * quantidade));
-
-						if (valor2 > valor) {
-							desconto = valor2;
-
-						}
-					}
-					 System.out.println("tetse categoria 3");
 				}
 			}
 		}
@@ -224,7 +199,7 @@ public class ProductPromotionService {
 					if (product.getProductPromotions().get(i).getReceivePromotion().getCode() == 3
 							&& quantidade > product.getProductPromotions().get(i).getQuantidade()) {
 						if (product.getProductPromotions().get(i).getTypePromotion().getCode() == 1) {
-							valor2 = product.getProductPromotions().get(i).getDiscount();
+							valor2 = quantidade * product.getProductPromotions().get(i).getDiscount();
 
 							if (valor2 > valor) {
 								desconto = valor2;
@@ -242,8 +217,6 @@ public class ProductPromotionService {
 							}
 						}
 					}
-
-			
 
 				}
 				valor = desconto;

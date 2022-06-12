@@ -17,7 +17,7 @@ export class PromotionsFormComponent implements OnInit {
   
   errors: String[];
   id : number;
-  lista_promotion : String[] = ['PRODUCT','TOTAL','PRODUCT_QUANTITY','CATEGORY'];
+  lista_promotion : String[] = ['PRODUCT','TOTAL','PRODUCT_QUANTITY'];
   lista_type: String[] = ['VALUE', 'PERCENTAGE'];
   p1: boolean = true;
   p2: boolean = true;
@@ -39,10 +39,10 @@ export class PromotionsFormComponent implements OnInit {
         this.productPromotion.product=1;
         this.p3 =false;
       }
-      if(this.receivePromotion == 'CATEGORY'){
-        this.productPromotion.product=1;
-        this.p4 =false;
-      }
+      // if(this.receivePromotion == 'CATEGORY'){
+      //   this.productPromotion.product=1;
+      //   this.p4 =false;
+      // }
       
     }
 
