@@ -224,7 +224,7 @@ public class ProductPromotionService {
 					if (product.getProductPromotions().get(i).getReceivePromotion().getCode() == 3
 							&& quantidade > product.getProductPromotions().get(i).getQuantidade()) {
 						if (product.getProductPromotions().get(i).getTypePromotion().getCode() == 1) {
-							valor2 = quantidade * product.getProductPromotions().get(i).getDiscount();
+							valor2 = product.getProductPromotions().get(i).getDiscount();
 
 							if (valor2 > valor) {
 								desconto = valor2;
