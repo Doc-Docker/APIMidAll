@@ -57,7 +57,7 @@ Soluções que serão entregues na terceira sprint:
 
 ## :chart_with_downwards_trend: Burndown da Equipe
 
-<img src = "https://github.com/Doc-Docker/APIMidAll/blob/main/Images/burndow_sprint3.png" width="890" height="500"/></h1>
+<img src = "https://github.com/Doc-Docker/APIMidAll/blob/main/Images/sprint_3burnn.png" width="890" height="500"/></h1>
 
 <br>
 
