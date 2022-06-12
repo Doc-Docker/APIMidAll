@@ -18,9 +18,9 @@ Nessa sprint recuperação, focamos nas seguintes melhorias para o projeto:
 
 **Aba de Promoções:**
 
- - [x] Desabilitar campos de acordo com o tipo de promoção selecionada.
+ - [x] Desabilitar campos de acordo com o tipo de promoção selecionada
 
- - [ ] Listagem de Produtos no cadastro de promoções.
+ - [x] Listagem de Produtos no cadastro de promoções
 
 <br>
 
