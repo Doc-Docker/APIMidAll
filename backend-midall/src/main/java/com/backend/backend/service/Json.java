@@ -16,4 +16,5 @@ public class Json {
 	   Integer id;
 	   Integer quantidade;
 	   Integer total;
+	   Integer categoria;
 }

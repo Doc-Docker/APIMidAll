@@ -116,7 +116,8 @@ public class ProductPromotionResource {
 		Integer id = json.getId();
 		Integer quantidade = json.getQuantidade();
 		Integer total = json.getTotal();
-		ResponseEntity<?> discount = productPromotionService.retornaProdutoPromocao(id, quantidade, total);
+		Integer categoria = json.getCategoria();
+		ResponseEntity<?> discount = productPromotionService.retornaProdutoPromocao(id, quantidade, total, categoria);
 		return discount;
 	}
 

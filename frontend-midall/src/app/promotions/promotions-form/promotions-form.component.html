@@ -40,8 +40,8 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>Receive Promotion</label>
-                <select type="text" class="form-control" [(ngModel)]="productPromotion.receivePromotion" name="receivePromotion">
-                  <option [value]="n"  *ngFor="let n of lista_promotion" >
+                <select type="text" class="form-control" [(ngModel)]="productPromotion.receivePromotion" name="receivePromotion" (ngModelChange)="pegaValor()">
+                  <option [value]="n"  *ngFor="let n of lista_promotion" [ngValue]="n" >
                     <p>{{n}}</p>
                   </option>
                 </select>
@@ -58,21 +58,24 @@
             <tr *ngFor="let promotions of productPromotion"></tr>
 
             <div class="col col-md-6">
-              <div class="form-group">
+              <div class="form-group" [hidden]="p2">
+
                 <label>Quantity/Product:</label>
-                <input type="text" class="form-control" [(ngModel)]="productPromotion.quantidade" name="quantidade">
+                <input type="text" class="form-control" [(ngModel)]="productPromotion.quantidade" name="quantidade" >
+                <!-- <input type="date" *ngIf="linha.tipo == 'date'" class="form-control" id="{{linha.coluna}}"
+                #input value="{{linha.valor}}" placeholder="Informe o Conteúdo sobre {{ linha.coluna }}" /> -->
               </div>
             </div>
 
             <div class="col-md-6">
-              <div class="form-group">
+              <div class="form-group" [hidden]="p1">
                 <label>Product:</label>
                 <input type="text" class="form-control" [(ngModel)]="productPromotion.product" name="product">
               </div>
             </div>
 
             <div class="col-md-6">
-              <div class="form-group">
+              <div class="form-group" [hidden]="p3">
                 <label>Total Purchase:</label>
                 <input type="text" class="form-control" [(ngModel)]="productPromotion.totalCompra" name="discount">
               </div>
@@ -88,7 +91,7 @@
               </div>
 
               <div class="col-md-6">
-                <div class="form-group">
+                <div class="form-group" [hidden]="p4">
                   <label>Category:</label>
                   <input type="text" class="form-control" [(ngModel)]="productPromotion.idCategory" name="idCategory">
                 </div>

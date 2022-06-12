@@ -23,6 +23,7 @@ export class CartItemsComponent implements OnInit {
   id : number;
   quantidade : number;
   total: number;
+  categoria: number =1;
   lista: Product[] = [];
 
   teste : ProductDTO[] = []
@@ -33,25 +34,26 @@ export class CartItemsComponent implements OnInit {
     this.finalPrice = 0;
     this.product;
     this.discount;
+    this.categoria=0;
     this.noDiscount = 0;
     this.lista = [];
     this.teste = [];
-
     Cart.products.forEach(element => {
       this.product = element;
       this.id  = element.id;
       this.quantidade = element.quantidade;
+      this.categoria =  element.id;
       this.products.push(element);
-
+      
         this.total = this.noDiscount += (element.price  * element.quantidade);
 
-        this.service.getDiscount(this.id, this.quantidade, this.total).subscribe(
+        this.service.getDiscount(this.id, this.quantidade, this.total, this.categoria).subscribe(
             response =>
             { const product : Product = new Product();
               this.discount = response;
               this.product.discount = this.discount
               this.finalPrice = this.finalPrice += (element.price * element.quantidade)-(this.discount)
-
+              console.log("teste", this.categoria)
             errorResponse => console.log(errorResponse)
         })
     });

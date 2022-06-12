@@ -4,6 +4,7 @@ import { ProductPromotion } from '../ProductPromotion';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Product } from 'src/app/products/Product';
+import { NgIf } from '@angular/common';
 @Component({
   selector: 'app-promotions-form',
   templateUrl: './promotions-form.component.html',
@@ -13,10 +14,37 @@ export class PromotionsFormComponent implements OnInit {
 
   productPromotion : ProductPromotion
   success: boolean = false;
+  
   errors: String[];
   id : number;
   lista_promotion : String[] = ['PRODUCT','TOTAL','PRODUCT_QUANTITY','CATEGORY'];
   lista_type: String[] = ['VALUE', 'PERCENTAGE'];
+  p1: boolean = true;
+  p2: boolean = true;
+  p3: boolean = true;
+  p4: boolean = true;
+  receivePromotion : string = "teste"; 
+  
+
+    pegaValor(){ // Função que foi chamada
+      this.receivePromotion = this.productPromotion.receivePromotion;
+      if(this.receivePromotion == 'PRODUCT'){
+        this.p1 =false;
+      }
+      if(this.receivePromotion == 'PRODUCT_QUANTITY'){
+        this.p2 =false;
+        this.p1 =false;
+      }
+      if(this.receivePromotion == 'TOTAL'){
+        this.productPromotion.product=1;
+        this.p3 =false;
+      }
+      if(this.receivePromotion == 'CATEGORY'){
+        this.productPromotion.product=1;
+        this.p4 =false;
+      }
+      
+    }
 
 
   constructor(
@@ -26,6 +54,7 @@ export class PromotionsFormComponent implements OnInit {
     this.productPromotion = new ProductPromotion();
    }
 
+   
   ngOnInit(): void {
     let params : Observable<any> =  this.activatedRoute.params;
     params.subscribe(urlParams=>{
@@ -35,6 +64,8 @@ export class PromotionsFormComponent implements OnInit {
         .getPromotionById(this.id)
         .subscribe(
           response => this.productPromotion = response,
+
+         
           errorResponse => this.productPromotion = new ProductPromotion()
           )
       }
@@ -44,6 +75,7 @@ export class PromotionsFormComponent implements OnInit {
   }
 
   onSubmit(){
+
     if(this.id){
       this.service.update(this.id, this.productPromotion)
       .subscribe( res => {

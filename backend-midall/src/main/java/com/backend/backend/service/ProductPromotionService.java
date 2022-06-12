@@ -120,7 +120,7 @@ public class ProductPromotionService {
 
 	}
 
-	public ResponseEntity<?> retornaProdutoPromocao(@RequestBody Integer id, Integer quantidade, Integer total) {
+	public ResponseEntity<?> retornaProdutoPromocao(@RequestBody Integer id, Integer quantidade, Integer total, Integer categoria) {
 
 		List<ProductPromotion> promotios = productPromotionRepository.findAll();
 
@@ -137,10 +137,11 @@ public class ProductPromotionService {
 		Double valor2 = 0.0;
 		
 		
-		if (total > 0) {
-			System.out.println("Total");
+		if (total > 0 || categoria !=0) {
+			 System.out.println( categoria );
+			 System.out.println("tetse categoria 1");
 			for (ProductPromotion promocao : promotios) {
-				System.out.println("Total");
+				System.out.println("Total " +  promocao.getTotalCompra());
 				if (promocao.getReceivePromotion().getCode() == 2 && total > promocao.getTotalCompra()) {
 					if (promocao.getTypePromotion().getCode() == 1) {
 						valor2 = promocao.getDiscount();
@@ -160,6 +161,32 @@ public class ProductPromotionService {
 						}
 						System.out.println(desconto);
 					}
+				}
+				// Promotion Category
+				
+				System.out.println("produto " + product.getName()+ " "+ product.getId() + " "+ promocao.getReceivePromotion().getCode()+ " "+ promocao.getIdCategory());
+				if (promocao.getReceivePromotion().getCode() == 4 && promocao.getIdCategory() == product.getCategories().get(1).getId()) {
+				  System.out.println("tetse categoria 2");
+					if (promocao.getTypePromotion().getCode() == 1) {
+						System.out.println( promocao.getTypePromotion().getCode());
+						valor2 = quantidade * product.getProductPromotions().get(0).getDiscount();
+						System.out.println("tetse categoria code");
+						if (valor2 > valor) {
+							desconto = valor2;
+
+						}
+					}
+
+					if (promocao.getTypePromotion().getCode()  == 2) {
+						valor2 = ((product.getProductPromotions().get(i).getDiscount() / 100)
+								* (product.getPrice() * quantidade));
+
+						if (valor2 > valor) {
+							desconto = valor2;
+
+						}
+					}
+					 System.out.println("tetse categoria 3");
 				}
 			}
 		}
@@ -216,28 +243,7 @@ public class ProductPromotionService {
 						}
 					}
 
-					// Promotion Category
-					if (product.getProductPromotions().get(i).getReceivePromotion().getCode() == 4 && product
-							.getProductPromotions().get(i).getIdCategory() == product.getCategories().get(0).getId()) {
-						if (product.getProductPromotions().get(i).getTypePromotion().getCode() == 1) {
-							valor2 = quantidade * product.getProductPromotions().get(i).getDiscount();
-
-							if (valor2 > valor) {
-								desconto = valor2;
-
-							}
-						}
-
-						if (product.getProductPromotions().get(i).getTypePromotion().getCode() == 2) {
-							valor2 = ((product.getProductPromotions().get(i).getDiscount() / 100)
-									* (product.getPrice() * quantidade));
-
-							if (valor2 > valor) {
-								desconto = valor2;
-
-							}
-						}
-					}
+			
 
 				}
 				valor = desconto;

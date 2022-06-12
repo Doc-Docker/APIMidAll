@@ -1,4 +1,5 @@
 export class ProductPromotion{
+  [x: string]: any;
   id : number;
   name : string;
   isActive : boolean
