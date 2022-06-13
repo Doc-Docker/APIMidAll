@@ -16,6 +16,14 @@
             </div>
           </div>
         </div>
+        <div class="row">
+          <div class="col-md-12">
+              <div class="form-group">
+                  <label>ID:</label>
+                  <input type="text" class="form-control" disabled="true" [(ngModel)]="productPromotion.id" name="id">
+              </div>
+          </div>
+        </div>
 
           <div class="row">
             <div class="col-md-6">
@@ -32,8 +40,8 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>Receive Promotion</label>
-                <select type="text" class="form-control" [(ngModel)]="productPromotion.receivePromotion" name="receivePromotion">
-                  <option [value]="n"  *ngFor="let n of lista_promotion" >
+                <select type="text" class="form-control" [(ngModel)]="productPromotion.receivePromotion" name="receivePromotion" (ngModelChange)="pegaValor()">
+                  <option [value]="n"  *ngFor="let n of lista_promotion" [ngValue]="n" >
                     <p>{{n}}</p>
                   </option>
                 </select>
@@ -47,24 +55,33 @@
               </div>
             </div>
 
-            <tr *ngFor="let promotions of productPromotion"></tr>
-
             <div class="col col-md-6">
-              <div class="form-group">
+              <div class="form-group" [hidden]="p2">
+
                 <label>Quantity/Product:</label>
-                <input type="text" class="form-control" [(ngModel)]="productPromotion.quantidade" name="quantidade">
+                <input type="text" class="form-control" [(ngModel)]="productPromotion.quantidade" name="quantidade" >
+
               </div>
             </div>
 
             <div class="col-md-6">
-              <div class="form-group">
+              <div class="form-group" [hidden]="p1">
                 <label>Product:</label>
-                <input type="text" class="form-control" [(ngModel)]="productPromotion.product" name="product">
+                <input type="text" class="form-control" [(ngModel)]="productPromotion.productid" name="productid">
               </div>
+
+               <div [value]="n"  *ngFor="let n of productPromotion.product">
+                <p>{{n.id}}</p>
+              </div>            
+
+              <button type="button" class="btn btn-success" (click)="onAdd()">
+                Add
+              </button>                 
             </div>
+  
 
             <div class="col-md-6">
-              <div class="form-group">
+              <div class="form-group" [hidden]="p3">
                 <label>Total Purchase:</label>
                 <input type="text" class="form-control" [(ngModel)]="productPromotion.totalCompra" name="discount">
               </div>
@@ -79,20 +96,26 @@
                 </div>
               </div>
 
-              <div class="col-md-6">
-                <div class="form-group">
+              <!-- <div class="col-md-6">
+                <div class="form-group" [hidden]="p4">
                   <label>Category:</label>
                   <input type="text" class="form-control" [(ngModel)]="productPromotion.idCategory" name="idCategory">
                 </div>
               </div>
-            </div>
-
+            </div> -->
+          </div>
         <div class="row">
             <div class="col-md-4">
-                <button type="submit" class="btn btn-success">
+                <button type="submit" class="btn btn-success" *ngIf="!productPromotion.id" >
                     <i class="fa fa-save"></i>
                     Save Promotion
                 </button>
+
+                <button type="submit" class="btn btn-primary" *ngIf="productPromotion.id" >
+                  <i class="fa fa-sync-alt"></i>
+                  Update Promotion
+                </button>
+
                 <button type="submit" class="btn btn-danger ml-2" routerLink="/promotions-list">
                     <i class="fa fa-arrow-alt-circle-left"></i>
                     return

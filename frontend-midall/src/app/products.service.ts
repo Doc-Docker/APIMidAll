@@ -12,6 +12,7 @@ export class ProductsService {
 
   insert( product : Product) : Observable<Product>{
     let obj = {
+      "discount" : product.discount,
       "name" : product.name,
       "price" : product.price,
       "description" : product.description,
@@ -20,13 +21,13 @@ export class ProductsService {
               "id": product.categories
           }
       ]
-  
+
     }
     return this.http.post<Product>('http://localhost:8080/products', obj)
 
   }
 
-  
+
   getProducts() : Observable<any[]> {
     return this.http.get<Product[]>('http://localhost:8080/products')
 
@@ -35,7 +36,7 @@ export class ProductsService {
   getProductById(id : number) : Observable<Product>{
     return this.http.get<any>(`http://localhost:8080/products/${id}`)
   }
-  
+
   update(id : number, product : Product) : Observable<Product> {
     let obj = {
       "name": product.name,
@@ -45,7 +46,7 @@ export class ProductsService {
               "id": product.categories
           }
       ]
-  
+
     }
     return this.http.patch<Product>(`http://localhost:8080/products/${id}`, obj)
   }
@@ -54,4 +55,3 @@ export class ProductsService {
     return this.http.delete<any>(`http://localhost:8080/products/${product.id}`)
   }
 }
- 

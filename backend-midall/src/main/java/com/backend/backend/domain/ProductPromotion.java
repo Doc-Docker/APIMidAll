@@ -1,19 +1,14 @@
 package com.backend.backend.domain;
 
-import com.backend.backend.dto.ProductDTO;
 import com.backend.backend.enumerate.ReceivePromotion;
 import com.backend.backend.enumerate.TypePromotion;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,10 +40,9 @@ public class ProductPromotion implements Serializable {
 	
 	private Double discount;
 
-	@JsonIgnore
 	@ManyToMany
 	@JoinTable(name = "PROMOTION_PRODUCT", joinColumns = @JoinColumn(name = "productPromotion_id"), inverseJoinColumns = @JoinColumn(name = "Product_id"))
-	private List<Product> products = new ArrayList<>();
+	private List<Product> product = new ArrayList<>();
 	
 
 	public ProductPromotion(Integer id,String name, Boolean isActive, Integer idCategory,

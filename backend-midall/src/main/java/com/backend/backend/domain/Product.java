@@ -21,6 +21,7 @@ public class Product implements Serializable {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
 
+    private Integer discount;
     private String name;
 
     private Double price;
@@ -36,11 +37,12 @@ public class Product implements Serializable {
     )
     private List<Category> categories = new ArrayList<>();
 
-    @ManyToMany(mappedBy = "products")
+    @ManyToMany(mappedBy = "product")
     private List<ProductPromotion> productPromotions = new ArrayList<>();
 
-    public Product(Integer id, String name, Double price, String description) {
+    public Product(Integer id, Integer discount, String name, Double price, String description) {
         this.id = id;
+        this.discount = discount;
         this.name = name;
         this.price = price;
         this.description = description;

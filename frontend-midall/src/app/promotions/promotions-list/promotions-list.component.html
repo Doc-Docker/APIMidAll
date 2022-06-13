@@ -43,6 +43,11 @@
                         <td>{{ promotion.name }}</td>
                         <td>{{ promotion.discount }}</td>
 
+                        <td>
+                          <button class="btn btn-primary" routerLink="/promotions-form/{{ promotion.id }}">
+                            <i class="fa fa-edit"></i>
+                        </button>
+                        </td>
 
                         <td>
                             <button  class="btn btn-danger" (click)="preDelete(promotion)"

@@ -51,7 +51,7 @@ public class ProductPromotionDTO implements Serializable {
 	@Min(value = 0L, message = "Discount value must be positive")
 	private Double discount;
 
-	private List<ProductDTO> products = new ArrayList<>();
+	private List<ProductDTO> product = new ArrayList<>();
 
 	public ProductPromotionDTO(ProductPromotion obj) {
 		id = obj.getId();

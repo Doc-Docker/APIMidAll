@@ -92,6 +92,16 @@ public class ProductPromotionResource {
 		return ResponseEntity.ok().body(listProductPromotionDto);
 
 	}
+	@PutMapping("{id}")
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	public void update(@PathVariable Integer id, @RequestBody ProductPromotion promotion) {
+
+		productPromotionRepository.findById(id).map(ProductPromotion-> {
+			promotion.setIsActive(promotion.getIsActive());
+			return productPromotionRepository.save(promotion);
+		}).orElseThrow(()-> new ResponseStatusException(HttpStatus.NO_CONTENT));
+
+	}
 
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> delete(@PathVariable Integer id) {
@@ -106,7 +116,8 @@ public class ProductPromotionResource {
 		Integer id = json.getId();
 		Integer quantidade = json.getQuantidade();
 		Integer total = json.getTotal();
-		ResponseEntity<?> discount = productPromotionService.retornaProdutoPromocao(id, quantidade, total);
+		Integer categoria = json.getCategoria();
+		ResponseEntity<?> discount = productPromotionService.retornaProdutoPromocao(id, quantidade, total, categoria);
 		return discount;
 	}
 

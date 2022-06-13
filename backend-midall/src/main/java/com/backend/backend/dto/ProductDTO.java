@@ -26,6 +26,7 @@ public class ProductDTO implements Serializable {
 
 	private Integer id;
 
+    private Integer discount;
     @NotEmpty(message = "{field.name.mandatory}")
     private String name;
 
@@ -42,6 +43,7 @@ public class ProductDTO implements Serializable {
 
 	public ProductDTO(Product product) {
 		this.id = product.getId();
+        this.discount = product.getDiscount();
 		this.name = product.getName();
 		this.price = product.getPrice();
 		this.description = product.getDescription();

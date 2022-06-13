@@ -4,7 +4,7 @@
 </ol>
 
 <div class="container">
-    
+
     <div class="row">
         <div class="col-md-12">
             <table class="table table-condensed table-hover">
@@ -13,7 +13,11 @@
                         <th>Name</th>
                         <th>Price</th>
                         <th>Quantity</th>
-                       <!--<th>Discount</th>-->
+<<<<<<< Updated upstream
+                        <th>Discount</th>'
+=======
+                        <th>Discount</th>
+>>>>>>> Stashed changes
                         <th></th>
                     </tr>
                 </thead>
@@ -22,16 +26,16 @@
                         <td>{{ p.name }}</td>
                         <td>{{ p.price }}</td>
                         <td>{{ p.quantidade}}</td>
-                        <!--<td>-{{ discount }}</td>-->
+                        <td>-{{ p.discount }}</td>
 
-                        <td> 
+                        <td>
                             <button  class="btn btn-warning" (click)="deleteProduct(p)">
                                 <i class="fa fa-trash"></i>
                                 Delete
                             </button>
                         </td>
-                        
-                
+
+
                     </tr>
                 </tbody>
                 <tfoot>
@@ -47,11 +51,11 @@
                         <th></th>
                         <th></th>
                     </tr>
-                    
+
                 </tfoot>
             </table>
         </div>
-            
+
     </div>
     <br/>
 

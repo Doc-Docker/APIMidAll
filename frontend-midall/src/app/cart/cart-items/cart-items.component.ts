@@ -4,6 +4,7 @@ import { ProductsService } from 'src/app/products.service';
 import { Product } from 'src/app/products/Product';
 import { Cart } from '../Cart';
 import { Observable } from 'rxjs';
+import { ProductDTO } from 'src/app/products/ProductDTO';
 
 @Component({
   selector: 'app-cart-items',
@@ -22,7 +23,10 @@ export class CartItemsComponent implements OnInit {
   id : number;
   quantidade : number;
   total: number;
+  categoria: number =1;
+  lista: Product[] = [];
 
+  teste : ProductDTO[] = []
   constructor(private service : CartService) { }
 
   ngOnInit(): void {
@@ -30,44 +34,47 @@ export class CartItemsComponent implements OnInit {
     this.finalPrice = 0;
     this.product;
     this.discount;
+    this.categoria=0;
     this.noDiscount = 0;
-
-
+    this.lista = [];
+    this.teste = [];
     Cart.products.forEach(element => {
-      this.product= element;
+      this.product = element;
       this.id  = element.id;
       this.quantidade = element.quantidade;
+      this.categoria =  element.id;
       this.products.push(element);
-
-      if(this.product.promotion != []){
-
+      
         this.total = this.noDiscount += (element.price  * element.quantidade);
 
-        this.service.getDiscount(this.id, this.quantidade, this.total).subscribe(
-            response => 
-            { this.discount = response,
-            this.finalPrice = this.finalPrice += (element.price * element.quantidade)-(this.discount);
-            
+        this.service.getDiscount(this.id, this.quantidade, this.total, this.categoria).subscribe(
+            response =>
+            { const product : Product = new Product();
+              this.discount = response;
+              this.product.discount = this.discount
+              this.finalPrice = this.finalPrice += (element.price * element.quantidade)-(this.discount)
+              console.log("teste", this.categoria)
             errorResponse => console.log(errorResponse)
         })
-        element.promotion = this.discount;
-        this.noDiscount = this.total;
-      }
-      else {
-        this.finalPrice += (element.price * element.quantidade);
-      }
     });
 
-  
   }
 
   deleteProduct(product : Product){
-
-
     let position = Cart.products.indexOf(product);
     if (position !== -1) {
       Cart.products.splice(position, 1);
   }
+    this.ngOnInit();
+  }
+
+  deleteProductDto(product : ProductDTO){
+    let position = this.teste.indexOf(product)
+    if (position !== -1) {
+      this.teste.splice	(position, 1)
+
+    }
+
     this.ngOnInit();
   }
 }
