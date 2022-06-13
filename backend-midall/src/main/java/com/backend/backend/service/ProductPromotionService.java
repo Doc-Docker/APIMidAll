@@ -1,12 +1,9 @@
 package com.backend.backend.service;
 
-import com.backend.backend.domain.Category;
 import com.backend.backend.domain.Product;
 import com.backend.backend.domain.ProductPromotion;
-import com.backend.backend.dto.CategoryDTO;
 import com.backend.backend.dto.ProductDTO;
 import com.backend.backend.dto.ProductPromotionDTO;
-import com.backend.backend.enumerate.TypePromotion;
 import com.backend.backend.exceptions.BadRequestException;
 import com.backend.backend.repository.ProductPromotionRepository;
 
@@ -14,13 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import java.io.Serializable;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -73,8 +66,13 @@ public class ProductPromotionService {
 						: promotion.getTotalCompra(),
 				promotionReceived.getDiscount() != null ? promotionReceived.getDiscount() : promotion.getDiscount());
 
+<<<<<<< Updated upstream
 		finalPromotion.setProducts(promotionReceived.getProducts().get(0) != null ? promotionReceived.getProducts()
 				: promotion.getProducts());
+=======
+		finalPromotion.setProduct(promotionReceived.getProduct().get(0) != null ? promotionReceived.getProduct()
+				: promotion.getProduct());
+>>>>>>> Stashed changes
 
 		return productPromotionRepository.save(finalPromotion);
 	}
@@ -91,7 +89,7 @@ public class ProductPromotionService {
 	}
 
 	private void validateDTOProducts(ProductPromotionDTO productPromotionDTO) {
-		productPromotionDTO.getProducts().forEach(givenProduct -> {
+		productPromotionDTO.getProduct().forEach(givenProduct -> {
 			Product product = productService.findById(givenProduct.getId());
 			if (givenProduct.getName() != null && !Objects.equals(givenProduct.getName(), product.getName()))
 				throw new BadRequestException("Product name doesn't match with the given id");
@@ -105,8 +103,13 @@ public class ProductPromotionService {
 				productPromotionDTO.getQuantidade(), productPromotionDTO.getTotalCompra(),
 				productPromotionDTO.getDiscount());
 
+<<<<<<< Updated upstream
 		productPromotion.getProducts()
 				.addAll(productPromotionDTO.getProducts().stream()
+=======
+		productPromotion.getProduct()
+				.addAll(productPromotionDTO.getProduct().stream()
+>>>>>>> Stashed changes
 						.map(productDTO -> new Product(productDTO.getId(), productDTO.getDiscount(),
 								productDTO.getName(), productDTO.getPrice(), productDTO.getDescription()))
 						.collect(Collectors.toList()));
@@ -116,8 +119,8 @@ public class ProductPromotionService {
 
 	public ProductPromotionDTO fromDomain(ProductPromotion promotion) {
 		ProductPromotionDTO promotionDTO = new ProductPromotionDTO(promotion);
-		promotionDTO.getProducts().addAll(
-				promotion.getProducts().stream().map(product -> new ProductDTO(product)).collect(Collectors.toList()));
+		promotionDTO.getProduct().addAll(
+				promotion.getProduct().stream().map(product -> new ProductDTO(product)).collect(Collectors.toList()));
 		return promotionDTO;
 
 	}

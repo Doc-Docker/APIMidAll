@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ProductPromotionService } from 'src/app/product-promotion.service';
 import { ProductPromotion } from '../ProductPromotion';
 import { ActivatedRoute } from '@angular/router';
@@ -12,6 +12,7 @@ import { NgIf } from '@angular/common';
 })
 export class PromotionsFormComponent implements OnInit {
 
+  @Output() productsEmitter = new EventEmitter();
   productPromotion : ProductPromotion
   success: boolean = false;
   
@@ -36,7 +37,11 @@ export class PromotionsFormComponent implements OnInit {
         this.p1 =false;
       }
       if(this.receivePromotion == 'TOTAL'){
+<<<<<<< Updated upstream
         this.productPromotion.product=1;
+=======
+        //this.productPromotion.product;
+>>>>>>> Stashed changes
         this.p3 =false;
       }
       // if(this.receivePromotion == 'CATEGORY'){
@@ -72,6 +77,16 @@ export class PromotionsFormComponent implements OnInit {
 
 
     })
+  }
+
+
+  onAdd() {
+    let product : Product;
+    product = new Product();
+    product.id = this.productPromotion.productid;
+    this.productPromotion.product.push(product)
+    this.productsEmitter.emit(this.productPromotion.product)
+    console.log(this.productPromotion);
   }
 
   onSubmit(){

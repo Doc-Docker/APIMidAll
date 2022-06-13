@@ -55,8 +55,6 @@
               </div>
             </div>
 
-            <tr *ngFor="let promotions of productPromotion"></tr>
-
             <div class="col col-md-6">
               <div class="form-group" [hidden]="p2">
 
@@ -69,9 +67,18 @@
             <div class="col-md-6">
               <div class="form-group" [hidden]="p1">
                 <label>Product:</label>
-                <input type="text" class="form-control" [(ngModel)]="productPromotion.product" name="product">
+                <input type="text" class="form-control" [(ngModel)]="productPromotion.productid" name="productid">
               </div>
+
+               <div [value]="n"  *ngFor="let n of productPromotion.product">
+                <p>{{n.id}}</p>
+              </div>            
+
+              <button type="button" class="btn btn-success" (click)="onAdd()">
+                Add
+              </button>                 
             </div>
+  
 
             <div class="col-md-6">
               <div class="form-group" [hidden]="p3">

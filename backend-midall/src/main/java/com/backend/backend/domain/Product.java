@@ -37,7 +37,7 @@ public class Product implements Serializable {
     )
     private List<Category> categories = new ArrayList<>();
 
-    @ManyToMany(mappedBy = "products")
+    @ManyToMany(mappedBy = "product")
     private List<ProductPromotion> productPromotions = new ArrayList<>();
 
     public Product(Integer id, Integer discount, String name, Double price, String description) {

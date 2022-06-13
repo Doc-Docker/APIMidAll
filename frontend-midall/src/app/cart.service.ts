@@ -12,9 +12,6 @@ import { ProductPromotion } from './promotions/ProductPromotion';
 
 export class CartService {
 
-
-  
-  
   constructor(private http : HttpClient) { }
   
   getDiscount(id: number, quantidade: number, total:number, categoria: number) : Observable<any>{
